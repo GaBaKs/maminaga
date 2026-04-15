@@ -1,8 +1,9 @@
-[gd_scene format=4 uid="uid://dy7hasrc7uvao"]
+[gd_scene format=4 uid="uid://bc800l3i0bhvn"]
 
 [ext_resource type="Texture2D" uid="uid://ch8t3b36qcipn" path="res://tileset/orig.png" id="1_e0an3"]
 [ext_resource type="Texture2D" uid="uid://s0052ipf7eb7" path="res://tileset/Pixel Plains Free Pack/New Basic Tiles Free.png" id="2_p5pve"]
 [ext_resource type="Texture2D" uid="uid://cjrgjevxp6j83" path="res://tileset/Pixel Plains Free Pack/All free tiles.png" id="3_urblq"]
+[ext_resource type="PackedScene" uid="uid://cqlfic7mww4u7" path="res://enemigo.tscn" id="4_p5pve"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw27f"]
 texture = ExtResource("1_e0an3")
@@ -1283,3 +1284,6 @@ tile_map_data = PackedByteArray("AAAtABoAAAAAAAQAAADx//n/AAACAAIAAADx////AAADAAI
 tile_set = SubResource("TileSet_0t07s")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=376351646]
+
+[node name="Node2D2" parent="." unique_id=1206403565 instance=ExtResource("4_p5pve")]
+position = Vector2(-155.57605, -15.435059)

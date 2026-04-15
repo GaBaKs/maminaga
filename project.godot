@@ -11,13 +11,6 @@ config_version=5
 [application]
 
 config/name="Maminaga"
-<<<<<<< Updated upstream
-run/main_scene="uid://cqlfic7mww4u7"
-=======
-run/main_scene="uid://bnhpijswg0g1a"
->>>>>>> Stashed changes
-config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
 
 [input]
 
