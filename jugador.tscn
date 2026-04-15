@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bnhpijswg0g1a"]
+
+[ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://character_body_2d.gd" id="1_8o684"]
+[ext_resource type="Texture2D" uid="uid://ccu5fgs4sy5gg" path="res://png-transparent-pixel-dodgers-pixel-art-sprite-text-cartoon-fictional-character.png" id="2_ukil5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
+
+[sub_resource type="GDScript" id="GDScript_omvyu"]
+script/source = "extends Node2D
+class_name Personaje 
+@export var vida: float = 100.00
+@export
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Jugador" type="CharacterBody2D" unique_id=1603352472]
+script = ExtResource("1_8o684")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1061224042]
+texture = ExtResource("2_ukil5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185478807]
+shape = SubResource("CircleShape2D_lhvu3")
+
+[node name="Jugador" type="Node2D" parent="." unique_id=1728856833]
+script = SubResource("GDScript_omvyu")
+vida = null
