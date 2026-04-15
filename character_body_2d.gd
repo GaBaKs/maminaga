@@ -1,17 +1,35 @@
-
 extends CharacterBody2D
-class_name Jugador # Esto permite que otros scripts lo reconozcan como un tipo
 
-# Atributos compartidos
-@export var vida: float = 100.0
-@export var velocidad: float = 200.0
-@export var danio: float = 10.0
+var vida = 100
+var velocidad = 250
 
-func recibir_danio(cantidad: float):
+# Referencia a la barra de vida
+@onready var barra_vida = $ProgressBar 
+
+func _ready():
+	# Al empezar, nos aseguramos que la barra coincida con la vida
+	barra_vida.max_value = vida
+	barra_vida.value = vida
+
+func _physics_process(delta):
+	# (Tu código de movimiento actual...)
+	var direccion = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	velocity = direccion * velocidad
+	move_and_slide()
+
+func recibir_danio(cantidad):
 	vida -= cantidad
+	# Actualizamos la barra visualmente
+	barra_vida.value = vida
+	
+	print("Vida actual: ", vida)
+	
 	if vida <= 0:
 		morir()
 
 func morir():
-	# Lógica base (ej: efecto de partículas o sonido)
-	queue_free()
+	# Reinicia la escena o lo que prefieras
+	get_tree().reload_current_scene()
+	
+	# En lugar de scale.x = -1, hacé:
+	#$Sprite2D.flip_h = true
