@@ -11,6 +11,13 @@ config_version=5
 [application]
 
 config/name="Maminaga"
+run/main_scene="uid://dy7hasrc7uvao"
+config/features=PackedStringArray("4.6", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1153
 
 [input]
 

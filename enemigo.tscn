@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cqlfic7mww4u7"]
+[gd_scene format=3 uid="uid://dtaqlabs6dcgn"]
 
-[ext_resource type="Script" uid="uid://c7bhmqdcw2kwr" path="res://enemigo.gd" id="1_a5tj2"]
+[ext_resource type="Script" path="res://enemigo.gd" id="1_a5tj2"]
 [ext_resource type="Texture2D" uid="uid://bpvfx1mloojsd" path="res://goblin.png" id="2_moxti"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bnx68"]
