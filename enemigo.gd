@@ -35,7 +35,7 @@ func pick_new_direction():
 
 	timer = change_direction_time
 
-func mover(unidades: float):
+func move(unidades: float):
 	# Genera una dirección aleatoria
 	var direccion = Vector2(
 		randf_range(-1.0, 1.0),

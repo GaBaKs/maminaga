@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dnelyh2wg8mj"]
+
+[ext_resource type="Script" uid="uid://cnqlyk3ug80mp" path="res://play_button.gd" id="1_1idr4"]
+[ext_resource type="Texture2D" uid="uid://cpm04g1m1oqgf" path="res://play.png" id="1_v8f0b"]
+
+[node name="play_button" type="Node2D" unique_id=1930829804]
+script = ExtResource("1_1idr4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1362849185]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1895956288]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control" unique_id=247504365]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/CenterContainer" unique_id=771118420]
+layout_mode = 2
+icon = ExtResource("1_v8f0b")
+
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/Button" to="." method="_on_button_pressed"]
