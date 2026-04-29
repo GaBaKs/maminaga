@@ -31,7 +31,9 @@ func recibir_danio(cantidad):
 
 func morir():
 	# Reinicia la escena o lo que prefieras
-	get_tree().reload_current_scene()
+	print("El jugador murio")
+	vida=400
+	#get_tree().reload_current_scene()
 	
 signal mineral_recolectado(valor)
 
