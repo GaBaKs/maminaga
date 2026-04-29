@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cv5u4nloimxlk"]
+
+[ext_resource type="Script" uid="uid://bw7asbr1dgagd" path="res://goblin.gd" id="1_u6mjv"]
+[ext_resource type="Texture2D" uid="uid://bpvfx1mloojsd" path="res://goblin.png" id="2_vu5tg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nd7v"]
+
+[node name="Goblin" type="CharacterBody2D" unique_id=299554348]
+script = ExtResource("1_u6mjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315989587]
+shape = SubResource("RectangleShape2D_2nd7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1933469331]
+texture = ExtResource("2_vu5tg")
