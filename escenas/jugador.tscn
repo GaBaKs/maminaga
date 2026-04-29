@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b56b86jiyx3ro"]
 
 [ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://jugador.gd" id="1_jpodt"]
-[ext_resource type="Texture2D" uid="uid://ccu5fgs4sy5gg" path="res://png-transparent-pixel-dodgers-pixel-art-sprite-text-cartoon-fictional-character.png" id="2_ukil5"]
+[ext_resource type="Texture2D" uid="uid://duyvfdubb3fs1" path="res://pixel-art-character-of-an-adventurer-with-a-sword-vibrant-retro-style-perfect-for-game-design-or-fantasy-illustrations-png.webp" id="2_jpodt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
-radius = 101.0198
+radius = 56.0803
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpodt"]
 
@@ -14,10 +14,12 @@ radius = 101.0198
 script = ExtResource("1_jpodt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Jugador" unique_id=1061224042]
-texture = ExtResource("2_ukil5")
+position = Vector2(4.999939, -1)
+scale = Vector2(0.15510204, 0.16428572)
+texture = ExtResource("2_jpodt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador" unique_id=185478807]
-position = Vector2(-11, 155)
+position = Vector2(7, -4)
 shape = SubResource("CircleShape2D_lhvu3")
 
 [node name="ProgressBar" type="ProgressBar" parent="Jugador" unique_id=1890487245]

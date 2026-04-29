@@ -4,12 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://kcp6dbyhnxkp" path="res://monstruito2.png" id="2_nukbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nd7v"]
+size = Vector2(63, 67)
 
 [node name="Goblin" type="CharacterBody2D" unique_id=299554348]
 script = ExtResource("1_u6mjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315989587]
+position = Vector2(2, -5)
 shape = SubResource("RectangleShape2D_2nd7v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1933469331]
+position = Vector2(-2.0000002, -3.000002)
+scale = Vector2(0.09087172, 0.096217126)
 texture = ExtResource("2_nukbs")
