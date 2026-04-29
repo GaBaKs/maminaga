@@ -1,8 +1,8 @@
 extends CharacterBody2D
-
+class_name Enemigo_abstract
 @export var speed := 100
 @export var change_direction_time := 2.0
-
+var posicion = [0,0] 
 var direction := Vector2.ZERO
 var timer := 0.0
 
@@ -34,3 +34,16 @@ func pick_new_direction():
 		).normalized()
 
 	timer = change_direction_time
+
+func move(unidades: float):
+	# Genera una dirección aleatoria
+	var direccion = Vector2(
+		randf_range(-1.0, 1.0),
+		randf_range(-1.0, 1.0)
+	).normalized()
+
+	# Calcula la posición de destino
+	var destino = global_position + direccion * unidades
+
+	# Mueve al enemigo hacia la posición calculada
+	global_position = destino
