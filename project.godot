@@ -17,11 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*uid://gywgu2mliylk"
+Global="*uid://brxa8mbpi28rx"
 
 [display]
 
 window/size/viewport_width=1153
+
+[global_group]
+
+minerales=""
+jugador=""
 
 [input]
 

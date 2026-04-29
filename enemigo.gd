@@ -1,49 +1,35 @@
 extends CharacterBody2D
 class_name Enemigo_abstract
+
 @export var speed := 100
-@export var change_direction_time := 2.0
-var posicion = [0,0] 
-var direction := Vector2.ZERO
-var timer := 0.0
+var objetivo = Global.referencia_jugador
+# Ya no necesitamos la variable 'jugador' con @onready aquí arriba 
+# porque la buscaremos dinámicamente.
 
 func _ready():
-	randomize()
-	pick_new_direction()
+	print("Enemigo preparado")
 
 func _physics_process(delta):
-	timer -= delta
+	# Buscamos al jugador en cada frame si no lo tenemos, 
+	# o simplemente lo buscamos una vez.
+	var jugador = get_tree().get_first_node_in_group("jugador")
 
-	# Si pasa el tiempo → cambia dirección
-	if timer <= 0:
-		pick_new_direction()
-
-	velocity = direction * speed
-	move_and_slide()
-
-	# Si choca con una pared → cambia dirección inmediatamente
-	if is_on_wall():
-		pick_new_direction()
-
-func pick_new_direction():
-	if randf() < 0.3:
-		direction = Vector2.ZERO
+	if jugador: 
+		# 1. Cálculo de dirección: (Destino - Origen)
+		var direction = (jugador.global_position - global_position).normalized()
+		
+		# 2. Aplicar velocidad
+		velocity = direction * speed
+		
+		# 3. Mover y deslizar
+		move_and_slide() 
+		
+		# 4. Lógica de daño por contacto
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			var objeto_chocado = collision.get_collider()
+			if objeto_chocado.has_method("recibir_danio"):
+				objeto_chocado.recibir_danio(0.5)
 	else:
-		direction = Vector2(
-			randf_range(-1, 1),
-			randf_range(-1, 1)
-		).normalized()
-
-	timer = change_direction_time
-
-func move(unidades: float):
-	# Genera una dirección aleatoria
-	var direccion = Vector2(
-		randf_range(-1.0, 1.0),
-		randf_range(-1.0, 1.0)
-	).normalized()
-
-	# Calcula la posición de destino
-	var destino = global_position + direccion * unidades
-
-	# Mueve al enemigo hacia la posición calculada
-	global_position = destino
+		# Si no encuentra al jugador, imprimimos un error para saber qué pasa
+		print("Error: No encuentro a nadie en el grupo 'jugador'")

@@ -1,22 +1,26 @@
 [gd_scene format=3 uid="uid://b56b86jiyx3ro"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_8o684"]
+[ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://jugador.gd" id="1_jpodt"]
 [ext_resource type="Texture2D" uid="uid://ccu5fgs4sy5gg" path="res://png-transparent-pixel-dodgers-pixel-art-sprite-text-cartoon-fictional-character.png" id="2_ukil5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
 radius = 101.0198
 
-[node name="Jugador" type="CharacterBody2D" unique_id=1603352472]
-script = ExtResource("1_8o684")
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpodt"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1061224042]
+[node name="Node2D" type="Node2D" unique_id=1970177159]
+
+[node name="Jugador" type="CharacterBody2D" parent="." unique_id=1603352472 groups=["jugador"]]
+script = ExtResource("1_jpodt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador" unique_id=1061224042]
 texture = ExtResource("2_ukil5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185478807]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador" unique_id=185478807]
 position = Vector2(-11, 155)
 shape = SubResource("CircleShape2D_lhvu3")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1890487245]
+[node name="ProgressBar" type="ProgressBar" parent="Jugador" unique_id=1890487245]
 modulate = Color(0.6072, 0.36799997, 0.92, 1)
 self_modulate = Color(1.017, 0.236, 1.56, 1)
 offset_left = -81.0
@@ -25,3 +29,8 @@ offset_right = 103.0
 offset_bottom = -234.0
 value = 100.0
 fill_mode = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1674184352]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1153391755]
+shape = SubResource("CircleShape2D_jpodt")
