@@ -2,9 +2,57 @@
 
 [ext_resource type="Script" uid="uid://bif3ebdmvxeu0" path="res://control.gd" id="1_0fbet"]
 
-[node name="Control" type="Control" unique_id=1061274488]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1054953793]
+
+[node name="menu_principal" type="Control" parent="." unique_id=1061274488]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_0fbet")
+
+[node name="TextureRect" type="TextureRect" parent="menu_principal" unique_id=862998289]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="menu_principal" unique_id=1393469544]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer_info" type="VBoxContainer" parent="menu_principal/HBoxContainer" unique_id=596658895]
+layout_mode = 2
+
+[node name="Label_titulo" type="Label" parent="menu_principal/HBoxContainer/VBoxContainer_info" unique_id=806973142]
+layout_mode = 2
+
+[node name="Label_minerales" type="Label" parent="menu_principal/HBoxContainer/VBoxContainer_info" unique_id=1041130822]
+layout_mode = 2
+
+[node name="Label_almas" type="Label" parent="menu_principal/HBoxContainer/VBoxContainer_info" unique_id=670226325]
+layout_mode = 2
+
+[node name="Button_start" type="Button" parent="menu_principal/HBoxContainer/VBoxContainer_info" unique_id=347378543]
+layout_mode = 2
+
+[node name="VBoxContainer_selector" type="VBoxContainer" parent="menu_principal/HBoxContainer" unique_id=1532785596]
+layout_mode = 2
+
+[node name="Label_skin" type="Label" parent="menu_principal/HBoxContainer/VBoxContainer_selector" unique_id=665565258]
+layout_mode = 2
+
+[node name="Label_mapa" type="Label" parent="menu_principal/HBoxContainer/VBoxContainer_selector" unique_id=407962387]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="menu_principal/HBoxContainer/VBoxContainer_selector" unique_id=1098489006]
+layout_mode = 2
+
+[node name="Button_prev" type="Button" parent="menu_principal/HBoxContainer/VBoxContainer_selector/HBoxContainer" unique_id=221452773]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="menu_principal/HBoxContainer/VBoxContainer_selector/HBoxContainer" unique_id=752950482]
+layout_mode = 2
+
+[node name="Button_next" type="Button" parent="menu_principal/HBoxContainer/VBoxContainer_selector/HBoxContainer" unique_id=520576602]
+layout_mode = 2

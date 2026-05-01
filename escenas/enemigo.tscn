@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crhmuvmpb77cn" path="res://icon.svg" id="2_a5tj2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8qs0"]
+radius = 81.0
 
 [node name="Enemigo" type="CharacterBody2D" unique_id=1046897383]
 script = ExtResource("1_a5tj2")
@@ -12,4 +13,5 @@ script = ExtResource("1_a5tj2")
 texture = ExtResource("2_a5tj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1521158060]
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_j8qs0")

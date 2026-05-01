@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://jugador.gd" id="1_jpodt"]
 [ext_resource type="Texture2D" uid="uid://duyvfdubb3fs1" path="res://pixel-art-character-of-an-adventurer-with-a-sword-vibrant-retro-style-perfect-for-game-design-or-fantasy-illustrations-png.webp" id="2_jpodt"]
+[ext_resource type="PackedScene" uid="uid://cf3hmr3wj6eod" path="res://escenas/bala.tscn" id="2_xutah"]
+[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://bala.gd" id="3_njcx7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
-radius = 56.0803
+radius = 108.461975
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpodt"]
 
@@ -12,6 +14,7 @@ radius = 56.0803
 
 [node name="Jugador" type="CharacterBody2D" parent="." unique_id=1603352472 groups=["jugador"]]
 script = ExtResource("1_jpodt")
+bala_escena = ExtResource("2_xutah")
 
 [node name="Sprite2D" type="Sprite2D" parent="Jugador" unique_id=1061224042]
 position = Vector2(4.999939, -1)
@@ -32,7 +35,10 @@ offset_bottom = -234.0
 value = 100.0
 fill_mode = 1
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1674184352]
+[node name="Area2D" type="Area2D" parent="Jugador" unique_id=1674184352]
+script = ExtResource("3_njcx7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1153391755]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/Area2D" unique_id=1153391755]
 shape = SubResource("CircleShape2D_jpodt")
+
+[connection signal="body_entered" from="Jugador/Area2D" to="Jugador" method="_on_area_recoleccion_body_entered"]
