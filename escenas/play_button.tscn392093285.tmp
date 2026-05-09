@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnelyh2wg8mj"]
 
-[ext_resource type="Script" uid="uid://cnqlyk3ug80mp" path="res://play_button.gd" id="1_1idr4"]
+[ext_resource type="Script" path="res://play_button.gd" id="1_1idr4"]
 [ext_resource type="Texture2D" uid="uid://cpm04g1m1oqgf" path="res://play.png" id="1_v8f0b"]
 
 [node name="play_button" type="Node2D" unique_id=1930829804]
@@ -13,10 +13,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 451.0
-offset_top = 209.0
-offset_right = 451.0
-offset_bottom = 209.0
 grow_horizontal = 2
 grow_vertical = 2
 

@@ -6,6 +6,8 @@ var velocidad = 250
 # Variable para guardar la última dirección de movimiento
 var ultima_direccion := Vector2.RIGHT
 
+@onready var animated_sprite = $AnimatedSprite2D
+
 # Referencia a la barra de vida
 @onready var barra_vida = $ProgressBar 
 
@@ -28,6 +30,7 @@ func _ready():
 
 func _physics_process(delta):
 	# 1.(Tu código de movimiento actual...)
+	animacion()
 	var direccion = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direccion != Vector2.ZERO:
 		ultima_direccion = direccion.normalized() # Guardamos hacia donde miramos
@@ -93,3 +96,17 @@ func ataque_circular():
 			var direccion_empuje = (e.global_position - global_position).normalized()
 			# Pasamos el daño y la dirección[cite: 5]
 			e.recibir_danio_enemigo(danio_area, direccion_empuje)
+
+func animacion():
+	if velocity.x > 0:
+		animated_sprite.play("run_right")
+
+	elif velocity.x < 0:
+		animated_sprite.play("run_left")
+
+	else:
+		if ultima_direccion.x > 0:
+			animated_sprite.play("idle_right")
+
+		elif ultima_direccion.x < 0:
+			animated_sprite.play("idle_left")
