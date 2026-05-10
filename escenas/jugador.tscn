@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://jugador.gd" id="1_jpodt"]
 [ext_resource type="PackedScene" uid="uid://cf3hmr3wj6eod" path="res://escenas/bala.tscn" id="2_xutah"]
-[ext_resource type="Script" path="res://bala.gd" id="3_njcx7"]
-[ext_resource type="Texture2D" uid="uid://d1841kadkic04" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
-[ext_resource type="Texture2D" uid="uid://bbya2fticgppi" path="res://assets/character/character_test_run.png" id="4_as36m"]
+[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://bala.gd" id="3_njcx7"]
+[ext_resource type="Texture2D" uid="uid://pjxbftav8x5x" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
+[ext_resource type="Texture2D" uid="uid://brhmi6syfw0wr" path="res://assets/character/character_test_run.png" id="4_as36m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovq70"]
 atlas = ExtResource("3_ovq70")
@@ -310,27 +310,28 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
-radius = 108.461975
+radius = 10.770329
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpodt"]
-radius = 13.038404
+radius = 12.0415945
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1603352472 groups=["jugador"]]
+z_index = 5
+position = Vector2(544, 316)
 script = ExtResource("1_jpodt")
 bala_escena = ExtResource("2_xutah")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=763227625]
-zoom = Vector2(3, 3)
+position = Vector2(-3, 4)
 process_callback = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1692728392]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1692728392 groups=["jugador"]]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_2gy2m")
-animation = &"idle_left"
-frame = 7
-frame_progress = 0.97407573
+animation = &"idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185478807]
-position = Vector2(7, -4)
+position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_lhvu3")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1890487245]
@@ -344,9 +345,11 @@ value = 100.0
 fill_mode = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1674184352]
+position = Vector2(-2, 0)
 script = ExtResource("3_njcx7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1153391755]
+position = Vector2(-1, 6)
 shape = SubResource("CircleShape2D_jpodt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_recoleccion_body_entered"]

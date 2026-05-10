@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6qs2usjqcilp"]
+
+[ext_resource type="Script" uid="uid://8rosf32wcufb" path="res://scripts/cartel_fin.gd" id="1_erpbu"]
+
+[node name="cartel_fin" type="CanvasLayer" unique_id=2130493672]
+process_mode = 3
+layer = 10
+script = ExtResource("1_erpbu")
+
+[node name="Panel" type="Panel" parent="." unique_id=1466574714]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=234655991]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BotonRevivir" type="Button" parent="Panel/Label" unique_id=1358396037]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BotonReintentar" type="Button" parent="Panel/Label" unique_id=523196479]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

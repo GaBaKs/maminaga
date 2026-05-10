@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crnppfxf0qxeb"]
+
+[ext_resource type="Script" uid="uid://k3kqgqievl2y" path="res://meta_area_2d.gd" id="1_60afg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnmtg"]
+
+[node name="meta" type="Node2D" unique_id=1793651603]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1661704179]
+script = ExtResource("1_60afg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1743844906]
+shape = SubResource("RectangleShape2D_bnmtg")

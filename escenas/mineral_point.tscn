@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://384ckv6186sc"]
+
+[ext_resource type="Script" uid="uid://ccgfld6k36nbc" path="res://scripts/mineral_point.gd" id="1_4dc5f"]
+
+[node name="mineral_point" type="Node2D" unique_id=119048706]
+script = ExtResource("1_4dc5f")
