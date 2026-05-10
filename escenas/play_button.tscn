@@ -21,9 +21,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control" unique_id=247504365]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.079
+anchor_bottom = 0.18
+offset_right = 141.913
+offset_bottom = 116.35999
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/CenterContainer" unique_id=771118420]
 layout_mode = 2

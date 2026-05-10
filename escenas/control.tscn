@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://4dhliyqp34al"]
+
+[ext_resource type="Script" uid="uid://bif3ebdmvxeu0" path="res://control.gd" id="1_6m6ia"]
+[ext_resource type="Texture2D" uid="uid://b8c0lold64px2" path="res://8ldVYm.png" id="2_3bkg3"]
+[ext_resource type="PackedScene" uid="uid://dnelyh2wg8mj" path="res://escenas/play_button.tscn" id="3_ge6vf"]
+[ext_resource type="Texture2D" uid="uid://duyvfdubb3fs1" path="res://pixel-art-character-of-an-adventurer-with-a-sword-vibrant-retro-style-perfect-for-game-design-or-fantasy-illustrations-png.webp" id="3_qqb0l"]
+[ext_resource type="Texture2D" uid="uid://cpm04g1m1oqgf" path="res://play.png" id="4_3bkg3"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1054953793]
+
+[node name="menu_principal" type="Control" parent="." unique_id=1061274488]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6m6ia")
+
+[node name="TextureRect" type="TextureRect" parent="menu_principal" unique_id=862998289]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.6520002
+anchor_right = 0.5
+anchor_bottom = 4.1080003
+offset_left = -40.92
+offset_top = -112.0
+offset_right = 1294.0
+offset_bottom = 576.68
+texture = ExtResource("2_3bkg3")
+
+[node name="SeccionSuperior" type="HBoxContainer" parent="menu_principal" unique_id=1393469544]
+top_level = true
+visibility_layer = 5
+z_index = 2
+texture_filter = 1
+layout_mode = 0
+offset_left = 155.0
+offset_top = 14.0
+offset_right = 345.0
+offset_bottom = 177.0
+alignment = 1
+
+[node name="Gema1" type="HBoxContainer" parent="menu_principal/SeccionSuperior" unique_id=1602192278]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="menu_principal/SeccionSuperior/Gema1" unique_id=1958039038]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="menu_principal/SeccionSuperior/Gema1" unique_id=735019860]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="menu_principal/SeccionSuperior/Gema1" unique_id=1304412683]
+layout_mode = 2
+
+[node name="Gema2" type="HBoxContainer" parent="menu_principal/SeccionSuperior" unique_id=1733816853]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="menu_principal/SeccionSuperior/Gema2" unique_id=2044602867]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="menu_principal/SeccionSuperior/Gema2" unique_id=998831258]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="menu_principal/SeccionSuperior/Gema2" unique_id=259013826]
+layout_mode = 2
+
+[node name="Gema3" type="HBoxContainer" parent="menu_principal/SeccionSuperior" unique_id=1341542346]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="menu_principal/SeccionSuperior/Gema3" unique_id=785917861]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="menu_principal/SeccionSuperior/Gema3" unique_id=1720949688]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="menu_principal/SeccionSuperior/Gema3" unique_id=2106356701]
+layout_mode = 2
+
+[node name="Almas" type="HBoxContainer" parent="menu_principal/SeccionSuperior" unique_id=562622154]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="menu_principal/SeccionSuperior/Almas" unique_id=1276757711]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="menu_principal/SeccionSuperior/Almas" unique_id=1713980997]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="menu_principal/SeccionSuperior/Almas" unique_id=251555543]
+layout_mode = 2
+
+[node name="SeccionCentral" type="HBoxContainer" parent="menu_principal" unique_id=1622413409]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_right = 1557.0
+offset_bottom = 960.0
+
+[node name="Button_prev" type="Button" parent="menu_principal/SeccionCentral" unique_id=287586339]
+layout_mode = 2
+
+[node name="TextureRect_skin" type="TextureRect" parent="menu_principal/SeccionCentral" unique_id=1034382429]
+z_index = 5
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_qqb0l")
+
+[node name="Button_next" type="Button" parent="menu_principal/SeccionCentral" unique_id=1711038511]
+layout_mode = 2
+
+[node name="SeccionIzquierda" type="VBoxContainer" parent="menu_principal" unique_id=851728665]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button_tienda_de_skins" type="Button" parent="menu_principal/SeccionIzquierda" unique_id=2069246763]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="menu_principal" unique_id=779730993]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 13.467001
+anchor_bottom = 8.75
+offset_left = 437.0
+offset_top = 330.0
+offset_right = -61.680054
+offset_bottom = 20.0
+
+[node name="play_button" parent="menu_principal/CenterContainer" unique_id=1930829804 instance=ExtResource("3_ge6vf")]
+z_index = 6
+position = Vector2(132, 164)
+
+[node name="SelectorNivel" type="Panel" parent="menu_principal/CenterContainer" unique_id=2091539725]
+visible = false
+layout_mode = 2
+
+[node name="Mapa1" type="Button" parent="menu_principal/CenterContainer/SelectorNivel" unique_id=1944447275]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Mapa2" type="Button" parent="menu_principal/CenterContainer/SelectorNivel" unique_id=18937835]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Mapa3" type="Button" parent="menu_principal/CenterContainer/SelectorNivel" unique_id=591233935]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Dificultad" type="MenuButton" parent="menu_principal/CenterContainer/SelectorNivel" unique_id=1778550828]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+item_count = 3
+popup/item_0/text = "Facil"
+popup/item_0/icon = ExtResource("4_3bkg3")
+popup/item_0/id = 0
+popup/item_1/text = "Medio"
+popup/item_1/icon = ExtResource("4_3bkg3")
+popup/item_1/id = 1
+popup/item_2/text = "Dificil"
+popup/item_2/icon = ExtResource("4_3bkg3")
+popup/item_2/id = 2
