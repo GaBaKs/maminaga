@@ -41,7 +41,7 @@ func _physics_process(delta):
 
 func morir_enemigo():
 	# 1. Cambiar Global por Global2 (o como se llame tu Autoload) [cite: 11]
-	Global.almas += 1 
+	Global.almas += 1
 	print("¡Alma recolectada! Almas totales: ", Global.almas)
 	# 2. Eliminar al enemigo [cite: 5]
 	queue_free()

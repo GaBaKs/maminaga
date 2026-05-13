@@ -3,13 +3,7 @@ extends Node2D
 @export var mineral_escena: PackedScene 
 @export_range(0, 100) var probabilidad: int = 50
 func _ready() -> void:
-	# 1. Ajustar el spawn de enemigos
-	var ajustes = Global.ajustes_dificultad[Global.dificultad_actual] 
-	$EnemyTimer.wait_time = ajustes[spawn_rate] 
-	$EnemyTimer.start()
-	
-	# 2. Spawnear minerales iniciales
-	generar_minerales_por_dificultad(ajustes["multiplicador_minerales"])
+	pass
 
 func generar_minerales_por_dificultad(multiplicador):
 	# Buscamos tus Marker2D de minerales

@@ -31,6 +31,9 @@ func _ready() -> void:
 	
 	# 2. Usar ajustes_dificultad (el nombre del diccionario)
 	var ajustes = Global.ajustes_dificultad[Global.dificultad_actual]
+	print(ajustes)
+	$EnemyTimer.wait_time = ajustes["spawn_rate"] 
+	$EnemyTimer.start()
 	
 	# Configuramos el Timer (asegurate que el nodo se llame spawn_timer o enemy_timer)
 	if has_node("spawn_timer"):

@@ -323,6 +323,7 @@ bala_escena = ExtResource("2_xutah")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=763227625]
 position = Vector2(-3, 4)
+zoom = Vector2(2, 2)
 process_callback = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1692728392 groups=["jugador"]]
