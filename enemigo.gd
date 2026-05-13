@@ -40,9 +40,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func morir_enemigo():
-	# 1. Cambiar Global por Global2 (o como se llame tu Autoload) [cite: 11]
-	Global.almas += 1
-	print("¡Alma recolectada! Almas totales: ", Global.almas)
+	PlayerData.almas += 1
+	print("¡Alma recolectada! Almas totales: ", PlayerData.almas)
 	# 2. Eliminar al enemigo [cite: 5]
 	queue_free()
 	# El move_and_slide() se llama UNA SOLA VEZ al final para aplicar la velocity que sea

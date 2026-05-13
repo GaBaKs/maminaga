@@ -45,10 +45,6 @@ func obtener_ruta_skin_actual() -> String:
 
 # --- LÓGICA DE PARTIDA ---
 
-func sumar_minerales(cantidad):
-	minerales_partida += cantidad
-	print("Recolectado en partida: ", minerales_partida)
-
 func sumar_almas(cantidad):
 	almas_partida += cantidad
 

@@ -12,11 +12,8 @@ func _ready():
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugador"):
 		# Usamos la función que ya tenés en Global
-		Global.sumar_minerales(1) 
+		PlayerData.sumar_minerales(1) 
+		print(PlayerData.minerales["Glacita"])
 		# Efecto de sonido o partículas aquí
 		queue_free()
-func recolectar():
-	# Emitimos la señal o sumamos al Global directamente 
-	Global.sumar_minerales(valor)
-	print("Mineral recolectado! Valor: ", valor, " Total: ", Global.minerales)
-	queue_free() # Borra el mineral del mapa [cite: 5]
+		
