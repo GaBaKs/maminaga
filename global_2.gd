@@ -20,9 +20,9 @@ var almas_partida: int = 0 # Cambiado de 'almas' a 'almas_partida' para consiste
 # --- CONFIGURACIÓN DE MAPAS Y RECOMPENSAS ---
 # Aquí definimos qué gema da cada mapa para que el sistema sea automático
 var configuracion_mapas = {
-	"res://mapas/bosque.tscn": {"tipo_gema": 1},
-	"res://mapas/hielo.tscn":  {"tipo_gema": 2},
-	"res://mapas/desierto.tscn": {"tipo_gema": 3}
+	"bosque": "res://mapas/bosque.tscn",
+	"hielo": "res://mapas/hielo.tscn",
+	"desierto": "res://mapas/desierto.tscn"
 }
 
 # --- SISTEMA DE SKINS ---

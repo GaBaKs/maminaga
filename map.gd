@@ -2,6 +2,7 @@ extends Node2D
 
 # 1. Arrastrá tu escena enemigo.tscn a esta casilla en el inspector 
 @export var escena_enemigo: PackedScene 
+@export var escena_gema: PackedScene
 var dificultad := 1
 
 func _on_enemy_timer_timeout():
