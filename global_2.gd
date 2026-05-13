@@ -1,11 +1,14 @@
 extends Node
 
+var nivel_a_cargar: String
+
 # --- Variables de Navegación y Configuración ---
 var mapa_seleccionado: String = "" # Ejemplo: "res://mapas/bosque.tscn"
 var dificultad_actual: int = 1    # 1: Fácil, 2: Medio, 3: Difícil
 var skin_equipada: String = "default"
 var referencia_jugador: CharacterBody2D
 var cartel_interfaz: CanvasLayer 
+
 
 # --- SISTEMA DE MINERALES Y ECONOMÍA (BANCO) ---
 var minerales_tipo_1: int = 0 # Gema Roja (ej. Bosque)

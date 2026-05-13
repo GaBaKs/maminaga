@@ -48,7 +48,7 @@ func generar_minerales_por_dificultad():
 	var multiplicador = ajustes["multiplicador_minerales"]
 	
 	# Supongamos que tenés tus Marker2D dentro de un nodo llamado "MineralSpawns"
-	var puntos_disponibles = $MineralSpawns.get_children()
+	var puntos_disponibles = $PuntosDeMinerales.get_children()
 	puntos_disponibles.shuffle() # Mezclamos para que no siempre aparezcan en los mismos
 	
 	# Calculamos cuántos puntos usar (ej: 5 puntos base * 2.5 de dificultad = 12 puntos)

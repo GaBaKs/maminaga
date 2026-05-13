@@ -1335,11 +1335,13 @@ probabilidad = 20
 [node name="mineral_point3" parent="Control/Map/PuntosDeMinerales" unique_id=132433118 instance=ExtResource("7_gaqhc")]
 position = Vector2(-11, 253)
 mineral_escena = ExtResource("8_yblbi")
+probabilidad = null
 
 [node name="mineral_point4" parent="Control/Map/PuntosDeMinerales" unique_id=1221955267 instance=ExtResource("7_gaqhc")]
 visible = false
 position = Vector2(479, -27)
 mineral_escena = ExtResource("8_yblbi")
+probabilidad = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Control/Map" unique_id=1490427289]
 

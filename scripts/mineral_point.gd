@@ -4,16 +4,16 @@ extends Node2D
 @export_range(0, 100) var probabilidad: int = 50
 func _ready() -> void:
 	# 1. Ajustar el spawn de enemigos
-	var ajustes = Global.configuracion_dificultad[Global.dificultad_actual] 
-	$spawn_timer.wait_time = ajustes["spawn_rate"] 
-	$spawn_timer.start()
+	var ajustes = Global.ajustes_dificultad[Global.dificultad_actual] 
+	$EnemyTimer.wait_time = ajustes[spawn_rate] 
+	$EnemyTimer.start()
 	
 	# 2. Spawnear minerales iniciales
 	generar_minerales_por_dificultad(ajustes["multiplicador_minerales"])
 
 func generar_minerales_por_dificultad(multiplicador):
 	# Buscamos tus Marker2D de minerales
-	var puntos_disponibles = $MineralSpawns.get_children()
+	var puntos_disponibles = $PuntosDeMinerales.get_children()
 	puntos_disponibles.shuffle()
 	
 	# Calculamos cuántos spawnean según la dificultad
