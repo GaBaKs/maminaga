@@ -1,5 +1,15 @@
 [gd_scene format=3 uid="uid://cmnjjxci12bt2"]
 
-[ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/arma_abstract.tscn" id="1_nrhxe"]
+[ext_resource type="Script" uid="uid://0sdeelsnvyjy" path="res://scripts/arma/pistola.gd" id="1_tgstl"]
+[ext_resource type="Texture2D" uid="uid://3ey538nq6eeq" path="res://assets/arma/pistola.png" id="2_rqtst"]
 
-[node name="arma_abstract" unique_id=1549684524 instance=ExtResource("1_nrhxe")]
+[node name="Node2D" type="Node2D" unique_id=2066113132]
+script = ExtResource("1_tgstl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=850206429]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1350434913]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1590981338]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_rqtst")

@@ -8,7 +8,7 @@ var ultima_direccion := Vector2.RIGHT
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var joystick = $"../Joystick/Joystick"
-
+@onready var arma_actual
 # Referencia a la barra de vida
 @onready var barra_vida = $ProgressBar 
 
@@ -33,6 +33,10 @@ func _ready():
 		barra_vida.max_value = vida
 		barra_vida.value = vida
 	#self.mineral_recolectado.connect(_sumar_al_global)
+	if Global.arma_escena:
+		arma_actual = Global.arma_escena.instantiate()
+		add_child(arma_actual)
+		arma_actual.position = Vector2.ZERO  # centrada en el jugador
 
 func _physics_process(delta):
 	animacion()
@@ -40,16 +44,6 @@ func _physics_process(delta):
 	velocity = direccion * velocidad
 	move_and_slide()
 
-	# 2. Lógica de Disparo Manual (Opción A)
-	# Reemplazá tu línea del IF por esta para probar:
-	if Input.is_action_just_pressed("ui_accept"):
-		print("¡El botón funciona!") # Si ves esto en la consola, el botón está OK
-		disparar()
-	# 3. Lógica de Ataque de Área Pasivo (Opción B)
-	timer_area += delta
-	if timer_area >= recarga_area:
-		ataque_circular()
-		timer_area = 0
 
 func recibir_danio(cantidad):
 	vida -= cantidad
@@ -74,16 +68,6 @@ func disparar():
 	else:
 			print("ERROR: No hay escena cargada en bala_escena")
 			
-func ataque_circular():
-	# Ahora que es hijo, $Area2D funcionará perfecto
-	var enemigos = $Area2D.get_overlapping_bodies()
-	
-	for e in enemigos:
-		if e.has_method("recibir_danio_enemigo"):
-			# Calculamos hacia dónde empujar: (Posición Enemigo - Mi Posición)
-			var direccion_empuje = (e.global_position - global_position).normalized()
-			# Pasamos el daño y la dirección[cite: 5]
-			e.recibir_danio_enemigo(danio_area, direccion_empuje)
 
 func animacion():
 	if velocity.x > 0:

@@ -1,5 +1,7 @@
 extends Node
 
+var arma_escena: PackedScene = preload("res://escenas/pistola.tscn")
+
 var nivel_a_cargar: String
 
 # --- Variables de Navegación y Configuración ---

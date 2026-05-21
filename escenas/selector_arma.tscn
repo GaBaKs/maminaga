@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bgm52fowcod28"]
+
+[ext_resource type="Script" uid="uid://b5mty56bkpamf" path="res://scripts/menu/selector_arma.gd" id="1_m0ux5"]
+
+[node name="SelectorArma" type="Control" unique_id=900369122]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m0ux5")

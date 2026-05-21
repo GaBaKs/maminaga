@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://scripts/player/jugador.gd" id="1_jpodt"]
 [ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/arma_abstract.tscn" id="2_ovq70"]
-[ext_resource type="Texture2D" uid="uid://pjxbftav8x5x" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
-[ext_resource type="Texture2D" uid="uid://brhmi6syfw0wr" path="res://assets/character/character_test_run.png" id="4_as36m"]
-[ext_resource type="Script" uid="uid://cq614sc8jqbwu" path="res://scripts/arma/arma_abstract.gd" id="5_ovq70"]
+[ext_resource type="Texture2D" uid="uid://d1841kadkic04" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
+[ext_resource type="Texture2D" uid="uid://bbya2fticgppi" path="res://assets/character/character_test_run.png" id="4_as36m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovq70"]
 atlas = ExtResource("3_ovq70")
@@ -310,10 +309,6 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
-radius = 10.770329
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jpodt"]
-radius = 12.0415945
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1603352472 groups=["jugador"]]
 z_index = 5
@@ -332,7 +327,7 @@ sprite_frames = SubResource("SpriteFrames_2gy2m")
 animation = &"idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185478807]
-position = Vector2(-3, 2)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_lhvu3")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1890487245]
@@ -344,13 +339,3 @@ offset_right = 37.0
 offset_bottom = -20.0
 value = 100.0
 fill_mode = 1
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1674184352]
-position = Vector2(-2, 0)
-script = ExtResource("5_ovq70")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1153391755]
-position = Vector2(-1, 6)
-shape = SubResource("CircleShape2D_jpodt")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_recoleccion_body_entered"]
