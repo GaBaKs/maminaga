@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cmnjjxci12bt2"]
+
+[ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/arma_abstract.tscn" id="1_nrhxe"]
+
+[node name="arma_abstract" unique_id=1549684524 instance=ExtResource("1_nrhxe")]

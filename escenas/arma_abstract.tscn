@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4yo7np8erhxq"]
+
+[ext_resource type="Script" uid="uid://cq614sc8jqbwu" path="res://scripts/arma/arma_abstract.gd" id="1_cqgsl"]
+
+[node name="arma_abstract" type="Node2D" unique_id=1549684524]
+script = ExtResource("1_cqgsl")
+nombre_arma = null
+danio = null
+velocidad_ataque = null
+alcance_radio = null

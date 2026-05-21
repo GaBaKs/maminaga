@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b56b86jiyx3ro"]
 
 [ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://scripts/player/jugador.gd" id="1_jpodt"]
-[ext_resource type="PackedScene" uid="uid://cf3hmr3wj6eod" path="res://escenas/bala.tscn" id="2_xutah"]
-[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://scripts/arma/bala.gd" id="3_njcx7"]
-[ext_resource type="Texture2D" uid="uid://d1841kadkic04" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
-[ext_resource type="Texture2D" uid="uid://bbya2fticgppi" path="res://assets/character/character_test_run.png" id="4_as36m"]
+[ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/arma_abstract.tscn" id="2_ovq70"]
+[ext_resource type="Texture2D" uid="uid://pjxbftav8x5x" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
+[ext_resource type="Texture2D" uid="uid://brhmi6syfw0wr" path="res://assets/character/character_test_run.png" id="4_as36m"]
+[ext_resource type="Script" uid="uid://cq614sc8jqbwu" path="res://scripts/arma/arma_abstract.gd" id="5_ovq70"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovq70"]
 atlas = ExtResource("3_ovq70")
@@ -319,7 +319,7 @@ radius = 12.0415945
 z_index = 5
 position = Vector2(544, 316)
 script = ExtResource("1_jpodt")
-bala_escena = ExtResource("2_xutah")
+bala_escena = ExtResource("2_ovq70")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=763227625]
 position = Vector2(-3, 4)
@@ -347,7 +347,7 @@ fill_mode = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1674184352]
 position = Vector2(-2, 0)
-script = ExtResource("3_njcx7")
+script = ExtResource("5_ovq70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1153391755]
 position = Vector2(-1, 6)

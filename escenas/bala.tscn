@@ -1,12 +1,30 @@
 [gd_scene format=3 uid="uid://cf3hmr3wj6eod"]
 
-[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://scripts/arma/bala.gd" id="1_2y4dy"]
-[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://assets/arma/arma-test.webp" id="2_66u8n"]
+[ext_resource type="Texture2D" uid="uid://b2i1aqtkh7jei" path="res://assets/arma/bala.webp" id="1_2y4dy"]
+
+[sub_resource type="GDScript" id="GDScript_2y4dy"]
+script/source = "extends Area2D
+
+var velocidad := 500
+var direccion := Vector2.ZERO # Podés setearla al instanciarla
+
+func _process(delta):
+	# Si la dirección no es cero, se mueve
+	if direccion != Vector2.ZERO:
+		position += direccion * velocidad * delta
+
+func _on_body_entered(body):
+	print(\"Choqué con: \", body.name)
+	if body.has_method(\"recibir_danio_enemigo\"):
+		# Pasamos el daño Y la dirección actual de la bala
+		body.recibir_danio_enemigo(2, direccion) 
+		queue_free()
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qc4h"]
 
 [node name="bala" type="Area2D" unique_id=288132985]
-script = ExtResource("1_2y4dy")
+script = SubResource("GDScript_2y4dy")
 metadata/_edit_horizontal_guides_ = [304.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=228338539]
@@ -15,6 +33,6 @@ shape = SubResource("CircleShape2D_2qc4h")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1882303326]
 position = Vector2(-3.0517578e-05, 1)
 scale = Vector2(0.043877598, 0.039795853)
-texture = ExtResource("2_66u8n")
+texture = ExtResource("1_2y4dy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
