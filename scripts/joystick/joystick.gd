@@ -1,48 +1,41 @@
-extends Control
+extends Node2D
 
-@export var max_radius := 80.0
-
+@export var max_distance := 80.0
 @onready var knob = $Knob
 @onready var base = $Base
 
+var direction := Vector2.ZERO
+var dragging := false
 var touch_index := -1
-var input_vector := Vector2.ZERO
 var center := Vector2.ZERO
 
 func _ready():
-	center = base.position + base.size / 2
-	knob.position = center - knob.size / 2
+	reset_knob()
 
-func _input(event):
-
-	# TOQUE INICIAL
+func _unhandled_input(event):
 	if event is InputEventScreenTouch:
-
-		if event.pressed:
-			touch_index = event.index
-			_update_joystick(event.position)
-
-		elif event.index == touch_index:
+		if event.pressed and touch_index == -1:
+			if is_touch_inside_base(event.position):
+				touch_index = event.index
+				center = get_screen_position()
+				dragging = true
+		elif not event.pressed and event.index == touch_index:
 			touch_index = -1
-			input_vector = Vector2.ZERO
-			_reset_knob()
+			dragging = false
+			direction = Vector2.ZERO
+			reset_knob()
+	elif event is InputEventScreenDrag and dragging and event.index == touch_index:
+		var offset = event.position - center
+		if offset.length() > max_distance:
+			offset = offset.normalized() * max_distance
+		knob.position = base.position + offset
+		direction = offset / max_distance
 
-	# MOVIMIENTO DEL DEDO
-	elif event is InputEventScreenDrag:
+func get_screen_position() -> Vector2:
+	return base.get_screen_transform().origin
 
-		if event.index == touch_index:
-			_update_joystick(event.position)
+func reset_knob():
+	knob.position = base.position
 
-func _update_joystick(pos):
-
-	var offset = pos - center
-
-	if offset.length() > max_radius:
-		offset = offset.normalized() * max_radius
-
-	knob.position = center + offset - knob.size / 2
-
-	input_vector = offset / max_radius
-
-func _reset_knob():
-	knob.position = center - knob.size / 2
+func is_touch_inside_base(pos):
+	return pos.distance_to(get_screen_position()) <= max_distance

@@ -28,7 +28,6 @@ func _on_enemy_timer_timeout():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	# 2. Usar ajustes_dificultad (el nombre del diccionario)
 	var ajustes = Global.ajustes_dificultad[Global.dificultad_actual]
 	print(ajustes)
@@ -60,8 +59,8 @@ func generar_minerales_por_dificultad():
 	
 	for i in range(cantidad_a_spawnear):
 		var punto = puntos_disponibles[i]
-		var gema = escena_gema.instantiate()
-		gema.position = punto.position
-		add_child(gema)
+		#var gema = escena_gema.instantiate()
+		#gema.position = punto.position
+		#add_child(gema)
 	
 	

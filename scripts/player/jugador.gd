@@ -7,7 +7,7 @@ var velocidad = 250
 var ultima_direccion := Vector2.RIGHT
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var joystick = $"res://scripts/joystick/joystick.gd"
+@onready var joystick = $"../Joystick/Joystick"
 
 # Referencia a la barra de vida
 @onready var barra_vida = $ProgressBar 
@@ -26,6 +26,8 @@ var timer_area := 0.0
 func _ready():
 	# Al empezar, nos aseguramos que la barra coincida con la vida
 	print("EL JUGADOR SE CARGÓ CORRECTAMENTE EN: ", global_position) # Agregá esto
+	print("Joystick encontrado: ", joystick)
+	print("Dirección inicial: ", joystick.direction)
 	Global.referencia_jugador = self 
 	if barra_vida:
 		barra_vida.max_value = vida
@@ -34,9 +36,7 @@ func _ready():
 
 func _physics_process(delta):
 	animacion()
-	var direccion = joystick.input_vector
-	if direccion != Vector2.ZERO:
-		ultima_direccion = direccion.normalized()
+	var direccion = joystick.direction
 	velocity = direccion * velocidad
 	move_and_slide()
 

@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://7x1r8ksdjobp"]
 
 [ext_resource type="Script" uid="uid://bw61328nuwuvn" path="res://scripts/joystick/joystick.gd" id="1_qa35s"]
+[ext_resource type="Texture2D" uid="uid://dwfm7oujlmjgn" path="res://assets/joystick/elipse_Atras.png" id="2_e0ky1"]
+[ext_resource type="Texture2D" uid="uid://chmk1oohecod" path="res://assets/joystick/elipse_Adelante.png" id="3_1sngm"]
 
-[node name="Joystick" type="Control" unique_id=205296181]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Joystick" type="Node2D" unique_id=526028633]
 script = ExtResource("1_qa35s")
 
-[node name="Base" type="Control" parent="." unique_id=969008330]
-anchors_preset = 0
+[node name="Knob" type="Sprite2D" parent="." unique_id=494587589]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_1sngm")
 
-[node name="Knob" type="Control" parent="." unique_id=1858904821]
-anchors_preset = 0
+[node name="Base" type="Sprite2D" parent="." unique_id=1242023410]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_e0ky1")
