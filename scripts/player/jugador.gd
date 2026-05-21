@@ -7,6 +7,7 @@ var velocidad = 250
 var ultima_direccion := Vector2.RIGHT
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var joystick = $"res://scripts/joystick/joystick.gd"
 
 # Referencia a la barra de vida
 @onready var barra_vida = $ProgressBar 
@@ -32,11 +33,10 @@ func _ready():
 	#self.mineral_recolectado.connect(_sumar_al_global)
 
 func _physics_process(delta):
-	# 1.(Tu código de movimiento actual...)
 	animacion()
-	var direccion = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direccion = joystick.input_vector
 	if direccion != Vector2.ZERO:
-		ultima_direccion = direccion.normalized() # Guardamos hacia donde miramos
+		ultima_direccion = direccion.normalized()
 	velocity = direccion * velocidad
 	move_and_slide()
 

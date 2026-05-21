@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://7x1r8ksdjobp"]
+
+[ext_resource type="Script" uid="uid://bw61328nuwuvn" path="res://scripts/joystick/joystick.gd" id="1_qa35s"]
+
+[node name="Joystick" type="Control" unique_id=205296181]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qa35s")
+
+[node name="Base" type="Control" parent="." unique_id=969008330]
+anchors_preset = 0
+
+[node name="Knob" type="Control" parent="." unique_id=1858904821]
+anchors_preset = 0
