@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cpfd3pbcfk52l"]
 
 [ext_resource type="Texture2D" uid="uid://ch8t3b36qcipn" path="res://tileset/orig.png" id="1_e0an3"]
-[ext_resource type="Script" uid="uid://cm845jq0ob50v" path="res://map.gd" id="1_iw27f"]
+[ext_resource type="Script" uid="uid://cm845jq0ob50v" path="res://scripts/map/map_bosque.gd" id="1_iw27f"]
 [ext_resource type="PackedScene" uid="uid://dtaqlabs6dcgn" path="res://escenas/enemigo.tscn" id="2_mv7r8"]
 [ext_resource type="Texture2D" uid="uid://s0052ipf7eb7" path="res://tileset/Pixel Plains Free Pack/New Basic Tiles Free.png" id="2_p5pve"]
 [ext_resource type="Texture2D" uid="uid://cjrgjevxp6j83" path="res://tileset/Pixel Plains Free Pack/All free tiles.png" id="3_urblq"]
