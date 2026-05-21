@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://384ckv6186sc" path="res://escenas/mineral_point.tscn" id="8_73aga"]
 [ext_resource type="PackedScene" uid="uid://do1rgkjibfxe2" path="res://escenas/minerales.tscn" id="9_pecti"]
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/cartel_fin.tscn" id="10_pecti"]
-[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://3d-button-rendering-of-emergency-signal-gun-weapon-to-launch-signal-projectiles-realistic-blue-white-illustration-isolated-on-transparent-background-png.webp" id="11_ie2uw"]
+[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://assets/arma/arma-test.webp" id="11_ie2uw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]
 texture = ExtResource("1_c7s6e")

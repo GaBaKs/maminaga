@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b56b86jiyx3ro"]
 
-[ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://jugador.gd" id="1_jpodt"]
+[ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://scripts/player/jugador.gd" id="1_jpodt"]
 [ext_resource type="PackedScene" uid="uid://cf3hmr3wj6eod" path="res://escenas/bala.tscn" id="2_xutah"]
-[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://bala.gd" id="3_njcx7"]
-[ext_resource type="Texture2D" uid="uid://pjxbftav8x5x" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
-[ext_resource type="Texture2D" uid="uid://brhmi6syfw0wr" path="res://assets/character/character_test_run.png" id="4_as36m"]
+[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://scripts/arma/bala.gd" id="3_njcx7"]
+[ext_resource type="Texture2D" uid="uid://d1841kadkic04" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
+[ext_resource type="Texture2D" uid="uid://bbya2fticgppi" path="res://assets/character/character_test_run.png" id="4_as36m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovq70"]
 atlas = ExtResource("3_ovq70")

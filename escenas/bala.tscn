@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cf3hmr3wj6eod"]
 
-[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://bala.gd" id="1_2y4dy"]
-[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://3d-button-rendering-of-emergency-signal-gun-weapon-to-launch-signal-projectiles-realistic-blue-white-illustration-isolated-on-transparent-background-png.webp" id="2_66u8n"]
+[ext_resource type="Script" uid="uid://dppfedfrc3doi" path="res://scripts/arma/bala.gd" id="1_2y4dy"]
+[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://assets/arma/arma-test.webp" id="2_66u8n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qc4h"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7omi28o6fhwc"]
 
-[ext_resource type="Script" uid="uid://bovbmnpte06xf" path="res://loading_screen.gd" id="1_qoweb"]
+[ext_resource type="Script" uid="uid://bovbmnpte06xf" path="res://scripts/menu/loading_screen.gd" id="1_qoweb"]
 
 [node name="loading_screen" type="Control" unique_id=929722918]
 layout_mode = 3

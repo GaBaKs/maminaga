@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://4dhliyqp34al"]
 
-[ext_resource type="Script" uid="uid://bif3ebdmvxeu0" path="res://control.gd" id="1_6m6ia"]
-[ext_resource type="Texture2D" uid="uid://b8c0lold64px2" path="res://8ldVYm.png" id="2_3bkg3"]
+[ext_resource type="Script" uid="uid://bif3ebdmvxeu0" path="res://scripts/menu/control.gd" id="1_6m6ia"]
+[ext_resource type="Texture2D" uid="uid://b8c0lold64px2" path="res://assets/menu/fondo-menu.png" id="2_3bkg3"]
 [ext_resource type="PackedScene" uid="uid://dnelyh2wg8mj" path="res://escenas/play_button.tscn" id="3_ge6vf"]
-[ext_resource type="Texture2D" uid="uid://duyvfdubb3fs1" path="res://pixel-art-character-of-an-adventurer-with-a-sword-vibrant-retro-style-perfect-for-game-design-or-fantasy-illustrations-png.webp" id="3_qqb0l"]
-[ext_resource type="Texture2D" uid="uid://cpm04g1m1oqgf" path="res://play.png" id="4_3bkg3"]
+[ext_resource type="Texture2D" uid="uid://cpm04g1m1oqgf" path="res://assets/menu/play.png" id="4_3bkg3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3bkg3"]
+load_path = "res://.godot/imported/pixel-art-character-of-an-adventurer-with-a-sword-vibrant-retro-style-perfect-for-game-design-or-fantasy-illustrations-png.webp-150f78c935500fe8f414b96d095131bc.ctex"
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1054953793]
 
@@ -102,7 +104,7 @@ layout_mode = 2
 z_index = 5
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_qqb0l")
+texture = SubResource("CompressedTexture2D_3bkg3")
 
 [node name="Button_next" type="Button" parent="menu_principal/SeccionCentral" unique_id=1711038511]
 layout_mode = 2
