@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://bcplgvf8hocsu"]
+
+[ext_resource type="Script" uid="uid://cpth7t2xfp7nq" path="res://scripts/menu/seleccion_mapa.gd" id="1_766hy"]
+[ext_resource type="Texture2D" uid="uid://cf2ol482pb55i" path="res://assets/menu/descarga (1).jpg" id="1_x3jx0"]
+[ext_resource type="Texture2D" uid="uid://beg4bhh3ndqe7" path="res://assets/menu/pergamino lateral.png" id="2_766hy"]
+[ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="2_mif67"]
+[ext_resource type="Texture2D" uid="uid://bein0odvn7t1g" path="res://assets/menu/pergamino mapa.png" id="3_766hy"]
+[ext_resource type="Texture2D" uid="uid://qypkkpq8qmif" path="res://assets/menu/iconosMapas/BosqueIcono.jpg" id="6_hbr2o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_766hy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6102"]
+bg_color = Color(0.6509804, 0.39215687, 0.3137255, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqrsa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbr2o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bujju"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcitv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="SeleccionMapa" type="Control" unique_id=955157318]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_766hy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1105676796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x3jx0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1877419966]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.5
+offset_top = 435.0
+offset_right = 266.5
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 160
+
+[node name="PergaminoLateral2" type="Sprite2D" parent="HBoxContainer" unique_id=433982177]
+position = Vector2(490, 64)
+scale = Vector2(5.031249, 3.8316333)
+texture = ExtResource("2_766hy")
+
+[node name="PergaminoLateral" type="Sprite2D" parent="HBoxContainer" unique_id=877426334]
+position = Vector2(13, 63)
+scale = Vector2(5.031249, 3.8316333)
+texture = ExtResource("2_766hy")
+
+[node name="PergaminoMapa" type="Sprite2D" parent="HBoxContainer" unique_id=660355207]
+position = Vector2(249, 67)
+scale = Vector2(5.7083335, 6.2765155)
+texture = ExtResource("3_766hy")
+
+[node name="LButton" type="Button" parent="HBoxContainer" unique_id=1412332420]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("2_mif67")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_766hy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a6102")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dqrsa")
+text = "<
+"
+
+[node name="Jugar" type="Button" parent="HBoxContainer" unique_id=502863716]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("2_mif67")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_766hy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a6102")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dqrsa")
+text = "Jugar"
+
+[node name="RButton" type="Button" parent="HBoxContainer" unique_id=1839011215]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("2_mif67")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_hbr2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bujju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bcitv")
+text = ">"
+
+[node name="BosqueIcono" type="Sprite2D" parent="HBoxContainer" unique_id=1839502063]
+position = Vector2(257, -199)
+scale = Vector2(0.4149798, 0.41497976)
+texture = ExtResource("6_hbr2o")
+
+[connection signal="pressed" from="HBoxContainer/LButton" to="." method="_on_lbutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="HBoxContainer/RButton" to="." method="_on_rbutton_pressed"]

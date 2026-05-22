@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://c2nyvcc532msv"]
+
+[ext_resource type="Script" uid="uid://b8wjy562udgfu" path="res://scripts/menu/menuScript.gd" id="1_4hy44"]
+[ext_resource type="Texture2D" uid="uid://cf2ol482pb55i" path="res://assets/menu/descarga (1).jpg" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://bva7nu8npanwd" path="res://assets/menu/pergamino 1.png" id="2_4hy44"]
+[ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="3_ytr4m"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_l48gv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk3ma"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqepy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrnbx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1wq0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwrpx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="Menu" type="Control" unique_id=2031501003]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hy44")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=43014375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mae5d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1609916409]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.30900002
+anchor_right = 0.238
+anchor_bottom = 0.30900002
+offset_left = -158.414
+offset_top = -25.23201
+offset_right = 158.586
+offset_bottom = 213.76799
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 48
+
+[node name="Pergamino1" type="Sprite2D" parent="VBoxContainer" unique_id=314649653]
+position = Vector2(166, 52)
+scale = Vector2(5.1358023, 3.8709676)
+texture = ExtResource("2_4hy44")
+
+[node name="Jugar" type="Button" parent="VBoxContainer" unique_id=649844320]
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4843946, 0.27705473, 0.21941102, 1)
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 80
+theme_override_icons/icon = SubResource("ViewportTexture_l48gv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ytr4m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l48gv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ecwwl")
+text = "JUGAR"
+
+[node name="Pergamino2" type="Sprite2D" parent="VBoxContainer" unique_id=1797598408]
+position = Vector2(166, 181)
+scale = Vector2(5.1358023, 3.8709676)
+texture = ExtResource("2_4hy44")
+
+[node name="Equipo" type="Button" parent="VBoxContainer" unique_id=1407055513]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kk3ma")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iqepy")
+text = "EQUIPO"
+
+[node name="Pergamino3" type="Sprite2D" parent="VBoxContainer" unique_id=19116078]
+position = Vector2(169, 310)
+scale = Vector2(5.1358023, 3.8709676)
+texture = ExtResource("2_4hy44")
+
+[node name="Tienda" type="Button" parent="VBoxContainer" unique_id=1745994709]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrnbx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1wq0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dwrpx")
+text = "TIENDA"
+
+[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Equipo" to="." method="_on_equipo_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tienda" to="." method="_on_tienda_pressed"]
