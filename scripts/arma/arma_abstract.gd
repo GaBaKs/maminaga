@@ -36,7 +36,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	_actualizar_posicion()
-
+	print("Enemigos al alcance: ", enemigos_al_alcance.size())
 	if puede_atacar and enemigos_al_alcance.size() > 0:
 		var objetivo = seleccionar_objetivo()
 		if objetivo:

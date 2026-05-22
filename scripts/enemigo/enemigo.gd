@@ -8,7 +8,7 @@ var fuerza_retroceso := Vector2.ZERO
 # porque la buscaremos dinámicamente.
 
 func _ready():
-	print("Enemigo preparado")
+	add_to_group("enemigo")
 	if Global.dificultad_actual == 3:
 		speed = 150
 	else: 

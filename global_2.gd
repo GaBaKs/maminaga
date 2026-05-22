@@ -1,8 +1,14 @@
 extends Node
 
+
 var arma_escena: PackedScene = preload("res://escenas/pistola.tscn")
 
 var nivel_a_cargar: String
+
+#cuando tengamos mas enemigos, hay que precargarlos todos aca con ,
+var enemigos = {
+	"Goblin": preload("res://escenas/enemigo.tscn")
+}
 
 # --- Variables de Navegación y Configuración ---
 var mapa_seleccionado: String = "" # Ejemplo: "res://mapas/bosque.tscn"

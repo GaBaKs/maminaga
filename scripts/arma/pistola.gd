@@ -5,7 +5,7 @@ class_name ArmaLaser
 func _ready() -> void:
 	nombre_arma = "Pistola"
 	danio = 25.0
-	velocidad_ataque = 3.0
+	velocidad_ataque = 1.0
 	alcance_radio = 250.0
 	distancia_al_jugador = 25
 	super()  # llama al _ready() del padre DESPUÉS de setear los valores

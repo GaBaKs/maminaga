@@ -25,9 +25,6 @@ var timer_area := 0.0
 
 func _ready():
 	# Al empezar, nos aseguramos que la barra coincida con la vida
-	print("EL JUGADOR SE CARGÓ CORRECTAMENTE EN: ", global_position) # Agregá esto
-	print("Joystick encontrado: ", joystick)
-	print("Dirección inicial: ", joystick.direction)
 	Global.referencia_jugador = self 
 	if barra_vida:
 		barra_vida.max_value = vida

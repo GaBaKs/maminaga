@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cq614sc8jqbwu" path="res://scripts/arma/arma_abstract.gd" id="1_cqgsl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqgsl"]
-radius = 204.0098
 
 [node name="arma_abstract" type="Node2D" unique_id=1549684524]
 script = ExtResource("1_cqgsl")
