@@ -1,13 +1,15 @@
 extends Node
 
 
-var arma_escena: PackedScene = preload("res://escenas/pistola.tscn")
+var arma_escena: PackedScene = preload("res://escenas/armas/pistola.tscn")
 
 var nivel_a_cargar: String
 
+signal jugador_murio
+signal jugador_revivio
 #cuando tengamos mas enemigos, hay que precargarlos todos aca con ,
 var enemigos = {
-	"Goblin": preload("res://escenas/enemigo.tscn")
+	"Goblin": preload("res://escenas/enemigos/enemigo.tscn")
 }
 
 # --- Variables de Navegación y Configuración ---
@@ -97,3 +99,10 @@ func obtener_multiplicador_enemigos():
 
 func obtener_multiplicador_gemas():
 	return ajustes_dificultad[dificultad_actual]["multiplicador_minerales"]
+
+func _on_jugador_murio(yamurio: bool):
+	print("murio")
+	if yamurio:
+		print("ya termina el juego y va al menu")
+	else:
+		emit_signal("jugador_revivio")

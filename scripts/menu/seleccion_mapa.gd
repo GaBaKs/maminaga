@@ -21,7 +21,7 @@ func _on_jugar_pressed():
 	print("Cargando: ", proximo_nivel)
 
 	Global.nivel_a_cargar=proximo_nivel
-	get_tree().change_scene_to_file("res://escenas/map_Bosque_v2 .tscn")
+	get_tree().change_scene_to_file("res://escenas/mapas/map_Bosque_v2.tscn")
 
 func animar_cambio():
 	# Animación simple con Tween

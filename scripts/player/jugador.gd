@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-var vida = 100
-var velocidad = 250
-
+var vida_actual=PlayerData.vida
+var minerales=0
+var almas=0
+var velocidad=100
 # Variable para guardar la última dirección de movimiento
 var ultima_direccion := Vector2.RIGHT
-var yamurio= 0
+var yamurio= false
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var joystick = $"../Joystick/Joystick"
 @onready var arma_actual
@@ -24,11 +25,12 @@ var timer_area := 0.0
 
 
 func _ready():
-	# Al empezar, nos aseguramos que la barra coincida con la vida
 	Global.referencia_jugador = self 
+	Global.jugador_revivio.connect(_on_revivio_jugador)
+	
 	if barra_vida:
-		barra_vida.max_value = vida
-		barra_vida.value = vida
+		barra_vida.max_value = vida_actual
+		barra_vida.value = vida_actual
 	#self.mineral_recolectado.connect(_sumar_al_global)
 	if Global.arma_escena:
 		arma_actual = Global.arma_escena.instantiate()
@@ -43,23 +45,24 @@ func _physics_process(delta):
 
 
 func recibir_danio(cantidad):
-	vida -= cantidad
-	barra_vida.value = vida
-	if vida <= 0:
+	vida_actual -= cantidad
+	barra_vida.value = vida_actual
+	if vida_actual <= 0:
 		morir()
 
 func morir():
-	if yamurio:
-		print("game over")
-		Global.jugador_murio()
-	else:
-		print("game over con anuncio")
-		#pedir anuncio para que reviva
-		#if (!anuncio)
-			#Global.jugador_murio()
-	
+	get_tree().paused = true # pausamos el juego
+	Global.emit_signal("jugador_murio",yamurio)
+	yamurio=true
 	set_physics_process(false) # Pausamos su movimiento
-	visible = false # Lo ocultamos temporalmente
+	visible = false
+	
+func _on_revivio_jugador():
+		vida_actual=PlayerData.vida
+		yamurio=true
+		set_physics_process(true)
+		visible = true
+		get_tree().paused = false
 	
 func disparar():
 	if bala_escena:
