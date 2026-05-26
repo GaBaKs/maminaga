@@ -138,6 +138,11 @@ func cargar_datos():
 
 	print("Partida cargada")
 
+func jugador_murio():
+		print("Jugador murio!")
+		cargar_datos()
+		#ir a menu inicio
+
 func sumar_minerales(cantidad):
 	#Por ahora hardcodeado hay que separar por tipo de mineral
 	minerales["Glacita"]+=1

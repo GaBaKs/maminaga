@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dy7hasrc7uvao"]
 
-[ext_resource type="Texture2D" uid="uid://bsmkvgsoa7r7y" path="res://tileset/pixel_16_woods v2 free/Principal.png" id="1_c7s6e"]
+[ext_resource type="Texture2D" uid="uid://b88eiws5v6tfg" path="res://tileset/pixel_16_woods v2 free/Principal.png" id="1_c7s6e"]
 [ext_resource type="Script" uid="uid://dtp40fddc0omw" path="res://scripts/map/map_bosque.gd" id="1_q3ooc"]
 [ext_resource type="Texture2D" uid="uid://chaspoc0s0akp" path="res://tileset/Decoraciones de piedra/Texture/TX Props.png" id="2_e0an3"]
 [ext_resource type="Texture2D" uid="uid://dsqn2l84qpfyr" path="res://tileset/Decoraciones de piedra/Texture/TX Shadow Plant.png" id="3_p5pve"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://384ckv6186sc" path="res://escenas/mineral_point.tscn" id="8_73aga"]
 [ext_resource type="PackedScene" uid="uid://do1rgkjibfxe2" path="res://escenas/minerales.tscn" id="9_pecti"]
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/cartel_fin.tscn" id="10_pecti"]
-[ext_resource type="Texture2D" uid="uid://dpxphfm7u64p7" path="res://assets/arma/arma-test.webp" id="11_ie2uw"]
+[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://assets/arma/arma-test.webp" id="11_ie2uw"]
 [ext_resource type="PackedScene" uid="uid://7x1r8ksdjobp" path="res://escenas/joystick.tscn" id="12_ie2uw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]

@@ -5,7 +5,7 @@ var velocidad = 250
 
 # Variable para guardar la última dirección de movimiento
 var ultima_direccion := Vector2.RIGHT
-
+var yamurio= 0
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var joystick = $"../Joystick/Joystick"
 @onready var arma_actual
@@ -49,12 +49,18 @@ func recibir_danio(cantidad):
 		morir()
 
 func morir():
-	# Evitamos llamar a get_tree().current_scene.find_child() aquí 
-	Global.jugador_murio() 
-	# NO uses queue_free() todavía, porque si el jugador desaparece, 
-	# no podrá "revivir" en el mismo lugar después del anuncio.
+	if yamurio:
+		print("game over")
+		Global.jugador_murio()
+	else:
+		print("game over con anuncio")
+		#pedir anuncio para que reviva
+		#if (!anuncio)
+			#Global.jugador_murio()
+	
 	set_physics_process(false) # Pausamos su movimiento
 	visible = false # Lo ocultamos temporalmente
+	
 func disparar():
 	if bala_escena:
 		var nueva_bala = bala_escena.instantiate()
