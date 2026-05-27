@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://c2nyvcc532msv"]
 
 [ext_resource type="Script" uid="uid://b8wjy562udgfu" path="res://scripts/menu/menuScript.gd" id="1_4hy44"]
-[ext_resource type="Texture2D" uid="uid://cf2ol482pb55i" path="res://assets/menu/descarga (1).jpg" id="1_mae5d"]
-[ext_resource type="Texture2D" uid="uid://bva7nu8npanwd" path="res://assets/menu/pergamino 1.png" id="2_4hy44"]
+[ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="2_4hy44"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="3_ytr4m"]
+[ext_resource type="AudioStream" uid="uid://bje7820l0586v" path="res://audios/musica_menu.mp3" id="5_dgj5e"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l48gv"]
 
@@ -125,6 +126,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_nrnbx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h1wq0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dwrpx")
 text = "TIENDA"
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=787844940]
+stream = ExtResource("5_dgj5e")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Equipo" to="." method="_on_equipo_pressed"]

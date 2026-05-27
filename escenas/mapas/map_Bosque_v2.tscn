@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b56b86jiyx3ro" path="res://escenas/player/jugador.tscn" id="9_src8b"]
 [ext_resource type="PackedScene" uid="uid://384ckv6186sc" path="res://escenas/mapas/mineral_point.tscn" id="10_fnb7c"]
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/UI/cartel_gameover.tscn" id="11_wulo0"]
-[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://assets/arma/arma-test.webp" id="12_kpj04"]
+[ext_resource type="Texture2D" uid="uid://dpxphfm7u64p7" path="res://assets/arma/arma-test.webp" id="12_kpj04"]
+[ext_resource type="AudioStream" uid="uid://rwiyqf76oit5" path="res://audios/musica_bosque.mp3" id="13_6o02u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]
 texture = ExtResource("4_jvrhv")
@@ -4651,3 +4652,8 @@ scale = Vector2(0.08367346, 0.07959184)
 texture_normal = ExtResource("12_kpj04")
 texture_pressed = ExtResource("12_kpj04")
 action = "ui_accept"
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=1883592041]
+stream = ExtResource("13_6o02u")
+volume_db = -20.0
+autoplay = true
