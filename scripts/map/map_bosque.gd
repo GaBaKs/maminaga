@@ -16,6 +16,8 @@ func _ready() -> void:
 	print("Inicia el mapa en dificultad: ", Global.dificultad_actual)
 	$EnemyTimer.wait_time = 0.5#ajustes["spawn_rate"]
 	$EnemyTimer.start()
+	for nodo in get_tree().get_nodes_in_group("jugador"):
+		print(nodo.name, " - ", nodo.get_class(), " - ", nodo.get_path())
 	generar_minerales_por_dificultad()
 
 func _on_enemy_timer_timeout():
@@ -24,7 +26,6 @@ func _on_enemy_timer_timeout():
 		return
 
 	var punto = buscar_punto_spawn(jugador.global_position)
-	print("Punto: ", punto)
 	if punto == null:
 		return
 
@@ -32,7 +33,6 @@ func _on_enemy_timer_timeout():
 	var nuevo_enemigo = escena.instantiate()
 	add_child(nuevo_enemigo)
 	nuevo_enemigo.global_position = punto  # ← global_position en lugar de position
-	print("Enemigo spawneado en: ", punto)
 	
 func buscar_punto_spawn(origen: Vector2) -> Variant:
 	for i in range(intentos_maximos):

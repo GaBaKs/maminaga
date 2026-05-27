@@ -1,14 +1,19 @@
 [gd_scene format=4 uid="uid://bmqd3t43aq0ey"]
 
 [ext_resource type="Texture2D" uid="uid://l0camp75wcgo" path="res://tileset/spritesheet.png" id="1_13ahe"]
-[ext_resource type="Texture2D" uid="uid://44bkkdyf8tgp" path="res://tileset/Trees/Trees/Snow_christmass_tree2.png" id="2_u3pro"]
+[ext_resource type="Texture2D" uid="uid://c1l6psp41vmsk" path="res://tileset/Trees/Trees/Snow_christmass_tree2.png" id="2_u3pro"]
 [ext_resource type="Texture2D" uid="uid://cmpmbe68xg3n7" path="res://tileset/PNG_n_Tiled/Objects.png" id="3_v2ks0"]
 [ext_resource type="Texture2D" uid="uid://cj2s4tcesv717" path="res://tileset/PNG_n_Tiled/Details.png" id="4_k55l2"]
-[ext_resource type="Texture2D" uid="uid://dqci5y80dysfs" path="res://tileset/Trees/Trees/Broken_tree3.png" id="6_cmpl4"]
-[ext_resource type="Texture2D" uid="uid://cwd4mrso0qv4y" path="res://tileset/Trees/Trees/Broken_tree7.png" id="8_bcyky"]
+[ext_resource type="Texture2D" uid="uid://c8sjhha207p4p" path="res://tileset/Trees/Trees/Broken_tree3.png" id="6_cmpl4"]
+[ext_resource type="Texture2D" uid="uid://dfqxywhapy7iv" path="res://tileset/Trees/Trees/Broken_tree7.png" id="8_bcyky"]
 [ext_resource type="Texture2D" uid="uid://bxpn4is4mwyjv" path="res://tileset/Assets_texture_shadow_source.png" id="9_qrn22"]
-[ext_resource type="Texture2D" uid="uid://duf7a7mmcyba3" path="res://tileset/Trees/Trees/Snow_christmass_tree3.png" id="11_rgegm"]
-[ext_resource type="Texture2D" uid="uid://caikwi6d5mmqf" path="res://tileset/Trees/Trees/Burned_tree3.png" id="12_bihj4"]
+[ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/UI/cartel_gameover.tscn" id="10_0nusx"]
+[ext_resource type="PackedScene" uid="uid://7x1r8ksdjobp" path="res://escenas/joystick.tscn" id="11_2njgf"]
+[ext_resource type="Texture2D" uid="uid://b24ydve4qcp3p" path="res://tileset/Trees/Trees/Snow_christmass_tree3.png" id="11_rgegm"]
+[ext_resource type="PackedScene" uid="uid://b56b86jiyx3ro" path="res://escenas/player/jugador.tscn" id="12_4lpsi"]
+[ext_resource type="Texture2D" uid="uid://dbjxwtt05es5e" path="res://tileset/Trees/Trees/Burned_tree3.png" id="12_bihj4"]
+[ext_resource type="PackedScene" uid="uid://384ckv6186sc" path="res://escenas/mapas/mineral_point.tscn" id="13_w8pw1"]
+[ext_resource type="PackedScene" uid="uid://do1rgkjibfxe2" path="res://escenas/mapas/minerales.tscn" id="14_xo4nm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_apchg"]
 texture = ExtResource("1_13ahe")
@@ -5248,3 +5253,50 @@ tile_set = SubResource("TileSet_6hhse")
 [node name="Fondo" type="TileMapLayer" parent="TilemapLayers" unique_id=2140961741]
 tile_map_data = PackedByteArray("AAB3/9L/AAAYAAgAAAB3/9P/AAAYAAkAAAB3/9T/AAAYAAoAAAB3/9X/AAAYAAsAAAB4/9L/AAAZAAgAAAB4/9P/AAAZAAkAAAB4/9T/AAAZAAoAAAB4/9X/AAAZAAsAAAB3/87/AAAYAAgAAAB3/8//AAAYAAkAAAB3/9D/AAAYAAoAAAB3/9H/AAAYAAsAAAB4/87/AAAZAAgAAAB4/8//AAAZAAkAAAB4/9D/AAAZAAoAAAB4/9H/AAAZAAsAAAB4/8r/AAAYAAgAAAB4/8v/AAAYAAkAAAB4/8z/AAAYAAoAAAB4/83/AAAYAAsAAAB5/8r/AAAZAAgAAAB5/8v/AAAZAAkAAAB5/8z/AAAZAAoAAAB5/83/AAAZAAsAAAB3/8P/AAAcAAAAAAB3/8T/AAAcAAEAAAB3/8X/AAAcAAIAAAB3/8b/AAAcAAMAAAB4/8P/AAAdAAAAAAB4/8T/AAAdAAEAAAB4/8X/AAAdAAIAAAB4/8b/AAAdAAMAAAB4/73/AAAYAAgAAAB4/77/AAAYAAkAAAB4/7//AAAYAAoAAAB4/8D/AAAYAAsAAAB5/73/AAAZAAgAAAB5/77/AAAZAAkAAAB5/7//AAAZAAoAAAB5/8D/AAAZAAsAAACp/7v/AAAcAAAAAACp/7z/AAAcAAEAAACp/73/AAAcAAIAAACp/77/AAAcAAMAAACq/7v/AAAdAAAAAACq/7z/AAAdAAEAAACq/73/AAAdAAIAAACq/77/AAAdAAMAAACl/7r/AAAcAAAAAACl/7v/AAAcAAEAAACl/7z/AAAcAAIAAACl/73/AAAcAAMAAACm/7r/AAAdAAAAAACm/7v/AAAdAAEAAACm/7z/AAAdAAIAAACm/73/AAAdAAMAAACg/7v/AAAcAAAAAACg/7z/AAAcAAEAAACg/73/AAAcAAIAAACg/77/AAAcAAMAAACh/7v/AAAdAAAAAACh/7z/AAAdAAEAAACh/73/AAAdAAIAAACh/77/AAAdAAMAAACb/7r/AAAcAAAAAACb/7v/AAAcAAEAAACb/7z/AAAcAAIAAACb/73/AAAcAAMAAACc/7r/AAAdAAAAAACc/7v/AAAdAAEAAACc/7z/AAAdAAIAAACc/73/AAAdAAMAAACV/7v/AAAcAAAAAACV/7z/AAAcAAEAAACV/73/AAAcAAIAAACV/77/AAAcAAMAAACW/7v/AAAdAAAAAACW/7z/AAAdAAEAAACW/73/AAAdAAIAAACW/77/AAAdAAMAAACM/7r/AAAYAAgAAACM/7v/AAAYAAkAAACM/7z/AAAYAAoAAACM/73/AAAYAAsAAACN/7r/AAAZAAgAAACN/7v/AAAZAAkAAACN/7z/AAAZAAoAAACN/73/AAAZAAsAAACH/7v/AAAYAAgAAACH/7z/AAAYAAkAAACH/73/AAAYAAoAAACH/77/AAAYAAsAAACI/7v/AAAZAAgAAACI/7z/AAAZAAkAAACI/73/AAAZAAoAAACI/77/AAAZAAsAAACB/7r/AAAcAAAAAACB/7v/AAAcAAEAAACB/7z/AAAcAAIAAACB/73/AAAcAAMAAACC/7r/AAAdAAAAAACC/7v/AAAdAAEAAACC/7z/AAAdAAIAAACC/73/AAAdAAMAAAB8/7v/AAAYAAgAAAB8/7z/AAAYAAkAAAB8/73/AAAYAAoAAAB8/77/AAAYAAsAAAB9/7v/AAAZAAgAAAB9/7z/AAAZAAkAAAB9/73/AAAZAAoAAAB9/77/AAAZAAsAAACP/7v/AAAcAAAAAACP/7z/AAAcAAEAAACP/73/AAAcAAIAAACP/77/AAAcAAMAAACQ/7v/AAAdAAAAAACQ/7z/AAAdAAEAAACQ/73/AAAdAAIAAACQ/77/AAAdAAMAAACZ/7v/AAAYAAgAAACZ/7z/AAAYAAkAAACZ/73/AAAYAAoAAACZ/77/AAAYAAsAAACa/7v/AAAZAAgAAACa/7z/AAAZAAkAAACa/73/AAAZAAoAAACa/77/AAAZAAsAAACj/7v/AAAcAAAAAACj/7z/AAAcAAEAAACj/73/AAAcAAIAAACj/77/AAAcAAMAAACk/7v/AAAdAAAAAACk/7z/AAAdAAEAAACk/73/AAAdAAIAAACk/77/AAAdAAMAAACn/7v/AAAcAAAAAACn/7z/AAAcAAEAAACn/73/AAAcAAIAAACn/77/AAAcAAMAAACo/7v/AAAdAAAAAACo/7z/AAAdAAEAAACo/73/AAAdAAIAAACo/77/AAAdAAMAAACd/7v/AAAYAAgAAACd/7z/AAAYAAkAAACd/73/AAAYAAoAAACd/77/AAAYAAsAAACe/7v/AAAZAAgAAACe/7z/AAAZAAkAAACe/73/AAAZAAoAAACe/77/AAAZAAsAAAD//+3/AAAYAAwAAAD//+7/AAAYAA0AAAD//+//AAAYAA4AAAD///D/AAAYAA8AAAAAAO3/AAAZAAwAAAAAAO7/AAAZAA0AAAAAAO//AAAZAA4AAAAAAPD/AAAZAA8AAAA=")
 tile_set = SubResource("TileSet_rmsyi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=309418541]
+
+[node name="cartel_gameover" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("10_0nusx")]
+
+[node name="Joystick" type="CanvasLayer" parent="." unique_id=1110743618]
+offset = Vector2(1000, 500)
+transform = Transform2D(1, 0, 0, 1, 1000, 500)
+
+[node name="Joystick" parent="Joystick" unique_id=526028633 instance=ExtResource("11_2njgf")]
+
+[node name="Player" parent="." unique_id=1603352472 instance=ExtResource("12_4lpsi")]
+position = Vector2(119, 20)
+
+[node name="PuntosDeSpawn" type="Node2D" parent="." unique_id=855993568]
+
+[node name="Spawn1" type="Marker2D" parent="PuntosDeSpawn" unique_id=1034539877]
+position = Vector2(-159, -16)
+
+[node name="Spawn2" type="Marker2D" parent="PuntosDeSpawn" unique_id=1234354447]
+position = Vector2(641, 363)
+
+[node name="EnemyTimer" type="Timer" parent="." unique_id=1657619388]
+wait_time = 2.0
+autostart = true
+
+[node name="PuntosDeMinerales" type="Node2D" parent="." unique_id=1156807379]
+
+[node name="Marker2D" type="Marker2D" parent="PuntosDeMinerales" unique_id=1831107461]
+
+[node name="mineral_point" parent="PuntosDeMinerales" unique_id=119048706 instance=ExtResource("13_w8pw1")]
+mineral_escena = ExtResource("14_xo4nm")
+probabilidad = 100
+
+[node name="mineral_point2" parent="PuntosDeMinerales" unique_id=1597382749 instance=ExtResource("13_w8pw1")]
+position = Vector2(388, 150)
+mineral_escena = ExtResource("14_xo4nm")
+probabilidad = 20
+
+[node name="mineral_point3" parent="PuntosDeMinerales" unique_id=378391960 instance=ExtResource("13_w8pw1")]
+position = Vector2(-11, 253)
+mineral_escena = ExtResource("14_xo4nm")
+
+[node name="mineral_point4" parent="PuntosDeMinerales" unique_id=481458224 instance=ExtResource("13_w8pw1")]
+visible = false
+position = Vector2(479, -27)
+mineral_escena = ExtResource("14_xo4nm")

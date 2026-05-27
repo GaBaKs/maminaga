@@ -7,13 +7,22 @@ process_mode = 3
 layer = 10
 script = ExtResource("1_erpbu")
 
-[node name="Panel" type="Panel" parent="." unique_id=1466574714]
+[node name="Control" type="Control" parent="." unique_id=151165267]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1466574714]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 11.0
 offset_right = 141.0
 offset_bottom = 124.0
 
-[node name="Label" type="Label" parent="Panel" unique_id=234655991]
+[node name="Label" type="Label" parent="Control/Panel" unique_id=234655991]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 4.0
@@ -21,7 +30,7 @@ offset_right = 61.0
 offset_bottom = 27.0
 text = "La quedaste"
 
-[node name="BotonRevivir" type="Button" parent="Panel/Label" unique_id=1358396037]
+[node name="BotonRevivir" type="Button" parent="Control/Panel/Label" unique_id=1358396037]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 31.0
@@ -29,7 +38,7 @@ offset_right = 77.0
 offset_bottom = 62.0
 text = "revivir"
 
-[node name="BotonMenu" type="Button" parent="Panel/Label" unique_id=523196479]
+[node name="BotonMenu" type="Button" parent="Control/Panel/Label" unique_id=523196479]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 68.0
@@ -37,5 +46,5 @@ offset_right = 92.0
 offset_bottom = 99.0
 text = "reintentar"
 
-[connection signal="pressed" from="Panel/Label/BotonRevivir" to="." method="_on_boton_revivir_pressed"]
-[connection signal="pressed" from="Panel/Label/BotonMenu" to="." method="_on_boton_menu_pressed"]
+[connection signal="pressed" from="Control/Panel/Label/BotonRevivir" to="." method="_on_boton_revivir_pressed"]
+[connection signal="pressed" from="Control/Panel/Label/BotonMenu" to="." method="_on_boton_menu_pressed"]

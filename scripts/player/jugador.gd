@@ -3,7 +3,8 @@ extends CharacterBody2D
 var vida_actual=PlayerData.vida
 var minerales=0
 var almas=0
-var velocidad=100
+var velocidad=200
+
 # Variable para guardar la última dirección de movimiento
 var ultima_direccion := Vector2.RIGHT
 var yamurio= false
@@ -53,6 +54,7 @@ func recibir_danio(cantidad):
 func morir():
 	get_tree().paused = true # pausamos el juego
 	Global.emit_signal("jugador_murio",yamurio)
+	
 	yamurio=true
 	set_physics_process(false) # Pausamos su movimiento
 	visible = false

@@ -4556,7 +4556,7 @@ spawn_distancia_max = 200.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1852405267]
 
-[node name="cartel_gameover" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("11_wulo0")]
+[node name="cartel_fin" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("11_wulo0")]
 
 [node name="Joystick" type="CanvasLayer" parent="." unique_id=697574457]
 offset = Vector2(1000, 500)

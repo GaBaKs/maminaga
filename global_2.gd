@@ -4,9 +4,9 @@ extends Node
 var arma_escena: PackedScene = preload("res://escenas/armas/pistola.tscn")
 
 var nivel_a_cargar: String
-
-signal jugador_murio
+signal jugador_murio(yamurio:bool)
 signal jugador_revivio
+
 #cuando tengamos mas enemigos, hay que precargarlos todos aca con ,
 var enemigos = {
 	"Goblin": preload("res://escenas/enemigos/enemigo.tscn")
@@ -58,34 +58,6 @@ func obtener_ruta_skin_actual() -> String:
 func sumar_almas(cantidad):
 	almas_partida += cantidad
 
-func finalizar_partida(victoria: bool):
-	get_tree().paused = true
-	
-	if cartel_interfaz != null:
-		cartel_interfaz.mostrar_cartel() 
-	else:
-		print("ERROR: Cartel no registrado")
-
-	if victoria:
-		# 1. Identificar qué tipo de gema corresponde al mapa actual
-		var tipo = 1 # Por defecto
-		if configuracion_mapas.has(mapa_seleccionado):
-			tipo = configuracion_mapas[mapa_seleccionado]["tipo_gema"]
-		
-		# 2. Sumar al acumulador correcto
-		match tipo:
-			1: minerales_tipo_1 += minerales_partida
-			2: minerales_tipo_2 += minerales_partida
-			3: minerales_tipo_3 += minerales_partida
-		
-		almas_totales += almas_partida
-		print("¡Victoria! Gema Tipo ", tipo, " guardada. Almas totales: ", almas_totales)
-	else:
-		print("Derrota. Se perdieron los recursos de la partida.")
-	
-	# 3. Resetear contadores de partida
-	minerales_partida = 0
-	almas_partida = 0
 
 # --- DIFICULTAD ---
 var ajustes_dificultad = {
@@ -99,10 +71,3 @@ func obtener_multiplicador_enemigos():
 
 func obtener_multiplicador_gemas():
 	return ajustes_dificultad[dificultad_actual]["multiplicador_minerales"]
-
-func _on_jugador_murio(yamurio: bool):
-	print("murio")
-	if yamurio:
-		print("ya termina el juego y va al menu")
-	else:
-		emit_signal("jugador_revivio")

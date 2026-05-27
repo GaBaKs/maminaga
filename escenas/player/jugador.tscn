@@ -321,7 +321,7 @@ position = Vector2(-3, 4)
 zoom = Vector2(2, 2)
 process_callback = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1692728392 groups=["jugador"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1692728392]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_2gy2m")
 animation = &"idle_right"

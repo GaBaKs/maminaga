@@ -26,6 +26,7 @@ func _physics_process(delta):
 		fuerza_retroceso = fuerza_retroceso.lerp(Vector2.ZERO, 0.1)
 	else:
 		var jugador = get_tree().get_first_node_in_group("jugador")
+		
 		if jugador: 
 			var direction = (jugador.global_position - global_position).normalized()
 			velocity = direction * speed
