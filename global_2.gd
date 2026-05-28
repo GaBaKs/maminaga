@@ -1,8 +1,6 @@
 extends Node
 
 
-var arma_escena: PackedScene = preload("res://escenas/armas/pistola.tscn")
-
 var nivel_a_cargar: String
 signal jugador_murio(yamurio:bool)
 signal jugador_revivio
@@ -71,3 +69,19 @@ func obtener_multiplicador_enemigos():
 
 func obtener_multiplicador_gemas():
 	return ajustes_dificultad[dificultad_actual]["multiplicador_minerales"]
+	
+# Diccionario para cargar las escenas de las armas fácilmente
+var armas_disponibles = {
+	"pistola": preload("res://escenas/armas/pistola.tscn"), # Ajustá la ruta
+	#"espada": preload("res://escenas/armas/espada.tscn")    # Ajustá la ruta
+}
+
+# Esta es la variable que lee el jugador al instanciarse, 
+#no hice la persistencia gabi xd
+var arma_escena: PackedScene = armas_disponibles["pistola"] 
+
+# Función que llamarás desde los botones de tu menú "Equipo"
+func equipar_arma(id_arma: String):
+	if armas_disponibles.has(id_arma):
+		arma_escena = armas_disponibles[id_arma]
+		print("Arma equipada para la partida: ", id_arma)

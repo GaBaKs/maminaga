@@ -8,7 +8,8 @@ func _on_jugar_pressed() -> void:
 
 func _on_equipo_pressed() -> void:
 	pass # Replace with function body.
-
+#desde aca (o la escena equipo ni idea) tenemos q 
+#llamar a equipar_arma (q esta en global)
 
 func _on_tienda_pressed() -> void:
 	pass # Replace with function body.

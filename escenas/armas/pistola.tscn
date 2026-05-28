@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://cmnjjxci12bt2"]
 
 [ext_resource type="Script" uid="uid://0sdeelsnvyjy" path="res://scripts/arma/pistola.gd" id="1_tgstl"]
+[ext_resource type="PackedScene" uid="uid://cf3hmr3wj6eod" path="res://escenas/armas/bala.tscn" id="2_pn1si"]
 [ext_resource type="Texture2D" uid="uid://3ey538nq6eeq" path="res://assets/arma/pistola.png" id="2_rqtst"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rqtst"]
 
 [node name="Node2D" type="Node2D" unique_id=2066113132]
 script = ExtResource("1_tgstl")
+bala_escena = ExtResource("2_pn1si")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=850206429]
 

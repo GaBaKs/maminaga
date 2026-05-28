@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://5b8g3j6ur70o"]
+
+[ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/armas/arma_abstract.tscn" id="1_28u2q"]
+[ext_resource type="Script" uid="uid://dlgdnavcunddo" path="res://scripts/arma/espada.gd" id="2_u7ok3"]
+
+[node name="espada" unique_id=1549684524 instance=ExtResource("1_28u2q")]
+script = ExtResource("2_u7ok3")
