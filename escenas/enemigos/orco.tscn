@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://e4qj5vtyyrfn"]
+
+[ext_resource type="PackedScene" uid="uid://dtaqlabs6dcgn" path="res://escenas/enemigos/enemigo.tscn" id="1_hyx5b"]
+[ext_resource type="Script" uid="uid://ojempeijgnhm" path="res://scripts/enemigo/orco.gd" id="2_b0dxb"]
+[ext_resource type="Texture2D" uid="uid://drvc41lpr61y8" path="res://assets/enemigo/goblin.png" id="3_uc5t0"]
+
+[node name="orco" unique_id=1046897383 instance=ExtResource("1_hyx5b")]
+script = ExtResource("2_b0dxb")
+
+[node name="SpriteGoblin" parent="." index="0" unique_id=1453319294]
+texture = ExtResource("3_uc5t0")

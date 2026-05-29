@@ -19,7 +19,7 @@ func _ready() -> void:
 	for nodo in get_tree().get_nodes_in_group("jugador"):
 		print(nodo.name, " - ", nodo.get_class(), " - ", nodo.get_path())
 	generar_minerales_por_dificultad()
-
+@export var tipos_de_enemigos: Array[PackedScene]
 func _on_enemy_timer_timeout():
 	var jugador = Global.referencia_jugador
 	if not is_instance_valid(jugador):

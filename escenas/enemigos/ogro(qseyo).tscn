@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cuf7e8qvicjtf"]
+
+[ext_resource type="PackedScene" uid="uid://dtaqlabs6dcgn" path="res://escenas/enemigos/enemigo.tscn" id="1_nka1a"]
+[ext_resource type="Script" uid="uid://dhjrfv2lmlmo4" path="res://scripts/enemigo/tercero.gd" id="2_6tdaw"]
+[ext_resource type="Texture2D" uid="uid://crhmuvmpb77cn" path="res://icon.svg" id="3_7cb6o"]
+
+[node name="tercero" unique_id=1046897383 instance=ExtResource("1_nka1a")]
+script = ExtResource("2_6tdaw")
+
+[node name="SpriteGoblin" parent="." index="0" unique_id=1453319294]
+texture = ExtResource("3_7cb6o")
