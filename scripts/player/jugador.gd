@@ -4,6 +4,8 @@ var vida_actual=PlayerData.vida
 var minerales=0
 var almas=0
 var velocidad=200
+@onready var sonido_muerte = $Sonido_Muerte
+@onready var sonido_pasos = $Pasos
 
 # Variable para guardar la última dirección de movimiento
 var ultima_direccion := Vector2.RIGHT
@@ -53,6 +55,9 @@ func recibir_danio(cantidad):
 
 func morir():
 	get_tree().paused = true # pausamos el juego
+	
+	sonido_muerte.play()
+		
 	Global.emit_signal("jugador_murio",yamurio)
 	
 	yamurio=true
@@ -78,6 +83,14 @@ func disparar():
 			
 
 func animacion():
+	
+	if velocity.x != 0:
+		if not sonido_pasos.playing:
+			sonido_pasos.play(1)
+	else:
+			sonido_pasos.stop()
+	
+	
 	if velocity.x > 0:
 		animated_sprite.play("run_right")
 

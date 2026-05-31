@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://scripts/player/jugador.gd" id="1_jpodt"]
 [ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/armas/arma_abstract.tscn" id="2_ovq70"]
-[ext_resource type="Texture2D" uid="uid://d1841kadkic04" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
-[ext_resource type="Texture2D" uid="uid://bbya2fticgppi" path="res://assets/character/character_test_run.png" id="4_as36m"]
+[ext_resource type="Texture2D" uid="uid://pjxbftav8x5x" path="res://assets/character/character_test_idle.png" id="3_ovq70"]
+[ext_resource type="Texture2D" uid="uid://brhmi6syfw0wr" path="res://assets/character/character_test_run.png" id="4_as36m"]
+[ext_resource type="AudioStream" uid="uid://bljhb0f20gbnb" path="res://audios/sonido_muerte.mp3" id="5_clsgm"]
+[ext_resource type="AudioStream" uid="uid://couwgwyxyyp3p" path="res://audios/caminar.mp3" id="6_l63m8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovq70"]
 atlas = ExtResource("3_ovq70")
@@ -310,6 +312,21 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
 
+[sub_resource type="GDScript" id="GDScript_l63m8"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if ($yamurio):
+		play() # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Jugador" type="CharacterBody2D" unique_id=1603352472 groups=["jugador"]]
 z_index = 5
 position = Vector2(544, 316)
@@ -339,3 +356,13 @@ offset_right = 37.0
 offset_bottom = -20.0
 value = 100.0
 fill_mode = 1
+
+[node name="Sonido_Muerte" type="AudioStreamPlayer" parent="." unique_id=2038402044]
+stream = ExtResource("5_clsgm")
+volume_db = -40.0
+script = SubResource("GDScript_l63m8")
+
+[node name="Pasos" type="AudioStreamPlayer" parent="." unique_id=1476132535]
+stream = ExtResource("6_l63m8")
+volume_db = -20.0
+pitch_scale = 1.5
