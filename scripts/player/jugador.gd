@@ -11,7 +11,7 @@ var velocidad=200
 var ultima_direccion := Vector2.RIGHT
 var yamurio= false
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var joystick = $"../Joystick/Joystick"
+@onready var joystick = $"../../Joystick/Joystick"
 @onready var arma_actual
 # Referencia a la barra de vida
 @onready var barra_vida = $ProgressBar 
