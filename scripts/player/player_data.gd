@@ -9,6 +9,8 @@ const ruta = "user://save.json"
 
 var nivel = 1
 var experiencia = 0
+var puntos_habilidad = 0
+var experiencia_max = 100
 
 var vida = 100
 var danio = 10
@@ -49,6 +51,8 @@ func guardar_datos():
 		"jugador": {
 			"nivel": nivel,
 			"experiencia": experiencia,
+			"experiencia_max": experiencia_max,
+			"puntos_habilidad": puntos_habilidad,
 
 			"estadisticas": {
 				"vida": vida,
@@ -107,7 +111,8 @@ func cargar_datos():
 
 	nivel = datos["jugador"]["nivel"]
 	experiencia = datos["jugador"]["experiencia"]
-
+	experiencia_max=datos["jugador"]["experiencia_max"]
+	puntos_habilidad=datos["jugador"]["puntos_habilidad"]
 	vida = datos["jugador"]["estadisticas"]["vida"]
 	danio = datos["jugador"]["estadisticas"]["danio"]
 	velocidad_ataque = datos["jugador"]["estadisticas"]["velocidad_ataque"]
@@ -146,3 +151,10 @@ func jugador_murio():
 func sumar_minerales(cantidad):
 	#Por ahora hardcodeado hay que separar por tipo de mineral
 	minerales["Glacita"]+=1
+
+func subir_nivel():
+	nivel+=1
+	experiencia=0
+	experiencia_max=experiencia_max*1.15
+	puntos_habilidad+=1
+	print("Subio de nivel!")

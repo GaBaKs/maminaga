@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bwmfpxxqg0evb"]
+
+[ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_j0avv"]
+[ext_resource type="Script" uid="uid://r0a2skr887sx" path="res://scripts/menu/estadisticas.gd" id="1_kxusn"]
+[ext_resource type="Texture2D" uid="uid://cj8xhcs46gckf" path="res://assets/menu/equipo.png" id="2_kxusn"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2112885601]
+script = ExtResource("1_kxusn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=503557261]
+offset_right = 1154.5446
+offset_bottom = 651.0
+texture = ExtResource("1_j0avv")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=472819735]
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("2_kxusn")
+
+[node name="Control" type="Control" parent="." unique_id=127028919]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="vida" type="Label" parent="Control" unique_id=1826402976]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 132.0
+offset_right = 894.0
+offset_bottom = 155.0
+text = "0"
+
+[node name="daño" type="Label" parent="Control" unique_id=722951055]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 246.0
+offset_right = 891.0
+offset_bottom = 269.0
+text = "0"
+
+[node name="vel_ataque" type="Label" parent="Control" unique_id=550744792]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 353.0
+offset_right = 898.0
+offset_bottom = 376.0
+text = "0"
+
+[node name="regen_vida" type="Label" parent="Control" unique_id=232585405]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 466.0
+offset_right = 893.0
+offset_bottom = 489.0
+text = "0"
+
+[node name="armadura" type="Label" parent="Control" unique_id=524640518]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 582.0
+offset_right = 906.0
+offset_bottom = 605.0
+text = "0"

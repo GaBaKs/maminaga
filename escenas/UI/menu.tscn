@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_mae5d"]
 [ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="2_4hy44"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="3_ytr4m"]
-[ext_resource type="AudioStream" uid="uid://bje7820l0586v" path="res://audios/musica_menu.mp3" id="5_dgj5e"]
+[ext_resource type="AudioStream" uid="uid://cxuq5pk1gq42" path="res://audios/musica_menu.mp3" id="5_dgj5e"]
 [ext_resource type="Script" uid="uid://bbxatqwv2f57r" path="res://scripts/sonidos/musica/musica_menu.gd" id="6_6vuw5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l48gv"]
