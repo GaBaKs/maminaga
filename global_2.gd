@@ -8,7 +8,7 @@ signal jugador_revivio
 #cuando tengamos mas enemigos, hay que precargarlos todos aca con ,
 var enemigos = {
 	"Goblin": preload("res://escenas/enemigos/enemigo.tscn"),
-	"enemigo2": preload("res://escenas/enemigos/ogro(qseyo).tscn"),
+	"enemigo2": preload("res://escenas/enemigos/Slime.tscn"),
 	"enemigo3": preload("res://escenas/enemigos/orco.tscn")
 
 }

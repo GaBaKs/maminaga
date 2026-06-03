@@ -111,7 +111,7 @@ func cargar_datos():
 
 	nivel = datos["jugador"]["nivel"]
 	experiencia = datos["jugador"]["experiencia"]
-	experiencia_max=datos["jugador"]["experiencia_max"]
+	experiencia_max = datos["jugador"]["experiencia_max"]
 	puntos_habilidad=datos["jugador"]["puntos_habilidad"]
 	vida = datos["jugador"]["estadisticas"]["vida"]
 	danio = datos["jugador"]["estadisticas"]["danio"]
