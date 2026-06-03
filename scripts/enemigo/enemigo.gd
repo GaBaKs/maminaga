@@ -4,6 +4,7 @@ class_name Enemigo_abstract
 @export var speed := 100
 var vida_enemigo = 3
 var fuerza_retroceso := Vector2.ZERO
+var experiencia_muerte= 10
 # Ya no necesitamos la variable 'jugador' con @onready aquí arriba 
 # porque la buscaremos dinámicamente.
 
@@ -42,8 +43,11 @@ func _physics_process(delta):
 
 func morir_enemigo():
 	PlayerData.almas += 1
-	print("¡Alma recolectada! Almas totales: ", PlayerData.almas)
-	# 2. Eliminar al enemigo [cite: 5]
+	
+	PlayerData.experiencia+=experiencia_muerte*Global.mult_dificultad[Global.dificultad_actual]
+	print("¡Mato enemigo! Experiencia: ", PlayerData.experiencia)
+	if (PlayerData.experiencia>PlayerData.experiencia_max):
+		PlayerData.subir_nivel()
 	queue_free()
 	# El move_and_slide() se llama UNA SOLA VEZ al final para aplicar la velocity que sea
 	
