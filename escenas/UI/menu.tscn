@@ -128,6 +128,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_h1wq0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dwrpx")
 text = "TIENDA"
 
+[node name="Estadisticas" type="Button" parent="VBoxContainer" unique_id=1346265361]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrnbx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1wq0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dwrpx")
+text = "Estadisticas"
+
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=787844940]
 stream = ExtResource("5_dgj5e")
 volume_db = -30.0
@@ -136,3 +148,4 @@ script = ExtResource("6_6vuw5")
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Equipo" to="." method="_on_equipo_pressed"]
 [connection signal="pressed" from="VBoxContainer/Tienda" to="." method="_on_tienda_pressed"]
+[connection signal="pressed" from="VBoxContainer/Estadisticas" to="." method="_on_estadisticas_pressed"]

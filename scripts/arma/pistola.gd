@@ -2,14 +2,20 @@ extends ArmaAbstract
 class_name ArmaPistola
 
 @export var bala_escena: PackedScene # Arrastrá bala.tscn acá en el Inspector
-
+@onready var velocidad_ataque: int = 0.5
 func _ready() -> void:
 	nombre_arma = "Pistola"
 	danio = 25.0
 	velocidad_ataque = 1.0
 	alcance_radio = 250.0
 	distancia_al_jugador = 25.0
-	super() 
+	timer_ataque = Timer.new()
+	timer_ataque.wait_time = 1.0 / ((velocidad_ataque+PlayerData.velocidad_ataque))
+	print("Timer valor:", timer_ataque.wait_time)
+	timer_ataque.one_shot = true
+	timer_ataque.timeout.connect(_on_timer_ataque_timeout)
+	add_child(timer_ataque)
+	super()
 	
 func aplicar_danio(objetivo: Node2D) -> void:
 	if not bala_escena or not is_instance_valid(objetivo):

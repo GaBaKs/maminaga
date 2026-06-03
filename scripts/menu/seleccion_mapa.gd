@@ -33,3 +33,8 @@ func animar_cambio():
 func actualizar_display():
 	display.texture = load("res://assets/menu/iconosMapas/" + opciones[indice_actual] + ".jpg")
 	print(opciones[indice_actual])  # acá cambiás la textura o label
+
+
+func _on_volver_atras_pressed() -> void:
+	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")
+	pass # Replace with function body.

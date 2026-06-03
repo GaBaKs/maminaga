@@ -62,3 +62,55 @@ offset_top = 582.0
 offset_right = 906.0
 offset_bottom = 605.0
 text = "0"
+
+[node name="puntos" type="Label" parent="Control" unique_id=460599178]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 35.0
+offset_right = 698.0
+offset_bottom = 58.0
+text = "0"
+
+[node name="btn_vida" type="Button" parent="Control" unique_id=1306169238]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 109.0
+offset_right = 1013.0
+offset_bottom = 173.0
+
+[node name="btn_daño" type="Button" parent="Control" unique_id=1928686931]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 220.0
+offset_right = 1015.0
+offset_bottom = 291.0
+
+[node name="btn_velataque" type="Button" parent="Control" unique_id=1151387261]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 337.0
+offset_right = 1015.0
+offset_bottom = 397.0
+
+[node name="btn_regenvida" type="Button" parent="Control" unique_id=1580249344]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 445.0
+offset_right = 1023.0
+offset_bottom = 514.0
+
+[node name="btn_armadura" type="Button" parent="Control" unique_id=1397951109]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 556.0
+offset_right = 1024.0
+offset_bottom = 625.0
+
+[node name="volver_menu" type="Button" parent="." unique_id=1333677518]
+offset_left = 25.0
+offset_top = 17.0
+offset_right = 147.0
+offset_bottom = 48.0
+text = "VOLVER ATRAS"
+
+[connection signal="pressed" from="volver_menu" to="." method="_on_volver_menu_pressed"]

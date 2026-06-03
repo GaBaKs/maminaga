@@ -6,7 +6,6 @@ signal enemigo_perdido(enemigo: Node2D)
 
 @export var nombre_arma: String = "Arma Base"
 @export var danio: float = 10.0
-@export var velocidad_ataque: float = 2.0
 @export var alcance_radio: float = 200.0
 @export var distancia_al_jugador: float = 50.0
 
@@ -28,11 +27,6 @@ func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
 
-	timer_ataque = Timer.new()
-	timer_ataque.wait_time = 1.0 / velocidad_ataque
-	timer_ataque.one_shot = true
-	timer_ataque.timeout.connect(_on_timer_ataque_timeout)
-	add_child(timer_ataque)
 
 func _physics_process(_delta: float) -> void:
 	_actualizar_posicion()
@@ -60,6 +54,7 @@ func seleccionar_objetivo() -> Node2D:
 func atacar(objetivo: Node2D) -> void:
 	puede_atacar = false
 	timer_ataque.start()
+
 	if is_instance_valid(objetivo):
 		direccion_actual = (objetivo.global_position - jugador.global_position).normalized()
 		aplicar_danio(objetivo)  # ← cada hija define esto

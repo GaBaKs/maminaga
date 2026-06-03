@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ox1mfjdg6o8" path="res://assets/menu/pergamino mapa.png" id="4_aqsmi"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_4naqb"]
 [ext_resource type="Texture2D" uid="uid://bbl1p5dd0pfym" path="res://assets/menu/iconosMapas/BosqueIcono.jpg" id="6_n3xrl"]
-[ext_resource type="AudioStream" uid="uid://dclowxsj0xpkf" path="res://audios/musica_seleccion_mapas.mp3" id="7_5bj3u"]
+[ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="7_5bj3u"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="8_6o8fp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_766hy"]
@@ -121,6 +121,13 @@ stream = ExtResource("7_5bj3u")
 volume_db = -30.0
 script = ExtResource("8_6o8fp")
 
+[node name="volver atras" type="Button" parent="." unique_id=1509712651]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Volver atras"
+
 [connection signal="pressed" from="HBoxContainer/LButton" to="." method="_on_lbutton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="HBoxContainer/RButton" to="." method="_on_rbutton_pressed"]
+[connection signal="pressed" from="volver atras" to="." method="_on_volver_atras_pressed"]

@@ -9,7 +9,7 @@ const ruta = "user://save.json"
 
 var nivel = 1
 var experiencia = 0
-var puntos_habilidad = 0
+var puntos_habilidad = 10
 var experiencia_max = 100
 
 var vida = 100
@@ -44,6 +44,7 @@ var objetos_equipados = []
 
 func _ready():
 	cargar_datos()
+	pass
 
 func guardar_datos():
 
