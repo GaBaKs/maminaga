@@ -8,8 +8,8 @@ position = Vector2(-6, 0)
 
 [node name="Sprite2D" parent="." index="0" unique_id=1475947839]
 z_index = 5
-position = Vector2(3.999998, 3.9999962)
-scale = Vector2(0.787564, 0.6515306)
+position = Vector2(8.000004, 3.000002)
+scale = Vector2(1.5031571, 1.1538904)
 texture = ExtResource("2_8kuty")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=2104259717]

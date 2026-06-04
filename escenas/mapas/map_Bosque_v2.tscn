@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cpwqrs0pjuykv" path="res://tileset/Decoraciones de piedra/Texture/TX Struct.png" id="7_1vn4m"]
 [ext_resource type="Texture2D" uid="uid://gt6bx77rm63" path="res://tileset/deco exterior/exterior.png" id="8_1hrnh"]
 [ext_resource type="PackedScene" uid="uid://b56b86jiyx3ro" path="res://escenas/player/jugador.tscn" id="9_src8b"]
-[ext_resource type="Script" uid="uid://ccgfld6k36nbc" path="res://scripts/mineral_point.gd" id="10_6o02u"]
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/UI/cartel_gameover.tscn" id="11_wulo0"]
 [ext_resource type="Texture2D" uid="uid://dpxphfm7u64p7" path="res://assets/arma/arma-test.webp" id="12_kpj04"]
 [ext_resource type="AudioStream" uid="uid://cf4u0udtle7mh" path="res://audios/musica_bosque.mp3" id="13_6o02u"]
@@ -4549,7 +4548,6 @@ sources/1 = SubResource("TileSetAtlasSource_bssq0")
 sources/3 = SubResource("TileSetAtlasSource_wbpbn")
 
 [node name="Map" type="Node2D" unique_id=330170214]
-z_index = 6
 position = Vector2(5101, 6138)
 script = ExtResource("1_3kfbn")
 spawn_distancia_min = 200.0
@@ -4623,8 +4621,6 @@ wait_time = 2.0
 autostart = true
 
 [node name="PuntosDeMinerales" type="Node2D" parent="." unique_id=252384246]
-position = Vector2(0, 2)
-script = ExtResource("10_6o02u")
 
 [node name="Spawn_mineral" type="Marker2D" parent="PuntosDeMinerales" unique_id=478588407 groups=["puntos_spawns_minerales"]]
 z_index = 5
@@ -4648,7 +4644,7 @@ position = Vector2(65, 141)
 
 [node name="Spawn_mineral6" type="Marker2D" parent="PuntosDeMinerales" unique_id=1608806948 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-80, 156)
+position = Vector2(-86, 147)
 
 [node name="Spawn_mineral7" type="Marker2D" parent="PuntosDeMinerales" unique_id=1558323025 groups=["puntos_spawns_minerales"]]
 z_index = 5

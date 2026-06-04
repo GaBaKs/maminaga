@@ -68,6 +68,9 @@ func _hay_colision(pos: Vector2) -> bool:
 
 func generar_minerales_por_dificultad():
 	print("--- INICIANDO SPAWN MINERALES ---")
+	var jugador = get_tree().get_first_node_in_group("jugador")
+	if jugador:
+		print("-> EL JUGADOR ESTA EN: ", jugador.global_position)
 	
 	var ajustes = Global.ajustes_dificultad[Global.dificultad_actual]
 	var multiplicador = ajustes["multiplicador_minerales"]
@@ -105,6 +108,7 @@ func generar_minerales_por_dificultad():
 				var offset_y = randf_range(-20.0, 20.0)
 				
 				nuevo_mineral.global_position = punto.global_position + Vector2(offset_x, offset_y)
+				print("Gema spawneada en: ", nuevo_mineral.global_position)
 				add_child(nuevo_mineral)
 				gemas_creadas += 1
 				
