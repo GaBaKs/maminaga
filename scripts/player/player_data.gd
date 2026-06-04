@@ -21,9 +21,9 @@ var armadura = 0
 # MONEDAS
 
 var minerales = {
-	"Amatista": 1,
-	"Glacita": 0,
-	"Rodonita": 1
+	"mineral1": 1,
+	"mineral2": 0,
+	"mineral3": 1
 }
 var almas = 0
 
@@ -149,9 +149,9 @@ func jugador_murio():
 		cargar_datos()
 		#ir a menu inicio
 
-func sumar_minerales(cantidad):
+func sumar_minerales(tipomineral, cantidad):
 	#Por ahora hardcodeado hay que separar por tipo de mineral
-	minerales["Glacita"]+=1
+	minerales[tipomineral]+=cantidad
 
 func subir_nivel():
 	nivel+=1

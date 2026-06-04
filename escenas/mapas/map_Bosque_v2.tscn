@@ -1,15 +1,14 @@
 [gd_scene format=4 uid="uid://dy7hasrc7uvao"]
 
 [ext_resource type="Script" uid="uid://dtp40fddc0omw" path="res://scripts/map/map_bosque.gd" id="1_3kfbn"]
-[ext_resource type="PackedScene" uid="uid://do1rgkjibfxe2" path="res://escenas/mapas/minerales.tscn" id="2_4no8y"]
 [ext_resource type="PackedScene" uid="uid://7x1r8ksdjobp" path="res://escenas/joystick.tscn" id="3_bb8n1"]
-[ext_resource type="Texture2D" uid="uid://bsmkvgsoa7r7y" path="res://tileset/pixel_16_woods v2 free/Principal.png" id="4_jvrhv"]
+[ext_resource type="Texture2D" uid="uid://b88eiws5v6tfg" path="res://tileset/pixel_16_woods v2 free/Principal.png" id="4_jvrhv"]
 [ext_resource type="Texture2D" uid="uid://chaspoc0s0akp" path="res://tileset/Decoraciones de piedra/Texture/TX Props.png" id="5_wiu7m"]
 [ext_resource type="Texture2D" uid="uid://dsqn2l84qpfyr" path="res://tileset/Decoraciones de piedra/Texture/TX Shadow Plant.png" id="6_mgab0"]
 [ext_resource type="Texture2D" uid="uid://cpwqrs0pjuykv" path="res://tileset/Decoraciones de piedra/Texture/TX Struct.png" id="7_1vn4m"]
 [ext_resource type="Texture2D" uid="uid://gt6bx77rm63" path="res://tileset/deco exterior/exterior.png" id="8_1hrnh"]
 [ext_resource type="PackedScene" uid="uid://b56b86jiyx3ro" path="res://escenas/player/jugador.tscn" id="9_src8b"]
-[ext_resource type="PackedScene" uid="uid://384ckv6186sc" path="res://escenas/mapas/mineral_point.tscn" id="10_fnb7c"]
+[ext_resource type="Script" uid="uid://ccgfld6k36nbc" path="res://scripts/mineral_point.gd" id="10_6o02u"]
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/UI/cartel_gameover.tscn" id="11_wulo0"]
 [ext_resource type="Texture2D" uid="uid://dpxphfm7u64p7" path="res://assets/arma/arma-test.webp" id="12_kpj04"]
 [ext_resource type="AudioStream" uid="uid://cf4u0udtle7mh" path="res://audios/musica_bosque.mp3" id="13_6o02u"]
@@ -4550,9 +4549,9 @@ sources/1 = SubResource("TileSetAtlasSource_bssq0")
 sources/3 = SubResource("TileSetAtlasSource_wbpbn")
 
 [node name="Map" type="Node2D" unique_id=330170214]
+z_index = 6
 position = Vector2(5101, 6138)
 script = ExtResource("1_3kfbn")
-escena_gema = ExtResource("2_4no8y")
 spawn_distancia_min = 200.0
 spawn_distancia_max = 200.0
 
@@ -4611,6 +4610,7 @@ y_sort_enabled = true
 position = Vector2(119, 20)
 
 [node name="PuntosDeSpawn" type="Node2D" parent="." unique_id=683645398]
+position = Vector2(-32, -87)
 
 [node name="Spawn1" type="Marker2D" parent="PuntosDeSpawn" unique_id=1028028920]
 position = Vector2(-159, -16)
@@ -4623,26 +4623,68 @@ wait_time = 2.0
 autostart = true
 
 [node name="PuntosDeMinerales" type="Node2D" parent="." unique_id=252384246]
+position = Vector2(0, 2)
+script = ExtResource("10_6o02u")
 
-[node name="Marker2D" type="Marker2D" parent="PuntosDeMinerales" unique_id=478588407]
+[node name="Spawn_mineral" type="Marker2D" parent="PuntosDeMinerales" unique_id=478588407 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-85, 75)
 
-[node name="mineral_point" parent="PuntosDeMinerales" unique_id=119048706 instance=ExtResource("10_fnb7c")]
-mineral_escena = ExtResource("2_4no8y")
-probabilidad = 100
+[node name="Spawn_mineral2" type="Marker2D" parent="PuntosDeMinerales" unique_id=810644215 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-85, 75)
 
-[node name="mineral_point2" parent="PuntosDeMinerales" unique_id=1785498713 instance=ExtResource("10_fnb7c")]
-position = Vector2(388, 150)
-mineral_escena = ExtResource("2_4no8y")
-probabilidad = 20
+[node name="Spawn_mineral3" type="Marker2D" parent="PuntosDeMinerales" unique_id=577896551 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(334, 153)
 
-[node name="mineral_point3" parent="PuntosDeMinerales" unique_id=1924632120 instance=ExtResource("10_fnb7c")]
-position = Vector2(-11, 253)
-mineral_escena = ExtResource("2_4no8y")
+[node name="Spawn_mineral4" type="Marker2D" parent="PuntosDeMinerales" unique_id=676218993 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(223, 156)
 
-[node name="mineral_point4" parent="PuntosDeMinerales" unique_id=2035479353 instance=ExtResource("10_fnb7c")]
-visible = false
-position = Vector2(479, -27)
-mineral_escena = ExtResource("2_4no8y")
+[node name="Spawn_mineral5" type="Marker2D" parent="PuntosDeMinerales" unique_id=1137230367 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(65, 141)
+
+[node name="Spawn_mineral6" type="Marker2D" parent="PuntosDeMinerales" unique_id=1608806948 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-80, 156)
+
+[node name="Spawn_mineral7" type="Marker2D" parent="PuntosDeMinerales" unique_id=1558323025 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-99, -42)
+
+[node name="Spawn_mineral8" type="Marker2D" parent="PuntosDeMinerales" unique_id=713573256 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(108, -86)
+
+[node name="Spawn_mineral9" type="Marker2D" parent="PuntosDeMinerales" unique_id=147658562 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(35, 133)
+
+[node name="Spawn_mineral10" type="Marker2D" parent="PuntosDeMinerales" unique_id=1275614581 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(119, 91)
+
+[node name="Spawn_mineral11" type="Marker2D" parent="PuntosDeMinerales" unique_id=1464881846 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(199, 21)
+
+[node name="Spawn_mineral12" type="Marker2D" parent="PuntosDeMinerales" unique_id=1078468683 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(260, -37)
+
+[node name="Spawn_mineral13" type="Marker2D" parent="PuntosDeMinerales" unique_id=315288470 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(251, 81)
+
+[node name="Spawn_mineral14" type="Marker2D" parent="PuntosDeMinerales" unique_id=1532025849 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-19, 78)
+
+[node name="Spawn_mineral15" type="Marker2D" parent="PuntosDeMinerales" unique_id=328984703 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-81, 20)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1760205686]
 

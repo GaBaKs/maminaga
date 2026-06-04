@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d02b1811f22td"]
+
+[ext_resource type="PackedScene" uid="uid://do1rgkjibfxe2" path="res://escenas/mapas/minerales.tscn" id="1_ggmeh"]
+[ext_resource type="Texture2D" uid="uid://bt80qmacoo7yo" path="res://tileset/minerales/PNG/Assets/Red_crystal1.png" id="2_8kuty"]
+
+[node name="mineral1" unique_id=2113515821 instance=ExtResource("1_ggmeh")]
+position = Vector2(-6, 0)
+
+[node name="Sprite2D" parent="." index="0" unique_id=1475947839]
+z_index = 5
+position = Vector2(3.999998, 3.9999962)
+scale = Vector2(0.787564, 0.6515306)
+texture = ExtResource("2_8kuty")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=2104259717]
+position = Vector2(1, 0)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://enekqpwdyoto"]
+
+[ext_resource type="PackedScene" uid="uid://do1rgkjibfxe2" path="res://escenas/mapas/minerales.tscn" id="1_7a6xu"]
+[ext_resource type="Texture2D" uid="uid://dctom8yrb6d2r" path="res://tileset/minerales/PNG/Assets/Yellow_crystal1.png" id="2_2w8ea"]
+
+[node name="mineral3" unique_id=2113515821 instance=ExtResource("1_7a6xu")]
+valor = 2
+
+[node name="Sprite2D" parent="." index="0" unique_id=1475947839]
+z_index = 5
+position = Vector2(-1.0000057, 1)
+scale = Vector2(0.8969389, 0.7921556)
+texture = ExtResource("2_2w8ea")
