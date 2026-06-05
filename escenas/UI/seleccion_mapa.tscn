@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ox1mfjdg6o8" path="res://assets/menu/pergamino mapa.png" id="4_aqsmi"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_4naqb"]
 [ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="7_5bj3u"]
-[ext_resource type="Texture2D" uid="uid://c8bunj8iypbvy" path="res://assets/menu/iconosMapas/BosqueIcono.png" id="7_aqsmi"]
+[ext_resource type="Texture2D" uid="uid://bfqom8dtsttr8" path="res://assets/menu/iconosMapas/logo_bosque.png" id="7_aqsmi"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="8_6o8fp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_766hy"]

@@ -2,8 +2,8 @@ extends AudioStreamPlayer
 
 
 func _ready() -> void:
-	play(15)
+	play(0)
 
 func _process(delta: float) -> void:
-	if get_playback_position() >= 44:
-		seek(15)
+	if get_playback_position() >= 110:
+		seek(0)

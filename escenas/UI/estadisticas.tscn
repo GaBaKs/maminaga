@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cj8xhcs46gckf" path="res://assets/menu/equipo.png" id="2_kxusn"]
 [ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="4_pxbdy"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_pt41d"]
+[ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="6_m7ib4"]
+[ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="7_3r32r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7ib4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -136,5 +138,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_m7ib4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3r32r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5fcji")
 text = "Volver"
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=388686027]
+stream = ExtResource("6_m7ib4")
+volume_db = -30.0
+script = ExtResource("7_3r32r")
 
 [connection signal="pressed" from="volver_menu" to="." method="_on_volver_menu_pressed"]

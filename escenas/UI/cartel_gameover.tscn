@@ -17,10 +17,10 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Control" unique_id=1466574714]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 11.0
-offset_right = 141.0
-offset_bottom = 124.0
+offset_left = 511.0
+offset_top = 249.0
+offset_right = 650.0
+offset_bottom = 362.0
 
 [node name="Label" type="Label" parent="Control/Panel" unique_id=234655991]
 layout_mode = 0
@@ -28,7 +28,7 @@ offset_left = 21.0
 offset_top = 4.0
 offset_right = 61.0
 offset_bottom = 27.0
-text = "La quedaste"
+text = "Has muerto"
 
 [node name="BotonRevivir" type="Button" parent="Control/Panel/Label" unique_id=1358396037]
 layout_mode = 0
@@ -44,7 +44,7 @@ offset_left = 5.0
 offset_top = 68.0
 offset_right = 92.0
 offset_bottom = 99.0
-text = "reintentar"
+text = "ir al menu"
 
 [connection signal="pressed" from="Control/Panel/Label/BotonRevivir" to="." method="_on_boton_revivir_pressed"]
 [connection signal="pressed" from="Control/Panel/Label/BotonMenu" to="." method="_on_boton_menu_pressed"]

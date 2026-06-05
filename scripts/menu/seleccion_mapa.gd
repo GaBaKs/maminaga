@@ -1,7 +1,7 @@
 extends Node
 
 # Tus iconos/opciones (podés poner texturas, nombres, etc)
-var opciones = ["BosqueIcono", "HieloIcono", "VolcanIcono"]  
+var opciones = ["logo_bosque", "logo_hielo", "logo_muerte"]  
 var indice_actual = 0
 var proximo_nivel
 
