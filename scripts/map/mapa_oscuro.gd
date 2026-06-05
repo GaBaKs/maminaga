@@ -29,7 +29,7 @@ func _on_enemy_timer_timeout():
 	if punto == null:
 		return
 
-	var escena = Global.enemigosBosque.values().pick_random()
+	var escena = Global.enemigosOscuro.values().pick_random()
 	var nuevo_enemigo = escena.instantiate()
 	add_child(nuevo_enemigo)
 	nuevo_enemigo.global_position = punto  # ← global_position en lugar de position

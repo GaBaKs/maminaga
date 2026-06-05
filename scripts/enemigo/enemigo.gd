@@ -5,6 +5,7 @@ class_name Enemigo_abstract
 var vida_enemigo = 3
 var fuerza_retroceso := Vector2.ZERO
 var experiencia_muerte= 10
+var direccion_actual := Vector2.ZERO
 # Ya no necesitamos la variable 'jugador' con @onready aquí arriba 
 # porque la buscaremos dinámicamente.
 
@@ -30,6 +31,7 @@ func _physics_process(delta):
 		
 		if jugador: 
 			var direction = (jugador.global_position - global_position).normalized()
+			direccion_actual = direction
 			velocity = direction * speed
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)

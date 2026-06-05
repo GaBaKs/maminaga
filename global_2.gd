@@ -6,11 +6,20 @@ signal jugador_murio(yamurio:bool)
 signal jugador_revivio
 
 #cuando tengamos mas enemigos, hay que precargarlos todos aca con ,
-var enemigos = {
+var enemigosBosque = {
 	"Goblin": preload("res://escenas/enemigos/enemigo.tscn"),
-	"enemigo2": preload("res://escenas/enemigos/Slime.tscn"),
+	"enemigo2": preload("res://escenas/enemigos/slime.tscn"),
 	"enemigo3": preload("res://escenas/enemigos/orco.tscn")
+}
 
+var enemigosOscuro = {
+	"Vampiro": preload("res://escenas/enemigos/vampiro.tscn")
+}
+
+var enemigosNieve = {
+	"Goblin": preload("res://escenas/enemigos/enemigo.tscn"),
+	"enemigo2": preload("res://escenas/enemigos/slime.tscn"),
+	"enemigo3": preload("res://escenas/enemigos/orco.tscn")
 }
 # --- Variables de Navegación y Configuración ---
 var mapa_seleccionado: String = "" # Ejemplo: "res://mapas/bosque.tscn"

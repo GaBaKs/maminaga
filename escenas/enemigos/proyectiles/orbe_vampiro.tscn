@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cwnwu3k3qav2i"]
+
+[ext_resource type="Script" uid="uid://dprkaewerqhbl" path="res://scripts/enemigo/proyectiles/orbe_vampiro.gd" id="1_2bbex"]
+[ext_resource type="Texture2D" uid="uid://qihdmf0o2lpv" path="res://assets/enemigo/VampiroSprites/orbevampiro.png" id="1_avt0n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bbex"]
+radius = 6.3245554
+
+[node name="OrbeVampiro" type="Area2D" unique_id=575466495]
+script = ExtResource("1_2bbex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956636566]
+position = Vector2(8.4703295e-22, -2.1175824e-22)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_2bbex")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=205650110]
+scale = Vector2(0.028250001, 0.028250001)
+texture = ExtResource("1_avt0n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

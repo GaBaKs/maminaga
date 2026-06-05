@@ -6101,8 +6101,8 @@ spawn_distancia_max = 200.0
 [node name="cartel_gameover" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("11_wulo0")]
 
 [node name="Joystick" type="CanvasLayer" parent="." unique_id=697574457]
-offset = Vector2(1000, 500)
-transform = Transform2D(1, 0, 0, 1, 1000, 500)
+offset = Vector2(200, 500)
+transform = Transform2D(1, 0, 0, 1, 200, 500)
 
 [node name="Joystick" parent="Joystick" unique_id=205296181 instance=ExtResource("3_bb8n1")]
 
@@ -6145,7 +6145,6 @@ tile_set = SubResource("TileSet_jk4ss")
 
 [node name="Player" parent="." unique_id=1603352472 instance=ExtResource("9_src8b")]
 z_index = -1
-y_sort_enabled = true
 position = Vector2(119, 20)
 
 [node name="Techo" type="TileMapLayer" parent="." unique_id=1487503307]

@@ -26,6 +26,9 @@ func _on_jugar_pressed():
 	else:
 		if (indice_actual == 1):
 			proximo_nivel=("res://escenas/mapas/mapa_abismo_de_los_lamentos.tscn")
+		else:
+			if (indice_actual == 2):
+				proximo_nivel=("res://escenas/mapas/mapa_oscuro.tscn")
 	Global.nivel_a_cargar=proximo_nivel
 	get_tree().change_scene_to_file(proximo_nivel)
 	
