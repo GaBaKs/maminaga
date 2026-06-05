@@ -3,6 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_j0avv"]
 [ext_resource type="Script" uid="uid://r0a2skr887sx" path="res://scripts/menu/estadisticas.gd" id="1_kxusn"]
 [ext_resource type="Texture2D" uid="uid://cj8xhcs46gckf" path="res://assets/menu/equipo.png" id="2_kxusn"]
+[ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="4_pxbdy"]
+[ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_pt41d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7ib4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r32r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fcji"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=2112885601]
 script = ExtResource("1_kxusn")
@@ -16,6 +27,11 @@ texture = ExtResource("1_j0avv")
 offset_right = 1153.0
 offset_bottom = 648.0
 texture = ExtResource("2_kxusn")
+
+[node name="Pergamino1" type="Sprite2D" parent="TextureRect2" unique_id=1024345900]
+position = Vector2(104.75, 39.000008)
+scale = Vector2(2.0308638, 2.1290317)
+texture = ExtResource("4_pxbdy")
 
 [node name="Control" type="Control" parent="." unique_id=127028919]
 layout_mode = 3
@@ -107,10 +123,18 @@ offset_right = 1024.0
 offset_bottom = 625.0
 
 [node name="volver_menu" type="Button" parent="." unique_id=1333677518]
-offset_left = 25.0
-offset_top = 17.0
-offset_right = 147.0
-offset_bottom = 48.0
-text = "VOLVER ATRAS"
+offset_left = 34.0
+offset_top = 6.0
+offset_right = 178.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("5_pt41d")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_m7ib4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r32r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5fcji")
+text = "Volver"
 
 [connection signal="pressed" from="volver_menu" to="." method="_on_volver_menu_pressed"]

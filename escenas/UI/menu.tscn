@@ -60,6 +60,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_mae5d")
 
+[node name="Pergamino3" type="Sprite2D" parent="TextureRect" unique_id=430223154]
+position = Vector2(276, 500.00003)
+scale = Vector2(5.1358023, 3.8709676)
+texture = ExtResource("2_4hy44")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1609916409]
 layout_mode = 1
 anchors_preset = -1
@@ -112,6 +117,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_iqepy")
 text = "EQUIPO"
 
 [node name="Pergamino3" type="Sprite2D" parent="VBoxContainer" unique_id=19116078]
+position = Vector2(158, 310.00003)
+scale = Vector2(5.1358023, 3.8709676)
+texture = ExtResource("2_4hy44")
+
+[node name="Pergamino3" type="Sprite2D" parent="VBoxContainer/Pergamino3" unique_id=1177874421]
 position = Vector2(169, 310)
 scale = Vector2(5.1358023, 3.8709676)
 texture = ExtResource("2_4hy44")
@@ -134,7 +144,7 @@ theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
 theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
 theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
 theme_override_fonts/font = ExtResource("3_ytr4m")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 65
 theme_override_styles/normal = SubResource("StyleBoxFlat_nrnbx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h1wq0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dwrpx")

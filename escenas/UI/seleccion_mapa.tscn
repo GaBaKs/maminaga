@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cpth7t2xfp7nq" path="res://scripts/menu/seleccion_mapa.gd" id="1_stclm"]
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="2_5bj3u"]
 [ext_resource type="Texture2D" uid="uid://cqierf1ex3wb1" path="res://assets/menu/pergamino lateral.png" id="3_6o8fp"]
+[ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="3_aqsmi"]
 [ext_resource type="Texture2D" uid="uid://c1ox1mfjdg6o8" path="res://assets/menu/pergamino mapa.png" id="4_aqsmi"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_4naqb"]
 [ext_resource type="Texture2D" uid="uid://bbl1p5dd0pfym" path="res://assets/menu/iconosMapas/BosqueIcono.jpg" id="6_n3xrl"]
@@ -27,6 +28,15 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcitv"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4naqb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3xrl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlwnh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="SeleccionMapa" type="Control" unique_id=955157318]
 layout_mode = 3
 anchors_preset = 15
@@ -44,6 +54,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5bj3u")
+
+[node name="Pergamino2" type="Sprite2D" parent="TextureRect" unique_id=1063136243]
+position = Vector2(144, 86.00001)
+scale = Vector2(1.962963, 2.0645156)
+texture = ExtResource("3_aqsmi")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1877419966]
 layout_mode = 1
@@ -123,9 +138,19 @@ script = ExtResource("8_6o8fp")
 
 [node name="volver atras" type="Button" parent="." unique_id=1509712651]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Volver atras"
+offset_left = 90.0
+offset_top = 62.0
+offset_right = 191.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("5_4naqb")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_4naqb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3xrl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vlwnh")
+text = "Volver"
 
 [connection signal="pressed" from="HBoxContainer/LButton" to="." method="_on_lbutton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Jugar" to="." method="_on_jugar_pressed"]

@@ -43,6 +43,7 @@ var objetos_comprados = []
 var objetos_equipados = []
 
 func _ready():
+	guardar_datos()
 	cargar_datos()
 	pass
 
