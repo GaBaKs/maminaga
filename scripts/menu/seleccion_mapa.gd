@@ -19,10 +19,16 @@ func _on_rbutton_pressed():  # Flecha derecha
 func _on_jugar_pressed():
 	proximo_nivel = "res://escenas/map_Bosque_v2.tscn"
 	print("Cargando: ", proximo_nivel)
-
+	
+	
+	if (indice_actual == 0):
+		proximo_nivel=("res://escenas/mapas/map_Bosque_v2.tscn")
+	else:
+		if (indice_actual == 1):
+			proximo_nivel=("res://escenas/mapas/mapa_abismo_de_los_lamentos.tscn")
 	Global.nivel_a_cargar=proximo_nivel
-	get_tree().change_scene_to_file("res://escenas/mapas/map_Bosque_v2.tscn")
-
+	get_tree().change_scene_to_file(proximo_nivel)
+	
 func animar_cambio():
 	# Animación simple con Tween
 	var tween = create_tween()
@@ -31,7 +37,7 @@ func animar_cambio():
 	tween.tween_property(display, "modulate:a", 1.0, 0.1)  # fade in
 
 func actualizar_display():
-	display.texture = load("res://assets/menu/iconosMapas/" + opciones[indice_actual] + ".jpg")
+	display.texture = load("res://assets/menu/iconosMapas/" + opciones[indice_actual] + ".png")
 	print(opciones[indice_actual])  # acá cambiás la textura o label
 
 

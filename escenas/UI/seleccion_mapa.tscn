@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="3_aqsmi"]
 [ext_resource type="Texture2D" uid="uid://c1ox1mfjdg6o8" path="res://assets/menu/pergamino mapa.png" id="4_aqsmi"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_4naqb"]
-[ext_resource type="Texture2D" uid="uid://bbl1p5dd0pfym" path="res://assets/menu/iconosMapas/BosqueIcono.jpg" id="6_n3xrl"]
 [ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="7_5bj3u"]
+[ext_resource type="Texture2D" uid="uid://c8bunj8iypbvy" path="res://assets/menu/iconosMapas/BosqueIcono.png" id="7_aqsmi"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="8_6o8fp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_766hy"]
@@ -127,9 +127,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bcitv")
 text = ">"
 
 [node name="BosqueIcono" type="Sprite2D" parent="HBoxContainer" unique_id=1839502063]
-position = Vector2(257, -199)
-scale = Vector2(0.4149798, 0.41497976)
-texture = ExtResource("6_n3xrl")
+position = Vector2(250.99997, -193.00002)
+scale = Vector2(0.7926338, 0.778745)
+texture = ExtResource("7_aqsmi")
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=57051225]
 stream = ExtResource("7_5bj3u")
