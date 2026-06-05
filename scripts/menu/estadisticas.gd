@@ -50,7 +50,7 @@ func _on_btn_daño_pressed() -> void:
 
 func _on_btn_vel_ataque_pressed() -> void:
 	if PlayerData.puntos_habilidad > 0:
-		PlayerData.velocidad_ataque -= 0.05
+		PlayerData.velocidad_ataque += 0.05
 		PlayerData.puntos_habilidad -= 1
 		update_stats()
 

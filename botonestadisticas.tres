@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://b45ddtli6kw5x"]
+
+[ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="1_u0tlh"]
+
+[resource]
+font = ExtResource("1_u0tlh")
+font_size = 60

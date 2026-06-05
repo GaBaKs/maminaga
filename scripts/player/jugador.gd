@@ -35,9 +35,10 @@ func _ready():
 		barra_vida.max_value = vida_actual
 		barra_vida.value = vida_actual
 	#self.mineral_recolectado.connect(_sumar_al_global)
-	if Global.arma_escena:
-		arma_actual = Global.arma_escena.instantiate()
+	if PlayerData.arma_escena:
+		arma_actual = PlayerData.arma_escena.instantiate()
 		add_child(arma_actual)
+		print("arma actual:", arma_actual)
 		arma_actual.position = Vector2.ZERO  # centrada en el jugador
 
 func _physics_process(delta):

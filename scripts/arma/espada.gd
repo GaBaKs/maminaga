@@ -4,9 +4,14 @@ class_name ArmaEspada
 func _ready() -> void:
 	nombre_arma = "Espada Básica"
 	danio = 40.0             # Más daño que la pistola
-	velocidad_ataque = 1.5   # Ataque medianamente rápido
+	var velocidad_ataque = 0.7   # Ataque medianamente rápido
 	alcance_radio = 70.0     # Alcance muy corto (cuerpo a cuerpo)
 	distancia_al_jugador = 30.0
+	timer_ataque = Timer.new()
+	timer_ataque.wait_time = 3.0 / ((velocidad_ataque+PlayerData.velocidad_ataque))
+	timer_ataque.one_shot = true
+	timer_ataque.timeout.connect(_on_timer_ataque_timeout)
+	add_child(timer_ataque)
 	super() 
 
 func aplicar_danio(objetivo: Node2D) -> void:

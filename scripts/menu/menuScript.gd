@@ -7,14 +7,15 @@ func _on_jugar_pressed() -> void:
 
 
 func _on_equipo_pressed() -> void:
-	pass # Replace with function body.
-#desde aca (o la escena equipo ni idea) tenemos q 
+	get_tree().change_scene_to_file("res://escenas/UI/equipo.tscn")
 #llamar a equipar_arma (q esta en global)
 
-func _on_tienda_pressed() -> void:
-	pass # Replace with function body.
 
 
 func _on_estadisticas_pressed() -> void:
 	get_tree().change_scene_to_file("res://escenas/UI/estadisticas.tscn")
-	pass # Replace with function body.
+
+
+
+func _on_aspectos_pressed() -> void:
+	get_tree().change_scene_to_file("res://escenas/UI/aspectos.tscn")

@@ -21,26 +21,38 @@ var armadura = 0
 # MONEDAS
 
 var minerales = {
-	"mineral1": 1,
-	"mineral2": 0,
-	"mineral3": 1
+	"mineral1": 100,
+	"mineral2": 100,
+	"mineral3": 100
 }
 var almas = 0
 
 # SKINS
 
-var skin_actual = "default"
+var todas_las_skins = {
+	"default": "res://nyan_default.png",
+	"ninja": "res://nyan_ninja.png",
+	"gold": "res://nyan_gold.png"
+}
+var skins_desbloqueadas = ["default"] 
 
-var skins_desbloqueadas = [
-	"default"
-]
+func desbloquear_skin(id: String):
+	if not skins_desbloqueadas.has(id):
+		skins_desbloqueadas.append(id)
+
+var skin_actual = "default"
 
 # INVENTARIO
 
-var objetos_comprados = []
+var armas_compradas = ["espada"]
+var arma_equipada = "espada"
+var arma_escena : PackedScene
+var armas_disponibles = {
+	"pistola": preload("res://escenas/armas/pistola.tscn"),
+	"espada": preload("res://escenas/armas/espada.tscn")
+}
 
-# En base a esta variable, cambiamos las stats del jugador
-var objetos_equipados = []
+
 
 func _ready():
 	guardar_datos()
@@ -76,8 +88,8 @@ func guardar_datos():
 		},
 
 		"inventario": {
-			"objetos_comprados": objetos_comprados,
-			"objetos_equipados": objetos_equipados
+			"armas_compradas": armas_compradas,
+			"arma_equipada": arma_equipada
 		}
 	}
 	
@@ -88,7 +100,6 @@ func guardar_datos():
 	)
 
 	print("Partida guardada")
-
 
 func cargar_datos():
 
@@ -140,8 +151,8 @@ func cargar_datos():
 	# INVENTARIO
 	# =========================
 
-	objetos_comprados = datos["inventario"]["objetos_comprados"]
-	objetos_equipados = datos["inventario"]["objetos_equipados"]
+	armas_compradas = datos["inventario"]["armas_compradas"]
+	arma_equipada = datos["inventario"]["arma_equipada"]
 
 	print("Partida cargada")
 
@@ -160,3 +171,10 @@ func subir_nivel():
 	experiencia_max=experiencia_max*1.15
 	puntos_habilidad+=1
 	print("Subio de nivel!")
+
+func equipar_arma(id_arma: String):
+	if armas_compradas.has(id_arma):
+		arma_equipada = id_arma
+		arma_escena=armas_disponibles[id_arma]
+		print("Arma equipada para la partida: ", id_arma)
+		guardar_datos()

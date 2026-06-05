@@ -2,11 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_j0avv"]
 [ext_resource type="Script" uid="uid://r0a2skr887sx" path="res://scripts/menu/estadisticas.gd" id="1_kxusn"]
-[ext_resource type="Texture2D" uid="uid://cj8xhcs46gckf" path="res://assets/menu/equipo.png" id="2_kxusn"]
+[ext_resource type="Texture2D" uid="uid://coi8n2eylothe" path="res://assets/menu/estadisticas.png" id="3_3r32r"]
 [ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="4_pxbdy"]
+[ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="5_5fcji"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_pt41d"]
+[ext_resource type="LabelSettings" uid="uid://b45ddtli6kw5x" path="res://botonestadisticas.tres" id="6_5fcji"]
 [ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="6_m7ib4"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="7_3r32r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7qdl"]
+font = ExtResource("5_5fcji")
+font_size = 60
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7ib4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -28,7 +34,7 @@ texture = ExtResource("1_j0avv")
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=472819735]
 offset_right = 1153.0
 offset_bottom = 648.0
-texture = ExtResource("2_kxusn")
+texture = ExtResource("3_3r32r")
 
 [node name="Pergamino1" type="Sprite2D" parent="TextureRect2" unique_id=1024345900]
 position = Vector2(104.75, 39.000008)
@@ -43,51 +49,57 @@ offset_bottom = 40.0
 
 [node name="vida" type="Label" parent="Control" unique_id=1826402976]
 layout_mode = 0
-offset_left = 854.0
-offset_top = 132.0
-offset_right = 894.0
-offset_bottom = 155.0
+offset_left = 825.0
+offset_top = 113.0
+offset_right = 865.0
+offset_bottom = 174.0
 text = "0"
+label_settings = SubResource("LabelSettings_k7qdl")
 
 [node name="daño" type="Label" parent="Control" unique_id=722951055]
 layout_mode = 0
-offset_left = 851.0
-offset_top = 246.0
-offset_right = 891.0
-offset_bottom = 269.0
+offset_left = 825.0
+offset_top = 225.0
+offset_right = 865.0
+offset_bottom = 286.0
 text = "0"
+label_settings = ExtResource("6_5fcji")
 
 [node name="vel_ataque" type="Label" parent="Control" unique_id=550744792]
 layout_mode = 0
-offset_left = 858.0
-offset_top = 353.0
-offset_right = 898.0
-offset_bottom = 376.0
+offset_left = 825.0
+offset_top = 335.0
+offset_right = 865.0
+offset_bottom = 396.0
 text = "0"
+label_settings = ExtResource("6_5fcji")
 
 [node name="regen_vida" type="Label" parent="Control" unique_id=232585405]
 layout_mode = 0
-offset_left = 853.0
-offset_top = 466.0
-offset_right = 893.0
-offset_bottom = 489.0
+offset_left = 825.0
+offset_top = 449.0
+offset_right = 865.0
+offset_bottom = 510.0
 text = "0"
+label_settings = ExtResource("6_5fcji")
 
 [node name="armadura" type="Label" parent="Control" unique_id=524640518]
 layout_mode = 0
-offset_left = 866.0
-offset_top = 582.0
-offset_right = 906.0
-offset_bottom = 605.0
+offset_left = 825.0
+offset_top = 563.0
+offset_right = 865.0
+offset_bottom = 624.0
 text = "0"
+label_settings = ExtResource("6_5fcji")
 
 [node name="puntos" type="Label" parent="Control" unique_id=460599178]
 layout_mode = 0
-offset_left = 658.0
-offset_top = 35.0
-offset_right = 698.0
-offset_bottom = 58.0
+offset_left = 636.0
+offset_top = 15.0
+offset_right = 676.0
+offset_bottom = 76.0
 text = "0"
+label_settings = ExtResource("6_5fcji")
 
 [node name="btn_vida" type="Button" parent="Control" unique_id=1306169238]
 layout_mode = 0

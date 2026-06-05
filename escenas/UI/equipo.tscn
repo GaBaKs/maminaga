@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ccbwj3sdn6hkg"]
+
+[ext_resource type="Script" uid="uid://skt765je2c7m" path="res://scripts/menu/equipo.gd" id="1_it43d"]
+[ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="2_p4wvx"]
+[ext_resource type="Texture2D" uid="uid://cj8xhcs46gckf" path="res://assets/menu/equipo.png" id="3_it43d"]
+
+[node name="equipo" type="Control" unique_id=1359550272]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_it43d")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1098254460]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+texture = ExtResource("2_p4wvx")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=280406277]
+layout_mode = 0
+offset_left = -47.0
+offset_top = 25.0
+offset_right = 1106.0
+offset_bottom = 673.0
+texture = ExtResource("3_it43d")
+
+[node name="atras" type="Button" parent="." unique_id=137252365]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 33.0
+offset_right = 1091.0
+offset_bottom = 100.0
+
+[node name="boton_espada" type="Button" parent="." unique_id=387996950]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 342.0
+offset_right = 352.0
+offset_bottom = 428.0
+
+[node name="boton_pistola" type="Button" parent="." unique_id=2140810269]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 343.0
+offset_right = 651.0
+offset_bottom = 422.0
+
+[node name="boton_baculo" type="Button" parent="." unique_id=1674752167]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 344.0
+offset_right = 958.0
+offset_bottom = 421.0
+
+[connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]
+[connection signal="pressed" from="boton_espada" to="." method="_on_boton_espada_pressed"]
+[connection signal="pressed" from="boton_pistola" to="." method="_on_boton_pistola_pressed"]
+[connection signal="pressed" from="boton_baculo" to="." method="_on_boton_baculo_pressed"]

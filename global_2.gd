@@ -48,20 +48,6 @@ var configuracion_mapas = {
 	"desierto": "res://mapas/desierto.tscn"
 }
 
-# --- SISTEMA DE SKINS ---
-var todas_las_skins = {
-	"default": "res://nyan_default.png",
-	"ninja": "res://nyan_ninja.png",
-	"gold": "res://nyan_gold.png"
-}
-var skins_desbloqueadas = ["default"] 
-
-func desbloquear_skin(id: String):
-	if not skins_desbloqueadas.has(id):
-		skins_desbloqueadas.append(id)
-
-func obtener_ruta_skin_actual() -> String:
-	return todas_las_skins[skin_equipada]
 
 # --- LÓGICA DE PARTIDA ---
 
@@ -82,18 +68,3 @@ func obtener_multiplicador_enemigos():
 func obtener_multiplicador_gemas():
 	return ajustes_dificultad[dificultad_actual]["multiplicador_minerales"]
 	
-# Diccionario para cargar las escenas de las armas fácilmente
-var armas_disponibles = {
-	"pistola": preload("res://escenas/armas/pistola.tscn"), # Ajustá la ruta
-	#"espada": preload("res://escenas/armas/espada.tscn")    # Ajustá la ruta
-}
-
-# Esta es la variable que lee el jugador al instanciarse, 
-#no hice la persistencia gabi xd
-var arma_escena: PackedScene = armas_disponibles["pistola"] 
-
-# Función que llamarás desde los botones de tu menú "Equipo"
-func equipar_arma(id_arma: String):
-	if armas_disponibles.has(id_arma):
-		arma_escena = armas_disponibles[id_arma]
-		print("Arma equipada para la partida: ", id_arma)

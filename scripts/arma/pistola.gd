@@ -6,11 +6,11 @@ class_name ArmaPistola
 func _ready() -> void:
 	nombre_arma = "Pistola"
 	danio = 25.0
-	velocidad_ataque = 1.0
+	velocidad_ataque = 0.5
 	alcance_radio = 250.0
 	distancia_al_jugador = 25.0
 	timer_ataque = Timer.new()
-	timer_ataque.wait_time = 1.0 / ((velocidad_ataque+PlayerData.velocidad_ataque))
+	timer_ataque.wait_time = 3.0 / ((velocidad_ataque+PlayerData.velocidad_ataque))
 	print("Timer valor:", timer_ataque.wait_time)
 	timer_ataque.one_shot = true
 	timer_ataque.timeout.connect(_on_timer_ataque_timeout)
