@@ -5,9 +5,8 @@
 
 [node name="mineral3" unique_id=2113515821 instance=ExtResource("1_7a6xu")]
 valor = 2
+tipo_mineral = "mineral3"
 
 [node name="Sprite2D" parent="." index="0" unique_id=1475947839]
-z_index = 5
 position = Vector2(-3.9999962, 9.536743e-07)
-scale = Vector2(1.4015946, 1.1617029)
 texture = ExtResource("2_2w8ea")

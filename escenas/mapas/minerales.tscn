@@ -4,15 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://yjbogeu5nyo8" path="res://assets/mineral/mineral-azul.webp" id="2_rr1a0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c624d"]
-radius = 26.019224
+radius = 39.39543
 
 [node name="Area2D" type="Area2D" unique_id=2113515821 groups=["minerales"]]
+z_index = 50
+z_as_relative = false
+priority = 3
 script = ExtResource("1_2111e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1475947839]
-z_index = 6
+z_index = 50
+z_as_relative = false
 position = Vector2(-1.0000076, -2.999999)
-scale = Vector2(1.033, 1.24)
 texture = ExtResource("2_rr1a0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2104259717]

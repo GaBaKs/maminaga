@@ -4,9 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://objd2jhleobf" path="res://tileset/minerales/PNG/Assets_shadow/Violet_crystal1.png" id="2_rmly3"]
 
 [node name="mineral2" unique_id=2113515821 instance=ExtResource("1_5k6bd")]
+tipo_mineral = "mineral2"
 
 [node name="Sprite2D" parent="." index="0" unique_id=1475947839]
-z_index = 5
 position = Vector2(0, 4)
-scale = Vector2(1.487532, 1.2812501)
 texture = ExtResource("2_rmly3")

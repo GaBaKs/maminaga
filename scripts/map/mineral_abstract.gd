@@ -2,7 +2,7 @@ extends Area2D
 class_name MineralAbstract
 
 @export var valor := 1
-var tipo_mineral # Nueva variable para identificar la gema
+@export var tipo_mineral: String = "" # Nueva variable para identificar la gema
 
 func _ready():
 	# Aseguramos que pertenezca al grupo para que el jugador lo detecte

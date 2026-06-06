@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnwh3xnh0uawu" path="res://assets/arma/espada.png" id="3_gx850"]
 
 [node name="espada" unique_id=1549684524 instance=ExtResource("1_28u2q")]
+z_index = 5
 script = ExtResource("2_u7ok3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=810767489]

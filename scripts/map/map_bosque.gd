@@ -104,12 +104,15 @@ func generar_minerales_por_dificultad():
 		for escena_mineral in tipos_de_minerales:
 			if escena_mineral != null:
 				var nuevo_mineral = escena_mineral.instantiate()
+				
+				# 1. PRIMERO LO AGREGAMOS AL MAPA (Nace)
+				add_child(nuevo_mineral) 
+				
+				# 2. DESPUÉS LE DECIMOS A DÓNDE IR
 				var offset_x = randf_range(-20.0, 20.0)
 				var offset_y = randf_range(-20.0, 20.0)
-				
 				nuevo_mineral.global_position = punto.global_position + Vector2(offset_x, offset_y)
-				print("Gema spawneada en: ", nuevo_mineral.global_position)
-				add_child(nuevo_mineral)
+				
 				gemas_creadas += 1
 				
 	print("¡Éxito! Se spawnearon un total de ", gemas_creadas, " minerales.")
