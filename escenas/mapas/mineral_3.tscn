@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dctom8yrb6d2r" path="res://tileset/minerales/PNG/Assets/Yellow_crystal1.png" id="2_2w8ea"]
 
 [node name="mineral3" unique_id=2113515821 instance=ExtResource("1_7a6xu")]
-valor = 2
+valor = 3
 tipo_mineral = "mineral3"
 
 [node name="Sprite2D" parent="." index="0" unique_id=1475947839]
