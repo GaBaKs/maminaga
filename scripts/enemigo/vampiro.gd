@@ -2,9 +2,9 @@ extends Enemigo_abstract
 
 
 var proyectil = preload("res://escenas/enemigos/proyectiles/orbe_vampiro.tscn")
-var cooldown_disparo := 1.0
-var timer_disparo := 0.0
-var distancia_disparo := 100.0  # distancia máxima para disparar
+var cooldown_ataque := 1.0
+var timer_ataque := 0.0
+var distancia_ataque := 100.0  # distancia máxima para disparar
 var disparando := false
 
 
@@ -42,15 +42,15 @@ func _physics_process(delta):
 	var jugador = get_tree().get_first_node_in_group("jugador")
 	if jugador:
 		var distancia = global_position.distance_to(jugador.global_position)
-		if distancia <= distancia_disparo: # está cerca → se frena y cuenta para disparar
+		if distancia <= distancia_ataque: # está cerca → se frena y cuenta para disparar
 			velocity = Vector2.ZERO
 			move_and_slide() 
 			if not disparando:
-				timer_disparo -= delta
-				if timer_disparo <= 0:
+				timer_ataque -= delta
+				if timer_ataque <= 0:
 					disparando = true
 					disparar()
-					timer_disparo = cooldown_disparo
+					timer_ataque = cooldown_ataque
 		else: # está lejos → se mueve normal
 			disparando = false
 			super._physics_process(delta)
@@ -63,4 +63,11 @@ func disparar():
 	get_parent().add_child(nuevo_orbe)
 	nuevo_orbe.global_position = global_position
 	nuevo_orbe.direction = direccion_actual  # le pasa hacia dónde ir
+	
+func reproducir_animacion_muerte():
+	$AnimatedSprite2D.play("muerte")
+	$AnimatedSprite2D.animation_finished.connect(_on_muerte_terminada)
+
+func _on_muerte_terminada():
+	queue_free()
 	

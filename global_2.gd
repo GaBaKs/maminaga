@@ -12,7 +12,9 @@ var enemigosBosque = {
 }
 
 var enemigosOscuro = {
-	"Vampiro": preload("res://escenas/enemigos/vampiro.tscn")
+	"Vampiro": preload("res://escenas/enemigos/vampiro.tscn"),
+	"Slime_Oscuro": preload("res://escenas/enemigos/slime_oscuro.tscn"),
+	"Orco_Oscuro": preload("res://escenas/enemigos/orco_oscuro.tscn")
 }
 
 var enemigosNieve = {

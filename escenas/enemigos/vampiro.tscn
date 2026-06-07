@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://5k215fl602h1" path="res://scripts/enemigo/vampiro.gd" id="1_7b040"]
 [ext_resource type="Texture2D" uid="uid://67o3wlwpsmqa" path="res://assets/enemigo/VampiroSprites/Vampires1/With_shadow/Vampires1_Run_with_shadow.png" id="1_8impe"]
 [ext_resource type="Texture2D" uid="uid://de0etkq4elltw" path="res://assets/enemigo/VampiroSprites/Vampires1/With_shadow/Vampires1_Attack_with_shadow.png" id="3_bky24"]
+[ext_resource type="Texture2D" uid="uid://bsd8uk6r1pwgu" path="res://assets/enemigo/VampiroSprites/Vampires1/With_shadow/Vampires1_Death_with_shadow.png" id="4_les3m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7b040"]
 atlas = ExtResource("1_8impe")
@@ -324,6 +325,50 @@ region = Rect2(384, 128, 64, 64)
 atlas = ExtResource("1_8impe")
 region = Rect2(448, 128, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk57y"]
+atlas = ExtResource("4_les3m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyd2t"]
+atlas = ExtResource("4_les3m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0biv"]
+atlas = ExtResource("4_les3m")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44bh"]
+atlas = ExtResource("4_les3m")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6jdf"]
+atlas = ExtResource("4_les3m")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iyld"]
+atlas = ExtResource("4_les3m")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10cop"]
+atlas = ExtResource("4_les3m")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlmw1"]
+atlas = ExtResource("4_les3m")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmxvl"]
+atlas = ExtResource("4_les3m")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j544d"]
+atlas = ExtResource("4_les3m")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6nvq"]
+atlas = ExtResource("4_les3m")
+region = Rect2(640, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_lgwkj"]
 animations = [{
 "frames": [{
@@ -605,6 +650,44 @@ animations = [{
 "loop": true,
 "name": &"izquierda",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk57y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyd2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0biv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w44bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6jdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iyld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10cop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlmw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmxvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j544d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6nvq")
+}],
+"loop": true,
+"name": &"muerte",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oq765"]
@@ -616,6 +699,7 @@ script = ExtResource("1_7b040")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1951284352]
 sprite_frames = SubResource("SpriteFrames_lgwkj")
 animation = &"arriba"
+frame_progress = 0.9967708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410245677]
 position = Vector2(-1, -5)

@@ -6,6 +6,7 @@ var vida_enemigo = 3
 var fuerza_retroceso := Vector2.ZERO
 var experiencia_muerte= 10
 var direccion_actual := Vector2.ZERO
+var danio = 1
 # Ya no necesitamos la variable 'jugador' con @onready aquí arriba 
 # porque la buscaremos dinámicamente.
 
@@ -36,8 +37,8 @@ func _physics_process(delta):
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
 				var objeto_chocado = collision.get_collider()
-				if objeto_chocado and objeto_chocado.has_method("recibir_danio"):
-					objeto_chocado.recibir_danio(0.5)
+				#if objeto_chocado and objeto_chocado.has_method("recibir_danio"):
+				#	objeto_chocado.recibir_danio(0.5)
 		else:
 			velocity = Vector2.ZERO
 	# IMPORTANTE: move_and_slide() siempre afuera para que procese cualquier velocity
@@ -50,8 +51,14 @@ func morir_enemigo():
 	print("¡Mato enemigo! Experiencia: ", PlayerData.experiencia)
 	if (PlayerData.experiencia>PlayerData.experiencia_max):
 		PlayerData.subir_nivel()
-	queue_free()
+	
+	set_physics_process(false)  # detiene el movimiento
+	reproducir_animacion_muerte()
 	# El move_and_slide() se llama UNA SOLA VEZ al final para aplicar la velocity que sea
+	
+	
+func reproducir_animacion_muerte():
+	queue_free() 
 	
 func recibir_danio_enemigo(cantidad,direccion_golpe: Vector2):
 	vida_enemigo -= cantidad
