@@ -44,7 +44,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func morir_enemigo():
-	Global.almas_en_partida += 1
+	Global.referencia_jugador.almas_en_partida += 1 #IMPORTANTE CAMBIADO
 	
 	Global.experiencia_en_partida+=experiencia_muerte*Global.mult_dificultad[Global.dificultad_actual]
 	print("¡Mato enemigo! Experiencia: ", PlayerData.experiencia)
