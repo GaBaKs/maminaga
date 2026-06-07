@@ -6253,7 +6253,7 @@ volume_db = -30.0
 script = ExtResource("14_qryxp")
 
 [node name="Timer_supervivencia" type="Timer" parent="." unique_id=527694008]
-wait_time = 2.0
+wait_time = 600.0
 one_shot = true
 autostart = true
 

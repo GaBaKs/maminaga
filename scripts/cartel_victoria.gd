@@ -13,8 +13,8 @@ func mostrar_cartel_victoria():
 	
 	if jugador != null:
 		# Leemos la mochila para mostrarle al jugador lo que logró sacar
-		label_almas.text = "Almas recolectadas: " + str(jugador.almas)
-		label_minerales.text = "Minerales:\nAzul: " + str(jugador.minerales["mineral1"]) + "\nVerde: " + str(jugador.minerales["mineral2"]) + "\nRojo: " + str(jugador.minerales["mineral3"])
+		label_almas.text = "Almas recolectadas: " + str(jugador.almas_en_partida)
+		label_minerales.text = "Minerales:\nAzul: " + str(jugador.minerales_en_partida["mineral1"]) + "\nVerde: " + str(jugador.minerales_en_partida["mineral2"]) + "\nRojo: " + str(jugador.minerales_en_partida["mineral3"])
 	
 	visible = true
 
