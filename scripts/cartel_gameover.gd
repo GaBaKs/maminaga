@@ -13,6 +13,9 @@ func _on_boton_revivir_pressed():
 	Global.emit_signal("jugador_revivio")
 
 func _on_boton_menu_pressed():
+	if Global.referencia_jugador != null:
+		Global.referencia_jugador.resetear_recursos_temporales()
+	
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")
 

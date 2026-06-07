@@ -52,17 +52,17 @@ func obtener_multiplicador_gemas():
 	return ajustes_dificultad[dificultad_actual]["multiplicador_minerales"]
 	
 func ganar_partida():
-	get_tree().paused = true # Detiene el tiempo
+	get_tree().paused = true
 	
-	if referencia_jugador != null:
-		# 1. Pasamos las cosas de la mochila del jugador al Banco (PlayerData)
-		PlayerData.almas_totales += referencia_jugador.almas
+	if referencia_jugador:
+		# SUMAR ALMAS
+		PlayerData.almas += referencia_jugador.almas_en_partida
 		
-		for key in referencia_jugador.minerales.keys():
-			PlayerData.minerales[key] += referencia_jugador.minerales[key]
+		# SUMAR MINERALES
+		for tipo in referencia_jugador.minerales_en_partida.keys():
+			PlayerData.minerales[tipo] += referencia_jugador.minerales_en_partida[tipo]
 			
-		# 2. Persistimos los datos
-		PlayerData.save_data()
-	
-	# 3. Llamamos al cartel de Victoria
+		# GUARDAR LOS CAMBIOS
+		PlayerData.guardar_datos() # Asegurate que se llame así en tu script
+		
 	emit_signal("partida_ganada")

@@ -19,6 +19,9 @@ func mostrar_cartel_victoria():
 	visible = true
 
 func _on_boton_volver_menu_pressed():
+	if Global.referencia_jugador != null:
+		Global.referencia_jugador.resetear_recursos_temporales()
+	
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")
 

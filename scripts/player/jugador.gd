@@ -36,6 +36,7 @@ var timer_area := 0.0
 func _ready():
 	Global.referencia_jugador = self 
 	Global.jugador_revivio.connect(_on_revivio_jugador)
+	resetear_recursos_temporales()
 	
 	if barra_vida:
 		barra_vida.max_value = vida_actual
@@ -55,22 +56,31 @@ func _physics_process(delta):
 
 
 func recibir_danio(cantidad):
+	# CLÁUSULA DE GUARDIA: Si el jugador ya murió, ignoramos el daño
+	if yamurio:
+		return 
+		
 	vida_actual -= cantidad
 	barra_vida.value = vida_actual
+	
 	if vida_actual <= 0:
 		morir()
 
 func morir():
-	get_tree().paused = true # pausamos el juego
+	# Doble seguridad: Si ya pasó por acá, cortamos la ejecución
+	if yamurio:
+		return 
+		
+	# Lo marcamos como muerto INMEDIATAMENTE para que nadie más entre a esta función
+	yamurio = true 
 	
+	get_tree().paused = true # pausamos el juego
 	sonido_muerte.play()
 		
-	Global.emit_signal("jugador_murio",yamurio)
+	Global.emit_signal("jugador_murio", yamurio)
 	
-	yamurio=true
 	set_physics_process(false) # Pausamos su movimiento
 	visible = false
-	
 func _on_revivio_jugador():
 		vida_actual=PlayerData.vida
 		yamurio=true
@@ -120,6 +130,9 @@ func resetear_recursos_temporales():
 	for key in minerales_en_partida.keys():
 		minerales_en_partida[key] = 0
 		
-func sumar_minerales(tipomineral, cantidad):
-	#Por ahora hardcodeado hay que separar por tipo de mineral
-	minerales_en_partida[tipomineral]+=cantidad
+func sumar_almas(cantidad):
+	almas_en_partida += cantidad
+
+func sumar_minerales(tipo, cantidad):
+	if minerales_en_partida.has(tipo):
+		minerales_en_partida[tipo] += cantidad

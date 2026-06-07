@@ -11,6 +11,7 @@ extends Control
 var indice_seleccionado = 0
 
 func _ready():
+	Global.referencia_jugador = null
 	# Al entrar al menú, mostramos los datos del "banco"
 	actualizar_ui_recursos()
 	
