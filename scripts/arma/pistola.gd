@@ -22,10 +22,12 @@ func aplicar_danio(objetivo: Node2D) -> void:
 		return
 		
 	var nueva_bala = bala_escena.instantiate()
+	nueva_bala.danio_bala = danio+PlayerData.danio
+	print("daño bala: ",nueva_bala.danio_bala)
 	# La agregamos al mapa (current_scene) para que se mueva independiente del jugador
 	get_tree().current_scene.add_child(nueva_bala)
 	
 	nueva_bala.global_position = global_position
 	# La dirección se calcula hacia el objetivo actual
 	nueva_bala.direccion = (objetivo.global_position - global_position).normalized()
-	nueva_bala.danio_bala = danio
+	

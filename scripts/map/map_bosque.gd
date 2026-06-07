@@ -14,7 +14,7 @@ func _ready() -> void:
 	var ajustes = Global.ajustes_dificultad[Global.dificultad_actual]
 	$EnemyTimer.timeout.connect(_on_enemy_timer_timeout)
 	print("Inicia el mapa en dificultad: ", Global.dificultad_actual)
-	$EnemyTimer.wait_time = 0.5#ajustes["spawn_rate"]
+	$EnemyTimer.wait_time = Global.obtener_multiplicador_enemigos()
 	$EnemyTimer.start()
 	for nodo in get_tree().get_nodes_in_group("jugador"):
 		print(nodo.name, " - ", nodo.get_class(), " - ", nodo.get_path())

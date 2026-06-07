@@ -2,7 +2,7 @@ extends Area2D
 
 
 var direction:= Vector2.ZERO
-var speed: float = 1000.0
+var speed: float = 200.0
 var danio:= 10
 
 

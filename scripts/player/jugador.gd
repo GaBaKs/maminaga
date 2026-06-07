@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var vida_actual=PlayerData.vida
 # --- VARIABLES DE INVENTARIO TEMPORAL ---
-var almas_en_partida = 0
 var minerales_en_partida: Dictionary = {
 	"mineral1": 0,
 	"mineral2": 0,
@@ -42,7 +41,7 @@ func _ready():
 		barra_vida.max_value = vida_actual
 		barra_vida.value = vida_actual
 	#self.mineral_recolectado.connect(_sumar_al_global)
-	if PlayerData.arma_escena:
+		PlayerData.arma_escena=PlayerData.armas_disponibles[PlayerData.arma_equipada]
 		arma_actual = PlayerData.arma_escena.instantiate()
 		add_child(arma_actual)
 		print("arma actual:", arma_actual)
@@ -126,13 +125,9 @@ func animacion():
 
 # Reinicia los contadores (llamar al inicio de cada partida)
 func resetear_recursos_temporales():
-	almas_en_partida = 0
 	for key in minerales_en_partida.keys():
 		minerales_en_partida[key] = 0
 		
-func sumar_almas(cantidad):
-	almas_en_partida += cantidad
-
 func sumar_minerales(tipo, cantidad):
 	if minerales_en_partida.has(tipo):
 		minerales_en_partida[tipo] += cantidad

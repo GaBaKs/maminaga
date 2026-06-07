@@ -4,7 +4,7 @@ extends Enemigo_abstract
 var proyectil = preload("res://escenas/enemigos/proyectiles/semilla_planta.tscn")
 var cooldown_ataque := 5.0
 var timer_ataque := 0.0
-var distancia_ataque := 100.0  # distancia máxima para disparar
+var distancia_ataque := 150.0  # distancia máxima para disparar
 var disparando := false
 
 
