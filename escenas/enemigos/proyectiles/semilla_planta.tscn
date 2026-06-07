@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://n7xn3vodk4jl"]
+
+[ext_resource type="Texture2D" uid="uid://b21yn6ujuihuo" path="res://assets/enemigo/PlantaSprites/semilla_planta.png" id="1_at56r"]
+[ext_resource type="Script" uid="uid://dihfnh4mh0u0m" path="res://scripts/enemigo/proyectiles/semilla_planta.gd" id="1_sjxbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjxbf"]
+size = Vector2(6, 4)
+
+[node name="semilla_planta" type="Area2D" unique_id=246347285]
+script = ExtResource("1_sjxbf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=817637095]
+shape = SubResource("RectangleShape2D_sjxbf")
+
+[node name="SemillaPlanta" type="Sprite2D" parent="." unique_id=11897422]
+position = Vector2(0, -2.0861626e-07)
+rotation = -0.6847273
+scale = Vector2(0.0409796, 0.04097961)
+texture = ExtResource("1_at56r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

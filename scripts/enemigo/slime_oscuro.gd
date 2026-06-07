@@ -1,7 +1,6 @@
 extends Enemigo_abstract
 
 
-var proyectil = preload("res://escenas/enemigos/proyectiles/orbe_vampiro.tscn")
 var cooldown_ataque := 1.0
 var timer_ataque := 0.0
 var distancia_ataque := 40.0  

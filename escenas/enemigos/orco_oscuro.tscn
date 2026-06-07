@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bmlcpnff2i87" path="res://assets/enemigo/OrcoSprites/PNG/Orc2/With_shadow/orc2_run_with_shadow.png" id="1_b107v"]
 [ext_resource type="Script" uid="uid://jx5mdoaf2b4v" path="res://scripts/enemigo/orco_oscuro.gd" id="1_xkter"]
 [ext_resource type="Texture2D" uid="uid://bv4xqatnjkwr" path="res://assets/enemigo/OrcoSprites/PNG/Orc2/With_shadow/orc2_attack_with_shadow.png" id="2_xkter"]
+[ext_resource type="Texture2D" uid="uid://dc44brtf1wl8k" path="res://assets/enemigo/OrcoSprites/PNG/Orc2/With_shadow/orc2_death_with_shadow.png" id="4_xqi4s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqi4s"]
 radius = 12.0
@@ -264,6 +265,38 @@ region = Rect2(384, 128, 64, 64)
 atlas = ExtResource("1_b107v")
 region = Rect2(448, 128, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm81l"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kjyf"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh74e"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4boa"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk81h"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wybgm"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nflx2"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkheq"]
+atlas = ExtResource("4_xqi4s")
+region = Rect2(448, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bm81l"]
 animations = [{
 "frames": [{
@@ -349,7 +382,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_saxjx")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque abajo",
 "speed": 10.0
 }, {
@@ -378,7 +411,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mgtm4")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque arriba",
 "speed": 10.0
 }, {
@@ -407,7 +440,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_02ojx")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque derecha",
 "speed": 10.0
 }, {
@@ -436,7 +469,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g0g1g")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque izquierda",
 "speed": 10.0
 }, {
@@ -497,6 +530,35 @@ animations = [{
 "loop": true,
 "name": &"izquierda",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm81l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kjyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh74e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4boa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk81h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wybgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nflx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkheq")
+}],
+"loop": false,
+"name": &"muerte",
+"speed": 10.0
 }]
 
 [node name="Orco oscuro" type="CharacterBody2D" unique_id=1889674211]
@@ -509,5 +571,4 @@ shape = SubResource("CapsuleShape2D_xqi4s")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=472164742]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_bm81l")
-animation = &"abajo"
-frame_progress = 0.80875975
+animation = &"muerte"

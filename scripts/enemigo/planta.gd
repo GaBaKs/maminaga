@@ -1,16 +1,16 @@
 extends Enemigo_abstract
 
 
-var cooldown_ataque := 1.0
+var proyectil = preload("res://escenas/enemigos/proyectiles/semilla_planta.tscn")
+var cooldown_ataque := 5.0
 var timer_ataque := 0.0
-var distancia_ataque := 40.0  
-var atacando := false
-var jugador_ref 
+var distancia_ataque := 100.0  # distancia máxima para disparar
+var disparando := false
 
 
 func actualizar_animacion():
 	var direccionAnimacion = "abajo"
-	if atacando:  # animación de ataque
+	if disparando:  # animación de ataque
 		if (direccion_actual.x <= -0.5):
 			direccionAnimacion = "ataque izquierda"
 		elif (direccion_actual.x >= 0.5):
@@ -33,44 +33,42 @@ func actualizar_animacion():
 func _ready():
 	super._ready()  # ejecuta el _ready() del padre (Enemigo_abstract)
 	vida_enemigo = 100  
-	danio = 10
-	if not $AnimatedSprite2D.animation_finished.is_connected(_on_animacion_terminada):
-		$AnimatedSprite2D.animation_finished.connect(_on_animacion_terminada)
+	$AnimatedSprite2D.animation_finished.connect(_on_animacion_terminada)
 	
-
 func _on_animacion_terminada():
 	var anim = $AnimatedSprite2D.animation
 	if anim.begins_with("ataque"):
-		atacando = false
-		atacar(jugador_ref)
+		disparando = false
+		disparar()
 	
 func _physics_process(delta):
 	var jugador = get_tree().get_first_node_in_group("jugador")
 	if jugador:
-		jugador_ref = jugador 
 		var distancia = global_position.distance_to(jugador.global_position)
 		if distancia <= distancia_ataque: # está cerca → se frena y cuenta para disparar
 			velocity = Vector2.ZERO
 			move_and_slide() 
-			if not atacando:
+			if not disparando:
 				timer_ataque -= delta
 				if timer_ataque <= 0:
-					atacando = true
-					atacar(jugador)
+					disparando = true
 					timer_ataque = cooldown_ataque
 		else: # está lejos → se mueve normal
-			atacando = false
+			disparando = false
 			super._physics_process(delta)
 	actualizar_animacion()
 		
-func atacar(jugador):
-	if jugador.has_method("recibir_danio"):
-		jugador.recibir_danio(danio)  # ajustá el daño
+func disparar():
+	if direccion_actual == null:
+		return
+	var nuevo_orbe = proyectil.instantiate()
+	get_parent().add_child(nuevo_orbe)
+	nuevo_orbe.global_position = global_position
+	nuevo_orbe.direction = direccion_actual  # le pasa hacia dónde ir
 	
 func reproducir_animacion_muerte():
 	$AnimatedSprite2D.play("muerte")
-	if not $AnimatedSprite2D.animation_finished.is_connected(_on_muerte_terminada):
-		$AnimatedSprite2D.animation_finished.connect(_on_muerte_terminada)
+	$AnimatedSprite2D.animation_finished.connect(_on_muerte_terminada)
 
 func _on_muerte_terminada():
 	queue_free()

@@ -6,9 +6,9 @@ signal partida_ganada
 
 #cuando tengamos mas enemigos, hay que precargarlos todos aca con ,
 var enemigosBosque = {
-	"Goblin": preload("res://escenas/enemigos/enemigo.tscn"),
-	"enemigo2": preload("res://escenas/enemigos/slime.tscn"),
-	"enemigo3": preload("res://escenas/enemigos/orco.tscn")
+	"Jabali": preload("res://escenas/enemigos/jabali.tscn"),
+	"Planta": preload("res://escenas/enemigos/planta.tscn"),
+	"Slime": preload("res://escenas/enemigos/slime.tscn")
 }
 
 var enemigosOscuro = {
