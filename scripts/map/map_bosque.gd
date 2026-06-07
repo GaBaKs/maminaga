@@ -117,3 +117,7 @@ func generar_minerales_por_dificultad():
 				
 	print("¡Éxito! Se spawnearon un total de ", gemas_creadas, " minerales.")
 	print("--- FIN SPAWN MINERALES ---")
+# Conectá la señal timeout de tu TimerSupervivencia
+func _on_timer_supervivencia_timeout():
+	# Pasaron los 10 minutos
+	Global.ganar_partida()

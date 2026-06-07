@@ -161,9 +161,10 @@ func jugador_murio():
 		cargar_datos()
 		#ir a menu inicio
 
-func sumar_minerales(tipomineral, cantidad):
-	#Por ahora hardcodeado hay que separar por tipo de mineral
-	minerales[tipomineral]+=cantidad
+#func sumar_minerales(tipomineral, cantidad):
+#
+#	#Por ahora hardcodeado hay que separar por tipo de mineral
+#	minerales[tipomineral]+=cantidad
 
 func subir_nivel():
 	nivel+=1

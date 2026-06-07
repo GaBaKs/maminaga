@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
 var vida_actual=PlayerData.vida
-var minerales=0
-var almas=0
-var velocidad=200
+# --- VARIABLES DE INVENTARIO TEMPORAL ---
+var almas_en_partida = 0
+var minerales_en_partida: Dictionary = {
+	"mineral1": 0,
+	"mineral2": 0,
+	"mineral3": 0
+}
+# ----------------------------------------
+var velocidad = 200
 @onready var sonido_muerte = $Sonido_Muerte
 @onready var sonido_pasos = $Pasos
 
@@ -104,3 +110,16 @@ func animacion():
 
 		elif ultima_direccion.x < 0:
 			animated_sprite.play("idle_left")
+			
+			
+			
+
+# Reinicia los contadores (llamar al inicio de cada partida)
+func resetear_recursos_temporales():
+	almas_en_partida = 0
+	for key in minerales_en_partida.keys():
+		minerales_en_partida[key] = 0
+		
+func sumar_minerales(tipomineral, cantidad):
+	#Por ahora hardcodeado hay que separar por tipo de mineral
+	minerales_en_partida[tipomineral]+=cantidad

@@ -14,9 +14,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugador"):
 		# Ahora le pasamos el tipo de mineral y la cantidad al PlayerData
 		# (Asegurate de que PlayerData.sumar_minerales reciba estos dos parámetros)
-		PlayerData.sumar_minerales(tipo_mineral, valor) 
+		Global.referencia_jugador.sumar_minerales(tipo_mineral,valor)
 		
-		print("Recogido: ", tipo_mineral, " | Total: ", PlayerData.minerales[tipo_mineral])
+		print("Recogido: ", tipo_mineral, " | Total: ", Global.referencia_jugador.minerales_en_partida[tipo_mineral])
 		
 		# Efecto de sonido o partículas aquí (puedes instanciar un nodo de partículas antes de borrarlo)
 		queue_free()

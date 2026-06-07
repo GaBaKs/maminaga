@@ -1,9 +1,8 @@
 extends Node
-
-
 var nivel_a_cargar: String
 signal jugador_murio(yamurio:bool)
 signal jugador_revivio
+signal partida_ganada
 
 #cuando tengamos mas enemigos, hay que precargarlos todos aca con ,
 var enemigosBosque = {
@@ -30,16 +29,6 @@ var cartel_interfaz: CanvasLayer
 
 var mult_dificultad = [1, 1.5, 2]
 
-# --- SISTEMA DE MINERALES Y ECONOMÍA (BANCO) ---
-var minerales_tipo_1: int = 0 # Gema Roja (ej. Bosque)
-var minerales_tipo_2: int = 0 # Gema Azul (ej. Hielo)
-var minerales_tipo_3: int = 0 # Gema Verde (ej. Desierto)
-var almas_totales: int = 0
-
-# --- CONTADORES DE LA PARTIDA ACTUAL ---
-var minerales_partida: int = 0 
-var almas_partida: int = 0 # Cambiado de 'almas' a 'almas_partida' para consistencia
-
 # --- CONFIGURACIÓN DE MAPAS Y RECOMPENSAS ---
 # Aquí definimos qué gema da cada mapa para que el sistema sea automático
 var configuracion_mapas = {
@@ -47,12 +36,6 @@ var configuracion_mapas = {
 	"hielo": "res://mapas/hielo.tscn",
 	"desierto": "res://mapas/desierto.tscn"
 }
-
-
-# --- LÓGICA DE PARTIDA ---
-
-func sumar_almas(cantidad):
-	almas_partida += cantidad
 
 
 # --- DIFICULTAD ---
@@ -68,3 +51,18 @@ func obtener_multiplicador_enemigos():
 func obtener_multiplicador_gemas():
 	return ajustes_dificultad[dificultad_actual]["multiplicador_minerales"]
 	
+func ganar_partida():
+	get_tree().paused = true # Detiene el tiempo
+	
+	if referencia_jugador != null:
+		# 1. Pasamos las cosas de la mochila del jugador al Banco (PlayerData)
+		PlayerData.almas_totales += referencia_jugador.almas
+		
+		for key in referencia_jugador.minerales.keys():
+			PlayerData.minerales[key] += referencia_jugador.minerales[key]
+			
+		# 2. Persistimos los datos
+		PlayerData.save_data()
+	
+	# 3. Llamamos al cartel de Victoria
+	emit_signal("partida_ganada")
