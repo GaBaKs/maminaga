@@ -28,12 +28,7 @@ func _ready() -> void:
 	area.body_exited.connect(_on_body_exited)
 
 
-func _physics_process(_delta: float) -> void:
-	_actualizar_posicion()
-	if puede_atacar and enemigos_al_alcance.size() > 0:
-		var objetivo = seleccionar_objetivo()
-		if objetivo:
-			atacar(objetivo)
+
 
 func _actualizar_posicion() -> void:
 	if not is_instance_valid(jugador):
@@ -74,3 +69,31 @@ func _on_body_exited(body: Node2D) -> void:
 	if body in enemigos_al_alcance:
 		enemigos_al_alcance.erase(body)
 		enemigo_perdido.emit(body)
+		
+		
+func _physics_process(delta: float) -> void:
+	var objetivo: Node2D = null
+	
+	if enemigos_al_alcance.size() > 0:
+		objetivo = seleccionar_objetivo()
+
+	if is_instance_valid(objetivo) and is_instance_valid(jugador):
+		var angulo_deseado = (objetivo.global_position - jugador.global_position).angle()
+		var nuevo_angulo = lerp_angle(direccion_actual.angle(), angulo_deseado, 12.0 * delta)
+		
+		direccion_actual = Vector2.RIGHT.rotated(nuevo_angulo)
+		rotation = direccion_actual.angle() 
+
+		# --- NUEVA LÓGICA: VOLTEAR EL ARMA SI MIRA A LA IZQUIERDA ---
+		if direccion_actual.x < 0:
+			# Si la dirección en X es negativa (apunta a la izquierda), invertimos la escala Y
+			scale.y = -1
+		else:
+			# Si apunta a la derecha, la escala Y vuelve a la normalidad
+			scale.y = 1
+		# ------------------------------------------------------------
+
+	_actualizar_posicion()
+
+	if puede_atacar and is_instance_valid(objetivo):
+		atacar(objetivo)

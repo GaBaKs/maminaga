@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_k34yg"]
 [ext_resource type="Script" uid="uid://dmcu7nwdmhexp" path="res://scripts/menu/aspectos.gd" id="1_v6was"]
 [ext_resource type="Texture2D" uid="uid://dbur8j38jcj5n" path="res://assets/menu/aspectos.png" id="2_v6was"]
+[ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="4_w8jay"]
+[ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="5_a4do7"]
 
 [node name="Aspectos" type="Control" unique_id=300443084]
 layout_mode = 3
@@ -33,5 +35,10 @@ offset_left = 1016.0
 offset_top = 33.0
 offset_right = 1087.0
 offset_bottom = 100.0
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=1276026373]
+stream = ExtResource("4_w8jay")
+volume_db = -30.0
+script = ExtResource("5_a4do7")
 
 [connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]

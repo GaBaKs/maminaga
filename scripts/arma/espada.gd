@@ -20,3 +20,4 @@ func aplicar_danio(objetivo: Node2D) -> void:
 		print("¡Espadazo a: ", objetivo.name, "!")
 		var direccion_golpe = (objetivo.global_position - global_position).normalized()
 		objetivo.recibir_danio_enemigo(danio, direccion_golpe)
+		

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://skt765je2c7m" path="res://scripts/menu/equipo.gd" id="1_it43d"]
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="2_p4wvx"]
 [ext_resource type="Texture2D" uid="uid://cj8xhcs46gckf" path="res://assets/menu/equipo.png" id="3_it43d"]
+[ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="4_qy112"]
+[ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="5_np6vg"]
 
 [node name="equipo" type="Control" unique_id=1359550272]
 layout_mode = 3
@@ -50,6 +52,11 @@ offset_left = 809.0
 offset_top = 344.0
 offset_right = 958.0
 offset_bottom = 421.0
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=271399487]
+stream = ExtResource("4_qy112")
+volume_db = -30.0
+script = ExtResource("5_np6vg")
 
 [connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]
 [connection signal="pressed" from="boton_espada" to="." method="_on_boton_espada_pressed"]

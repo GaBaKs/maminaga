@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var vida_actual=PlayerData.vida
+
 # --- VARIABLES DE INVENTARIO TEMPORAL ---
 var minerales_en_partida: Dictionary = {
 	"mineral1": 0,
