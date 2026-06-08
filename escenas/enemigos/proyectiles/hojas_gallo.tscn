@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cx0ay867fou8h"]
+
+[ext_resource type="Script" uid="uid://dd16kqv6k4ges" path="res://scripts/enemigo/proyectiles/hojas_gallo.gd" id="1_ghyrp"]
+[ext_resource type="Texture2D" uid="uid://jp5dgts7rw8e" path="res://assets/enemigo/gallo/hojas_gallo.png" id="1_gyi1g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ghyrp"]
+radius = 13.999844
+height = 57.999355
+
+[node name="hojas_gallo" type="Area2D" unique_id=471802512]
+script = ExtResource("1_ghyrp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=308464631]
+position = Vector2(1.7881393e-07, -4.6588866e-10)
+rotation = -1.5755373
+shape = SubResource("CapsuleShape2D_ghyrp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2074693856]
+position = Vector2(-4, -1)
+scale = Vector2(0.09738372, 0.09738372)
+texture = ExtResource("1_gyi1g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

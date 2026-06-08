@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bmqd3t43aq0ey"]
 
 [ext_resource type="Texture2D" uid="uid://l0camp75wcgo" path="res://tileset/spritesheet.png" id="1_13ahe"]
+[ext_resource type="Script" uid="uid://cw7xsswhp4ah2" path="res://scripts/map/mapa_abismo_de_los_lamentos.gd" id="1_hvy66"]
 [ext_resource type="Texture2D" uid="uid://c1l6psp41vmsk" path="res://tileset/Trees/Trees/Snow_christmass_tree2.png" id="2_u3pro"]
 [ext_resource type="Texture2D" uid="uid://cmpmbe68xg3n7" path="res://tileset/PNG_n_Tiled/Objects.png" id="3_v2ks0"]
 [ext_resource type="Texture2D" uid="uid://cj2s4tcesv717" path="res://tileset/PNG_n_Tiled/Details.png" id="4_k55l2"]
@@ -21,11 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://dre7i1cuft7kx" path="res://tileset/Decoration/Snowman_3.png" id="12_wugam"]
 [ext_resource type="Texture2D" uid="uid://cy1t242tmhc0y" path="res://tileset/Decoration/Snowman_4.png" id="13_4rr2o"]
 [ext_resource type="Texture2D" uid="uid://bme1klvvaws8e" path="res://tileset/Fences/Fence_Bottom_Right.png" id="13_luqdx"]
-[ext_resource type="AudioStream" uid="uid://t2ly0kx0mmml" path="res://audios/musica_nieve.mp3" id="14_2njgf"]
+[ext_resource type="AudioStream" uid="uid://d3ehofgyjhu7k" path="res://audios/musica_nieve.mp3" id="14_2njgf"]
 [ext_resource type="Texture2D" uid="uid://b5qcjjmluel4k" path="res://tileset/Fences/Fence_Top_Left.png" id="14_e1ygp"]
 [ext_resource type="Texture2D" uid="uid://df13owhi1ifsl" path="res://tileset/Decoration/Snowman_5.png" id="14_hvy66"]
 [ext_resource type="Script" uid="uid://c6ce0au7wlcaj" path="res://scripts/sonidos/musica/musica_mapa_bosque.gd" id="15_4lpsi"]
-[ext_resource type="Texture2D" uid="uid://dcm0hl13a1645" path="res://tileset/mapacorrosion/PNG/Objects.png" id="15_44ljn"]
+[ext_resource type="Texture2D" uid="uid://dimd44svxcaw6" path="res://tileset/mapacorrosion/PNG/Objects.png" id="15_44ljn"]
 [ext_resource type="Texture2D" uid="uid://f7ik723xj3x2" path="res://tileset/Trees/Tree_3.png" id="17_hvy66"]
 [ext_resource type="Texture2D" uid="uid://cm0wqec4qr8od" path="res://tileset/Fences/Fence_Top_Right.png" id="20_r30of"]
 [ext_resource type="Texture2D" uid="uid://m6t31a1xlldq" path="res://tileset/Decoration/Log_Cabin.png" id="21_t8qd3"]
@@ -9583,8 +9584,9 @@ texture = ExtResource("6_hvy66")
 [sub_resource type="TileSet" id="TileSet_hvy66"]
 sources/0 = SubResource("TileSetAtlasSource_4rr2o")
 
-[node name="Node2D" type="Node2D" unique_id=1610385003]
+[node name="mapa nieve" type="Node2D" unique_id=1610385003]
 y_sort_enabled = true
+script = ExtResource("1_hvy66")
 
 [node name="TilemapLayers" type="Node2D" parent="." unique_id=1461305656]
 

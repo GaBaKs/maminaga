@@ -18,9 +18,9 @@ var enemigosOscuro = {
 }
 
 var enemigosNieve = {
-	"Goblin": preload("res://escenas/enemigos/enemigo.tscn"),
-	"enemigo2": preload("res://escenas/enemigos/slime.tscn"),
-	"enemigo3": preload("res://escenas/enemigos/orco.tscn")
+	"Gallo": preload("res://escenas/enemigos/gallo.tscn"),
+	"Planta Nieve": preload("res://escenas/enemigos/planta_nieve.tscn"),
+	"Orco Nieve": preload("res://escenas/enemigos/orco_nieve.tscn")
 }
 # --- Variables de Navegación y Configuración ---
 var mapa_seleccionado: String = "" # Ejemplo: "res://mapas/bosque.tscn"
