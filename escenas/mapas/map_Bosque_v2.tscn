@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/UI/cartel_gameover.tscn" id="11_wulo0"]
 [ext_resource type="Texture2D" uid="uid://dpxphfm7u64p7" path="res://assets/arma/arma-test.webp" id="12_kpj04"]
 [ext_resource type="AudioStream" uid="uid://cf4u0udtle7mh" path="res://audios/musica_bosque.mp3" id="13_6o02u"]
+[ext_resource type="PackedScene" uid="uid://c50j3oip8awvq" path="res://escenas/UI/cartel_victoria.tscn" id="13_qryxp"]
+[ext_resource type="PackedScene" uid="uid://crnppfxf0qxeb" path="res://escenas/player/extraccion.tscn" id="14_4t432"]
 [ext_resource type="Script" uid="uid://c6ce0au7wlcaj" path="res://scripts/sonidos/musica/musica_mapa_bosque.gd" id="14_qryxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]
@@ -6258,5 +6260,13 @@ script = ExtResource("14_qryxp")
 wait_time = 600.0
 one_shot = true
 autostart = true
+
+[node name="CartelVictoria" parent="." unique_id=494833260 instance=ExtResource("13_qryxp")]
+
+[node name="extraccion" parent="." unique_id=1793651603 instance=ExtResource("14_4t432")]
+position = Vector2(113, -287)
+
+[node name="extraccion2" parent="." unique_id=669638459 instance=ExtResource("14_4t432")]
+position = Vector2(-2734, -646)
 
 [connection signal="timeout" from="Timer_supervivencia" to="." method="_on_timer_supervivencia_timeout"]

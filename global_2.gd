@@ -57,8 +57,6 @@ func ganar_partida():
 	get_tree().paused = true
 	
 	if referencia_jugador:
-		# SUMAR ALMAS
-		PlayerData.almas += referencia_jugador.almas_en_partida
 		
 		# SUMAR MINERALES
 		for tipo in referencia_jugador.minerales_en_partida.keys():

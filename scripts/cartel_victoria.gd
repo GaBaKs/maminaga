@@ -1,7 +1,9 @@
 extends CanvasLayer
 
-@onready var label_almas = $Panel/VBoxContainer/LabelAlmas
-@onready var label_minerales = $Panel/VBoxContainer/LabelMinerales
+@onready var label_mineral1 = $CenterContainer/VBoxContainer/GridContainer/LabelMin1
+@onready var label_mineral2 = $CenterContainer/VBoxContainer/GridContainer/LabelMin2
+@onready var label_mineral3 = $CenterContainer/VBoxContainer/GridContainer/LabelMin3
+
 
 func _ready():
 	visible = false
@@ -9,12 +11,15 @@ func _ready():
 	Global.partida_ganada.connect(mostrar_cartel_victoria)
 
 func mostrar_cartel_victoria():
+	print("¡EL CARTEL RECIBIÓ LA SEÑAL Y DEBERÍA MOSTRARSE!") # <-- Agregá esto
 	var jugador = Global.referencia_jugador
 	
 	if jugador != null:
 		# Leemos la mochila para mostrarle al jugador lo que logró sacar
-		label_almas.text = "Almas recolectadas: " + str(jugador.almas_en_partida)
-		label_minerales.text = "Minerales:\nAzul: " + str(jugador.minerales_en_partida["mineral1"]) + "\nVerde: " + str(jugador.minerales_en_partida["mineral2"]) + "\nRojo: " + str(jugador.minerales_en_partida["mineral3"])
+		label_mineral1.text = "Cantidad de amatista recolectada " + str(jugador.minerales_en_partida["mineral1"]) 
+		label_mineral2.text = "Cantidad de rubi recolectado: " + str(jugador.minerales_en_partida["mineral2"]) 
+		label_mineral3.text = "Cantidad de agatha recolectada:" + str(jugador.minerales_en_partida["mineral3"])
+		
 	
 	visible = true
 
