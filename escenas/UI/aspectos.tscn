@@ -46,8 +46,8 @@ script = ExtResource("5_a4do7")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=120694758]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1150.0
+offset_bottom = 647.0
 vertical_scroll_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1987631841]

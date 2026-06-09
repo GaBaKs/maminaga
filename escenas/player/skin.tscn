@@ -1,22 +1,43 @@
 [gd_scene format=3 uid="uid://chvklfmaq8w1j"]
 
 [ext_resource type="Script" uid="uid://if6f51obcab4" path="res://scripts/player/skin.gd" id="1_qmidv"]
+[ext_resource type="Texture2D" uid="uid://bpuhf4hdnu0l4" path="res://assets/menu/marco_skin.png" id="2_v7ak3"]
 
 [node name="Skin" type="Control" unique_id=776449124]
+custom_minimum_size = Vector2(150, 250)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_qmidv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=83680611]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1854518847]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 58.0
+alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AnimatedSprite2D" unique_id=1854518847]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="AnimatedSprite2D/VBoxContainer" unique_id=1756989878]
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1530648147]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="AnimatedSprite2D/VBoxContainer" unique_id=1691811940]
-layout_mode = 2
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Control" unique_id=83680611]
+position = Vector2(51, 0)
+scale = Vector2(4, 4)
 
-[connection signal="pressed" from="AnimatedSprite2D/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control" unique_id=904062527]
+layout_mode = 0
+offset_top = 116.0
+offset_right = 400.0
+offset_bottom = 516.0
+texture = ExtResource("2_v7ak3")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1756989878]
+layout_mode = 2
+text = "Nombre skin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1691811940]
+layout_mode = 2
+text = "comprar"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

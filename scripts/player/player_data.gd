@@ -30,10 +30,14 @@ var almas = 0
 # SKINS
 
 var todas_las_skins = {
-	"default": "res://nyan_default.png",
-	"ninja": "res://nyan_ninja.png",
-	"gold": "res://nyan_gold.png"
+	"default": "res://escenas/player/skins/skin_default.tres",
+	"planta": "res://escenas/player/skins/skin_planta.tres",
+	"nieve": "res://escenas/player/skins/skin_nieve.tres",
+	"patito": "res://escenas/player/skins/skin_patito.tres",
+	"reno": "res://escenas/player/skins/skin_reno.tres",
+	"sombrero": "res://escenas/player/skins/skin_sombrero.tres"
 }
+
 var skins_desbloqueadas = ["default"] 
 
 func desbloquear_skin(id: String):

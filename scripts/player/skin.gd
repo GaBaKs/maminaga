@@ -1,6 +1,6 @@
 extends Control
 
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite = $VBoxContainer/Control/AnimatedSprite2D
 @onready var label_nombre = $VBoxContainer/Label
 @onready var boton_accion = $VBoxContainer/Button
 
