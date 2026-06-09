@@ -16,32 +16,99 @@ script = ExtResource("1_1da11")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -3.0
+offset_right = 7.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.039215688, 0.039215688, 0.039215688, 0.8117647)
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.9372549)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=189618803]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -15.5
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BotonVolverMenu" type="TextureButton" parent="." unique_id=1280544353]
+offset_left = 516.0
+offset_top = 452.0
+offset_right = 564.0
+offset_bottom = 485.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_xm4ke")
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1203507996]
+[node name="Label" type="Label" parent="BotonVolverMenu" unique_id=1169173167]
 texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.703
+anchor_bottom = 2.1330001
+offset_left = 10.5
+offset_top = 10.5
+offset_right = 2.7560005
+offset_bottom = -46.889008
+theme_override_colors/font_color = Color(0.1272859, 0.018312646, 0.010464549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t48rw")
+theme_override_font_sizes/font_size = 15
+text = "Volver "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1396892204]
+offset_left = 391.0
+offset_top = 201.0
+offset_right = 810.0
+offset_bottom = 459.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1802549644]
 layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="icon_gema1" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=139514707]
+layout_mode = 2
+texture = ExtResource("4_1ofgw")
+
+[node name="LabelMin1" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1574360639]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t48rw")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=660122653]
+layout_mode = 2
+
+[node name="icon_gema2" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=66627327]
+layout_mode = 2
+texture = ExtResource("5_hs8du")
+
+[node name="LabelMin2" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=2084976815]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t48rw")
+theme_override_font_sizes/font_size = 18
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1391126699]
+layout_mode = 2
+
+[node name="icon_gema3" type="TextureRect" parent="VBoxContainer/HBoxContainer3" unique_id=319961663]
+layout_mode = 2
+texture = ExtResource("6_7xtrf")
+
+[node name="LabelMin3" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=417962167]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t48rw")
+theme_override_font_sizes/font_size = 18
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1203507996]
+texture_filter = 1
+offset_left = 394.0
+offset_top = 50.0
+offset_right = 573.0
+offset_bottom = 123.0
+scale = Vector2(2, 2)
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("2_mchn7")
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1396892204]
-layout_mode = 2
-
-[node name="Titulo" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1383562254]
-layout_mode = 2
+[node name="Titulo" type="Label" parent="TextureRect" unique_id=1383562254]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 18.0
+offset_right = 118.0
+offset_bottom = 42.0
 theme_override_colors/font_color = Color(0.15937126, 0.026097149, 0.01757285, 1)
 theme_override_colors/font_shadow_color = Color(0.06950942, 0.020476347, 0.0035845677, 0)
 theme_override_fonts/font = ExtResource("3_t48rw")
@@ -50,65 +117,4 @@ text = "Victoria"
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=235623132]
-layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer" unique_id=889724833]
-layout_mode = 2
-
-[node name="icon_almas" type="TextureRect" parent="CenterContainer/VBoxContainer/GridContainer" unique_id=1626903157]
-layout_mode = 2
-
-[node name="LabelAlmas" type="Label" parent="CenterContainer/VBoxContainer/GridContainer" unique_id=1353413199]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t48rw")
-
-[node name="LabelMin1" type="Label" parent="CenterContainer/VBoxContainer/GridContainer" unique_id=1574360639]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t48rw")
-horizontal_alignment = 1
-
-[node name="icon_gema1" type="TextureRect" parent="CenterContainer/VBoxContainer/GridContainer/LabelMin1" unique_id=139514707]
-layout_mode = 0
-offset_left = -27.0
-offset_top = -2.0
-offset_right = 37.0
-offset_bottom = 62.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_1ofgw")
-
-[node name="LabelMin2" type="Label" parent="CenterContainer/VBoxContainer/GridContainer" unique_id=2084976815]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t48rw")
-
-[node name="icon_gema2" type="TextureRect" parent="CenterContainer/VBoxContainer/GridContainer/LabelMin2" unique_id=66627327]
-layout_mode = 0
-offset_left = -29.0
-offset_top = -3.0
-offset_right = 221.0
-offset_bottom = 61.0
-scale = Vector2(0.1, 0.3)
-texture = ExtResource("5_hs8du")
-
-[node name="LabelMin3" type="Label" parent="CenterContainer/VBoxContainer/GridContainer" unique_id=417962167]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t48rw")
-
-[node name="icon_gema3" type="TextureRect" parent="CenterContainer/VBoxContainer/GridContainer/LabelMin3" unique_id=319961663]
-layout_mode = 0
-offset_left = -26.0
-offset_right = 38.0
-offset_bottom = 64.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_7xtrf")
-
-[node name="TextureButton" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1280544353]
-layout_mode = 2
-texture_normal = ExtResource("2_xm4ke")
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/TextureButton" unique_id=1169173167]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("3_t48rw")
-text = "Volver al menu"
+[connection signal="pressed" from="BotonVolverMenu" to="." method="_on_boton_volver_menu_pressed"]

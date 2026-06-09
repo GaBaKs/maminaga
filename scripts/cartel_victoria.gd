@@ -1,9 +1,8 @@
 extends CanvasLayer
 
-@onready var label_mineral1 = $CenterContainer/VBoxContainer/GridContainer/LabelMin1
-@onready var label_mineral2 = $CenterContainer/VBoxContainer/GridContainer/LabelMin2
-@onready var label_mineral3 = $CenterContainer/VBoxContainer/GridContainer/LabelMin3
-
+@onready var label_mineral1 = $VBoxContainer/HBoxContainer/LabelMin1
+@onready var label_mineral2 = $VBoxContainer/HBoxContainer2/LabelMin2
+@onready var label_mineral3 = $VBoxContainer/HBoxContainer3/LabelMin3
 
 func _ready():
 	visible = false
@@ -16,10 +15,15 @@ func mostrar_cartel_victoria():
 	
 	if jugador != null:
 		# Leemos la mochila para mostrarle al jugador lo que logró sacar
-		label_mineral1.text = "Cantidad de amatista recolectada " + str(jugador.minerales_en_partida["mineral1"]) 
+		label_mineral1.text = "Cantidad de amatista recolectada: " + str(jugador.minerales_en_partida["mineral1"]) 
 		label_mineral2.text = "Cantidad de rubi recolectado: " + str(jugador.minerales_en_partida["mineral2"]) 
+<<<<<<< Updated upstream
 		label_mineral3.text = "Cantidad de agatha recolectada:" + str(jugador.minerales_en_partida["mineral3"])
 	
+=======
+		label_mineral3.text = "Cantidad de agatha recolectada: " + str(jugador.minerales_en_partida["mineral3"])
+		
+>>>>>>> Stashed changes
 	
 	visible = true
 
