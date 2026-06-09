@@ -4,8 +4,19 @@
 [ext_resource type="Script" uid="uid://dmcu7nwdmhexp" path="res://scripts/menu/aspectos.gd" id="1_v6was"]
 [ext_resource type="PackedScene" uid="uid://chvklfmaq8w1j" path="res://escenas/player/skin.tscn" id="2_a4do7"]
 [ext_resource type="Texture2D" uid="uid://dbur8j38jcj5n" path="res://assets/menu/aspectos.png" id="2_v6was"]
+[ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="4_rr6cx"]
 [ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="4_w8jay"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="5_a4do7"]
+[ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="6_2dset"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4ijv"]
+bg_color = Color(0, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly16x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dk7f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Aspectos" type="Control" unique_id=300443084]
 layout_mode = 3
@@ -23,6 +34,11 @@ offset_right = 1153.0
 offset_bottom = 647.0
 texture = ExtResource("1_k34yg")
 
+[node name="Pergamino1" type="Sprite2D" parent="TextureRect2" unique_id=1609017817]
+position = Vector2(170.5, 81)
+scale = Vector2(2.4814813, 2.838709)
+texture = ExtResource("4_rr6cx")
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1537316100]
 visible = false
 layout_mode = 0
@@ -34,23 +50,39 @@ texture = ExtResource("2_v6was")
 
 [node name="atras" type="Button" parent="." unique_id=1115786312]
 layout_mode = 0
-offset_left = 1016.0
-offset_top = 33.0
-offset_right = 1087.0
-offset_bottom = 100.0
+offset_left = 116.0
+offset_top = 51.0
+offset_right = 218.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("6_2dset")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_n4ijv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ly16x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7dk7f")
+text = "Atras
+"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=1276026373]
+position = Vector2(99, 326)
 stream = ExtResource("4_w8jay")
 volume_db = -30.0
 script = ExtResource("5_a4do7")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=120694758]
+clip_contents = false
+custom_minimum_size = Vector2(1000, 0)
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 647.0
+offset_left = 92.0
+offset_top = 205.0
+offset_right = 1142.0
+offset_bottom = 655.0
 vertical_scroll_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1987631841]
 layout_mode = 2
+theme_override_constants/separation = 70
 
 [connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]

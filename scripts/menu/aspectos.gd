@@ -24,3 +24,7 @@ func actualizar_menu():
 	for item in hbox_container.get_children():
 		if item.has_method("actualizar_boton"):
 			item.actualizar_boton()
+
+
+func _on_atras_pressed() -> void:
+	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")

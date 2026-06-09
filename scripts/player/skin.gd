@@ -2,7 +2,7 @@ extends Control
 
 @onready var animated_sprite = $VBoxContainer/Control/AnimatedSprite2D
 @onready var label_nombre = $VBoxContainer/Label
-@onready var boton_accion = $VBoxContainer/Button
+@onready var boton_accion = $VBoxContainer/Comprar
 
 var id_skin_actual: String = ""
 
@@ -30,7 +30,7 @@ func actualizar_boton():
 		boton_accion.text = "Comprar" # Podés agregar lógica de precios más adelante
 		boton_accion.disabled = false
 
-func _on_button_pressed():
+func _on_comprar_pressed():
 	if PlayerData.skins_desbloqueadas.has(id_skin_actual):
 		# Si ya la tiene, la equipa
 		PlayerData.skin_actual = id_skin_actual
