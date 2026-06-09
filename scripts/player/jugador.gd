@@ -42,7 +42,7 @@ func _ready():
 		barra_vida.max_value = vida_actual
 		barra_vida.value = vida_actual
 	#self.mineral_recolectado.connect(_sumar_al_global)
-		PlayerData.arma_escena=PlayerData.armas_disponibles[PlayerData.arma_equipada]
+		PlayerData.arma_escena=PlayerData.armas_disponibles[PlayerData.arma_equipada["nombre"]]
 		arma_actual = PlayerData.arma_escena.instantiate()
 		add_child(arma_actual)
 		print("arma actual:", arma_actual)

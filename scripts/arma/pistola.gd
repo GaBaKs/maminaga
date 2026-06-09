@@ -5,7 +5,7 @@ class_name ArmaPistola
 @onready var velocidad_ataque: int = 0.5
 func _ready() -> void:
 	nombre_arma = "Pistola"
-	danio = 25.0*nivel_arma[]
+	danio = 25.0
 	velocidad_ataque = 0.5
 	alcance_radio = 250.0
 	distancia_al_jugador = 25.0

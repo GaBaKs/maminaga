@@ -16,7 +16,7 @@ func compradas():
 
 func configurar_boton(boton: Button, id_arma: String):
 	if PlayerData.armas_compradas.has(id_arma):
-		if PlayerData.arma_equipada == id_arma:
+		if PlayerData.arma_equipada["nombre"] == id_arma:
 			boton.text = "Equipado" 
 			boton.disabled = true
 		else:
@@ -51,7 +51,7 @@ func comprar_arma(id_arma: String):
 	var costo = 50 
 	if PlayerData.minerales["mineral1"] >= costo:
 		PlayerData.minerales["mineral1"] -= costo
-		PlayerData.armas_compradas.append(id_arma)
+		PlayerData.armas_compradas[id_arma] = "amatista"
 		PlayerData.guardar_datos()
 		print("Arma comprada: ", id_arma)
 	else:
