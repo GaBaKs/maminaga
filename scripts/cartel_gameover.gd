@@ -1,6 +1,6 @@
 extends CanvasLayer
-@onready var titulo = $Panel/Label  # Quita el "Panel/" si no tienes un nodo Panel
-@onready var boton_revivir = $Panel/Label/BotonRevivir # Asegúrate que el nombre sea idéntico al del nodo
+@onready var titulo = $Panel/Label 
+@onready var boton_revivir = $Panel/Label/BotonRevivir 
 @onready var boton_menu = $Panel/Label/BotonMenu
 
 func _ready():

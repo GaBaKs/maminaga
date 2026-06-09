@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://6qs2usjqcilp"]
 
 [ext_resource type="Script" uid="uid://8rosf32wcufb" path="res://scripts/cartel_gameover.gd" id="1_erpbu"]
+[ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="2_8rnbh"]
+[ext_resource type="Texture2D" uid="uid://c1ox1mfjdg6o8" path="res://assets/menu/pergamino mapa.png" id="2_j16kx"]
+[ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="2_sxqe3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gqcb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h7pwo"]
 
 [node name="cartel_fin" type="CanvasLayer" unique_id=2130493672]
 process_mode = 3
@@ -15,36 +22,93 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Control" unique_id=1466574714]
-layout_mode = 0
-offset_left = 511.0
-offset_top = 249.0
-offset_right = 650.0
-offset_bottom = 362.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=604510582]
+offset_right = 1156.0
+offset_bottom = 652.0
+color = Color(0.02617561, 0.026175609, 0.026175609, 0.8980392)
 
-[node name="Label" type="Label" parent="Control/Panel" unique_id=234655991]
+[node name="Panel" type="Panel" parent="." unique_id=1466574714]
+offset_left = 485.0
+offset_top = 241.0
+offset_right = 623.0
+offset_bottom = 359.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=558664545]
+texture_filter = 1
 layout_mode = 0
-offset_left = 21.0
-offset_top = 4.0
-offset_right = 61.0
-offset_bottom = 27.0
+offset_left = -285.0
+offset_top = -159.0
+offset_right = -237.0
+offset_bottom = -126.0
+scale = Vector2(15, 15)
+texture = ExtResource("2_j16kx")
+
+[node name="Label" type="Label" parent="Panel" unique_id=234655991]
+texture_filter = 1
+layout_mode = 0
+offset_left = -87.0
+offset_top = 19.0
+offset_right = 64.0
+offset_bottom = 134.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.15530679, 0.08855087, 0.020277847, 1)
+theme_override_fonts/font = ExtResource("2_sxqe3")
+theme_override_font_sizes/font_size = 23
 text = "Has muerto"
+horizontal_alignment = 1
 
-[node name="BotonRevivir" type="Button" parent="Control/Panel/Label" unique_id=1358396037]
+[node name="BotonRevivir" type="Button" parent="Panel/Label" unique_id=1358396037]
+texture_filter = 1
 layout_mode = 0
-offset_left = 19.0
-offset_top = 31.0
-offset_right = 77.0
-offset_bottom = 62.0
+offset_left = 41.0
+offset_top = 20.0
+offset_right = 99.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.15689129, 0.0830198, 0.009060386, 1)
+theme_override_fonts/font = ExtResource("2_sxqe3")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0gqcb")
 text = "revivir"
 
-[node name="BotonMenu" type="Button" parent="Control/Panel/Label" unique_id=523196479]
+[node name="BotonMenu" type="Button" parent="Panel/Label" unique_id=523196479]
+texture_filter = 1
 layout_mode = 0
-offset_left = 5.0
-offset_top = 68.0
-offset_right = 92.0
-offset_bottom = 99.0
+offset_left = 28.0
+offset_top = 42.5
+offset_right = 115.0
+offset_bottom = 73.5
+theme_override_colors/font_color = Color(0.12941177, 0.08627451, 0.043137256, 1)
+theme_override_fonts/font = ExtResource("2_sxqe3")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h7pwo")
 text = "ir al menu"
 
-[connection signal="pressed" from="Control/Panel/Label/BotonRevivir" to="." method="_on_boton_revivir_pressed"]
-[connection signal="pressed" from="Control/Panel/Label/BotonMenu" to="." method="_on_boton_menu_pressed"]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1251373501]
+texture_filter = 1
+offset_left = 275.99997
+offset_top = 73.99999
+offset_right = 356.99997
+offset_bottom = 104.99999
+scale = Vector2(7, 7)
+texture = ExtResource("2_8rnbh")
+stretch_mode = 6
+
+[node name="Game Over" type="Label" parent="TextureRect" unique_id=289755068]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.1800001
+anchor_bottom = 1.2260001
+offset_left = 18.857145
+offset_top = 4.7142873
+offset_right = 15.277145
+offset_bottom = -3.29171
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.111975946, 0.06754665, 0.019364072, 1)
+theme_override_fonts/font = ExtResource("2_sxqe3")
+theme_override_font_sizes/font_size = 28
+text = "Game Over"
+
+[connection signal="pressed" from="Panel/Label/BotonRevivir" to="." method="_on_boton_revivir_pressed"]
+[connection signal="pressed" from="Panel/Label/BotonMenu" to="." method="_on_boton_menu_pressed"]
