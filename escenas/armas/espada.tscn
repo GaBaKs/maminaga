@@ -2,12 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/armas/arma_abstract.tscn" id="1_28u2q"]
 [ext_resource type="Script" uid="uid://dlgdnavcunddo" path="res://scripts/arma/espada.gd" id="2_u7ok3"]
-[ext_resource type="Texture2D" uid="uid://dnwh3xnh0uawu" path="res://assets/arma/espada.png" id="3_gx850"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u7ok3"]
+radius = 5.6562495
+height = 35.33373
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gx850"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}]
 
 [node name="espada" unique_id=1549684524 instance=ExtResource("1_28u2q")]
 z_index = 5
 script = ExtResource("2_u7ok3")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=810767489]
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1368386668) index="0" unique_id=979564224]
+position = Vector2(6, -4)
+rotation = 0.7722708
+shape = SubResource("CapsuleShape2D_u7ok3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=946461578]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_gx850")
+sprite_frames = SubResource("SpriteFrames_gx850")
+animation = &"ataque"
