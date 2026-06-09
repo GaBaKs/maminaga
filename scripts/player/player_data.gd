@@ -165,7 +165,7 @@ func subir_nivel():
 	experiencia=0
 	experiencia_max=experiencia_max*1.15
 	puntos_habilidad+=1
-	print("Subio de nivel!")
+	print("Subio de nivel!!")
 
 func equipar_arma(id_arma: String):
 	if armas_compradas.has(id_arma):
