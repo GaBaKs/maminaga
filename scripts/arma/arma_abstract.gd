@@ -11,7 +11,11 @@ signal enemigo_perdido(enemigo: Node2D)
 
 @onready var area = $Area2D
 @onready var collision_shape = $Area2D/CollisionShape2D
-
+@onready var nivel_arma = {
+	"amatista": 1,
+	"ruby": 1.5,
+	"agatha": 2
+}
 var puede_atacar: bool = true
 var enemigos_al_alcance: Array[Node2D] = []
 var timer_ataque: Timer

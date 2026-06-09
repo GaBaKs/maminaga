@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://gt6bx77rm63" path="res://tileset/deco exterior/exterior.png" id="8_1hrnh"]
 [ext_resource type="PackedScene" uid="uid://b56b86jiyx3ro" path="res://escenas/player/jugador.tscn" id="9_src8b"]
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/UI/cartel_gameover.tscn" id="11_wulo0"]
-[ext_resource type="Texture2D" uid="uid://dpxphfm7u64p7" path="res://assets/arma/arma-test.webp" id="12_kpj04"]
+[ext_resource type="Texture2D" uid="uid://dmb31yw3pkeuo" path="res://assets/arma/arma-test.webp" id="12_kpj04"]
 [ext_resource type="AudioStream" uid="uid://cf4u0udtle7mh" path="res://audios/musica_bosque.mp3" id="13_6o02u"]
 [ext_resource type="PackedScene" uid="uid://c50j3oip8awvq" path="res://escenas/UI/cartel_victoria.tscn" id="13_qryxp"]
 [ext_resource type="PackedScene" uid="uid://crnppfxf0qxeb" path="res://escenas/player/extraccion.tscn" id="14_4t432"]

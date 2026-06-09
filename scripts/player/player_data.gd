@@ -44,15 +44,18 @@ var skin_actual = "default"
 
 # INVENTARIO
 
-var armas_compradas = ["espada"]
-var arma_equipada = "espada"
+var armas_compradas = {
+	"espada": "amatista"
+}
+var arma_equipada = {
+	"nombre": "espada",
+	"material": "amatista"
+}
 var arma_escena : PackedScene
 var armas_disponibles = {
 	"pistola": preload("res://escenas/armas/pistola.tscn"),
 	"espada": preload("res://escenas/armas/espada.tscn")
 }
-
-
 
 func _ready():
 	cargar_datos()
@@ -169,7 +172,10 @@ func subir_nivel():
 
 func equipar_arma(id_arma: String):
 	if armas_compradas.has(id_arma):
-		arma_equipada = id_arma
+		arma_equipada = {
+			"nombre": id_arma,
+			"material": armas_compradas[id_arma]
+		}
 		arma_escena=armas_disponibles[id_arma]
 		print("Arma equipada para la partida: ", id_arma)
 		guardar_datos()
