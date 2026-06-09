@@ -9,6 +9,8 @@ signal enemigo_perdido(enemigo: Node2D)
 @export var alcance_radio: float = 200.0
 @export var distancia_al_jugador: float = 50.0
 
+@onready var sprite_idle = $AnimatedSprite2D_idle
+var sprite_ataque = AnimatedSprite2D
 @onready var area = $Area2D
 @onready var collision_shape = $Area2D/CollisionShape2D
 @onready var nivel_arma = {
@@ -27,7 +29,8 @@ func _ready() -> void:
 
 	if collision_shape and collision_shape.shape is CircleShape2D:
 		collision_shape.shape.radius = alcance_radio
-
+	if has_node("AnimatedSprite2D_ataque"):
+		sprite_ataque = $AnimatedSprite2D_ataque
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
 

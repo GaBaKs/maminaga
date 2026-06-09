@@ -1,5 +1,5 @@
 extends ArmaAbstract
-class_name ArmaPistola
+class_name Arco
 
 @export var bala_escena: PackedScene # Arrastrá bala.tscn acá en el Inspector
 @onready var velocidad_ataque: int = 0.5
@@ -16,6 +16,7 @@ func _ready() -> void:
 	timer_ataque.timeout.connect(_on_timer_ataque_timeout)
 	add_child(timer_ataque)
 	super()
+	sprite_idle.play("idle") 
 	
 func aplicar_danio(objetivo: Node2D) -> void:
 	if not bala_escena or not is_instance_valid(objetivo):

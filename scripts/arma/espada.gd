@@ -1,6 +1,8 @@
 extends ArmaAbstract
 class_name ArmaEspada
 
+@export var tier: int = 1
+
 func _ready() -> void:
 	nombre_arma = "Espada Básica"
 	danio = 40.0             # Más daño que la pistola
@@ -13,6 +15,21 @@ func _ready() -> void:
 	timer_ataque.timeout.connect(_on_timer_ataque_timeout)
 	add_child(timer_ataque)
 	super() 
+	# idle visible, ataque oculto
+	sprite_idle.play("idle"+ str(tier))
+	sprite_ataque.visible = false
+	sprite_ataque.animation_finished.connect(_on_animacion_terminada)
+	
+	
+func _on_animacion_terminada():
+	sprite_ataque.visible = false
+	sprite_idle.visible = true
+
+func atacar(objetivo: Node2D) -> void:
+	super.atacar(objetivo)
+	sprite_idle.visible = false
+	sprite_ataque.visible = true
+	sprite_ataque.play("ataque")
 
 func aplicar_danio(objetivo: Node2D) -> void:
 	if is_instance_valid(objetivo) and objetivo.has_method("recibir_danio_enemigo"):
