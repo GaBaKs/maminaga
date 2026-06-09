@@ -9,6 +9,13 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_qmidv")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=904062527]
+layout_mode = 0
+offset_top = 116.0
+offset_right = 400.0
+offset_bottom = 516.0
+texture = ExtResource("2_v7ak3")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1854518847]
 layout_mode = 0
 offset_right = 100.0
@@ -22,13 +29,6 @@ layout_mode = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Control" unique_id=83680611]
 position = Vector2(51, 0)
 scale = Vector2(4, 4)
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control" unique_id=904062527]
-layout_mode = 0
-offset_top = 116.0
-offset_right = 400.0
-offset_bottom = 516.0
-texture = ExtResource("2_v7ak3")
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1756989878]
 layout_mode = 2
