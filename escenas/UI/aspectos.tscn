@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_k34yg"]
 [ext_resource type="Script" uid="uid://dmcu7nwdmhexp" path="res://scripts/menu/aspectos.gd" id="1_v6was"]
+[ext_resource type="PackedScene" uid="uid://chvklfmaq8w1j" path="res://escenas/player/skin.tscn" id="2_a4do7"]
 [ext_resource type="Texture2D" uid="uid://dbur8j38jcj5n" path="res://assets/menu/aspectos.png" id="2_v6was"]
 [ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="4_w8jay"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="5_a4do7"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v6was")
+skin_item_escena = ExtResource("2_a4do7")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=78575923]
 layout_mode = 0
@@ -22,6 +24,7 @@ offset_bottom = 647.0
 texture = ExtResource("1_k34yg")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1537316100]
+visible = false
 layout_mode = 0
 offset_left = -48.0
 offset_top = 27.0
@@ -40,5 +43,14 @@ offset_bottom = 100.0
 stream = ExtResource("4_w8jay")
 volume_db = -30.0
 script = ExtResource("5_a4do7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=120694758]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1987631841]
+layout_mode = 2
 
 [connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]

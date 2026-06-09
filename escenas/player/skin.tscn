@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://chvklfmaq8w1j"]
+
+[ext_resource type="Script" uid="uid://if6f51obcab4" path="res://scripts/player/skin.gd" id="1_qmidv"]
+
+[node name="Skin" type="Control" unique_id=776449124]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qmidv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=83680611]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimatedSprite2D" unique_id=1854518847]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="AnimatedSprite2D/VBoxContainer" unique_id=1756989878]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AnimatedSprite2D/VBoxContainer" unique_id=1691811940]
+layout_mode = 2
+
+[connection signal="pressed" from="AnimatedSprite2D/VBoxContainer/Button" to="." method="_on_button_pressed"]
