@@ -12,7 +12,7 @@ var tiempo_total_partida = 330.0 # 5.5 minutos
 var tiempo_spawn_base = 2.0 # Valor por defecto
 
 # Recordá cambiar "Foreground" por tu capa de piso real para que no spawneen invisibles
-@onready var capa_suelo = $TilemapLayers/Terreno
+@onready var capa_suelo = $TilemapLayers/Foreground
 
 var dificultad := 1
 
