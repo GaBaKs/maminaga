@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://b7f38bgxmqiw3" path="res://assets/menu/logo_maminaga.png" id="5_7ne1b"]
 [ext_resource type="AudioStream" uid="uid://cxuq5pk1gq42" path="res://audios/musica_menu.mp3" id="5_dgj5e"]
 [ext_resource type="Script" uid="uid://bbxatqwv2f57r" path="res://scripts/sonidos/musica/musica_menu.gd" id="6_6vuw5"]
+[ext_resource type="Texture2D" uid="uid://ck7tuv3hqaj4y" path="res://assets/menu/Botones pergamino/description.png" id="8_8g2kd"]
+[ext_resource type="Texture2D" uid="uid://cftjgmpvpkpjb" path="res://assets/menu/Botones pergamino/pausaabierto.png" id="9_4y6ni"]
+[ext_resource type="Texture2D" uid="uid://bwktad654vn7g" path="res://assets/menu/Botones pergamino/pausa3.png" id="10_dpsfv"]
+[ext_resource type="FontFile" uid="uid://dggqfchefgadm" path="res://assets/menu/IosevkaCharon-Bold.ttf" id="11_t3gcf"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l48gv"]
 
@@ -43,6 +47,24 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g2kd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3gcf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpsfv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvm86"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w62e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f748"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Menu" type="Control" unique_id=2031501003]
 layout_mode = 3
 anchors_preset = 15
@@ -61,11 +83,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_mae5d")
 
-[node name="Pergamino3" type="Sprite2D" parent="TextureRect" unique_id=430223154]
-position = Vector2(276, 500.00003)
-scale = Vector2(5.1358023, 3.8709676)
-texture = ExtResource("2_4hy44")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1609916409]
 layout_mode = 1
 anchors_preset = -1
@@ -81,7 +98,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 48
 
+[node name="Pergamino4" type="Sprite2D" parent="VBoxContainer" unique_id=430223154]
+texture_filter = 1
+position = Vector2(160, 432.00003)
+scale = Vector2(5.1358023, 3.8709676)
+texture = ExtResource("2_4hy44")
+
 [node name="Pergamino1" type="Sprite2D" parent="VBoxContainer" unique_id=314649653]
+texture_filter = 1
 position = Vector2(166, 52)
 scale = Vector2(5.1358023, 3.8709676)
 texture = ExtResource("2_4hy44")
@@ -101,6 +125,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ecwwl")
 text = "JUGAR"
 
 [node name="Pergamino2" type="Sprite2D" parent="VBoxContainer" unique_id=1797598408]
+texture_filter = 1
 position = Vector2(166, 181)
 scale = Vector2(5.1358023, 3.8709676)
 texture = ExtResource("2_4hy44")
@@ -118,6 +143,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_iqepy")
 text = "EQUIPO"
 
 [node name="Pergamino3" type="Sprite2D" parent="VBoxContainer" unique_id=19116078]
+texture_filter = 1
 position = Vector2(158, 310.00003)
 scale = Vector2(5.1358023, 3.8709676)
 texture = ExtResource("2_4hy44")
@@ -128,6 +154,7 @@ scale = Vector2(5.1358023, 3.8709676)
 texture = ExtResource("2_4hy44")
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Pergamino3/Pergamino3" unique_id=1402091355]
+texture_filter = 1
 position = Vector2(-12.9642315, -84.22098)
 scale = Vector2(0.029079184, 0.049291745)
 texture = ExtResource("5_7ne1b")
@@ -160,7 +187,88 @@ text = "ESTADISTICAS"
 stream = ExtResource("5_dgj5e")
 script = ExtResource("6_6vuw5")
 
+[node name="Description" type="Sprite2D" parent="." unique_id=458594351]
+texture_filter = 1
+position = Vector2(1056.375, 551.375)
+scale = Vector2(2.1647713, 2.1647713)
+texture = ExtResource("8_8g2kd")
+
+[node name="ButtonDescription" type="Button" parent="." unique_id=409162296]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 516.0
+offset_right = 1080.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_8g2kd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t3gcf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpsfv")
+text = "?"
+
+[node name="ContenidoDescription" type="Control" parent="." unique_id=112236267]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DescriptionAbierto" type="Sprite2D" parent="ContenidoDescription" unique_id=1551164769]
+texture_filter = 1
+position = Vector2(538.00006, 322)
+scale = Vector2(12.699305, 12.699309)
+texture = ExtResource("9_4y6ni")
+
+[node name="Pausa3" type="Sprite2D" parent="ContenidoDescription" unique_id=1276539492]
+texture_filter = 1
+position = Vector2(780.99994, 66.999985)
+scale = Vector2(3.166667, 3.1666667)
+texture = ExtResource("10_dpsfv")
+
+[node name="Cerrar" type="Button" parent="ContenidoDescription" unique_id=72562150]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 36.0
+offset_right = 807.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_focus_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("11_t3gcf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uvm86")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7w62e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0f748")
+text = "X"
+
+[node name="Label" type="Label" parent="ContenidoDescription" unique_id=159158669]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 87.0
+offset_right = 799.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("11_t3gcf")
+theme_override_font_sizes/font_size = 18
+text = "Maminaga es un juego de accion y aventura 
+      con diversos mapas y dificultades. 
+      Seleccioná un mapa y su dificultad 
+  bajo tu propio riesgo: a mayor peligro, 
+                  mayor recompensa! 
+    Recorre las distintas islas y recolectá
+ los valiosos minerales repartidos por ella, 
+  pero tené cuidado con los monstruos 
+     que no te dejarán irte facilmente. 
+Cuando regreses podes invertir todo lo 
+que recolectaste en mejores armas 
+   para tu aventura y aumentar tus
+           habilidades de combate.
+           Que disfrutes del juego!"
+
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Equipo" to="." method="_on_equipo_pressed"]
 [connection signal="pressed" from="VBoxContainer/aspectos" to="." method="_on_aspectos_pressed"]
 [connection signal="pressed" from="VBoxContainer/Estadisticas" to="." method="_on_estadisticas_pressed"]
+[connection signal="pressed" from="ButtonDescription" to="." method="_on_button_description_pressed"]
+[connection signal="pressed" from="ContenidoDescription/Cerrar" to="." method="_on_cerrar_pressed"]

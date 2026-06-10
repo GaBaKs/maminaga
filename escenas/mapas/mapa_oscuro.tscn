@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://bmfxsprycorep" path="res://audios/musica_oscuro.mp3" id="18_5wshl"]
 [ext_resource type="PackedScene" uid="uid://c50j3oip8awvq" path="res://escenas/UI/cartel_victoria.tscn" id="18_b3ta5"]
 [ext_resource type="PackedScene" uid="uid://crnppfxf0qxeb" path="res://escenas/player/extraccion.tscn" id="19_wbbn5"]
-[ext_resource type="Script" uid="uid://coj88pygsbtu1" path="res://scripts/sonidos/musica/musica_mapa_oscurop.gd" id="19_ybigs"]
+[ext_resource type="Script" path="res://scripts/sonidos/musica/musica_mapa_oscurop.gd" id="19_ybigs"]
 [ext_resource type="PackedScene" uid="uid://bgf5dxu21omri" path="res://escenas/UI/pausa.tscn" id="20_q7ous"]
 [ext_resource type="Texture2D" uid="uid://yhfuygx0xths" path="res://assets/menu/Botones pergamino/pausa.png" id="22_ydfvp"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="23_yl36w"]
@@ -17988,59 +17988,59 @@ wait_time = 3.0
 one_shot = true
 
 [node name="PuntosDeSpawn" type="Node2D" parent="." unique_id=729328261]
-position = Vector2(-32, -87)
+position = Vector2(-485, 329)
 
 [node name="Spawn1" type="Marker2D" parent="PuntosDeSpawn" unique_id=1171796492]
 position = Vector2(-805, -455)
 
 [node name="Spawn2" type="Marker2D" parent="PuntosDeSpawn" unique_id=1753784294]
-position = Vector2(-210, -712)
+position = Vector2(-687, -1762)
 
 [node name="PuntosDeMinerales" type="Node2D" parent="." unique_id=433983440]
 
 [node name="Spawn_mineral" type="Marker2D" parent="PuntosDeMinerales" unique_id=218371243 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-85, 75)
+position = Vector2(-1888, -364)
 
 [node name="Spawn_mineral2" type="Marker2D" parent="PuntosDeMinerales" unique_id=633147350 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-85, 75)
+position = Vector2(2125, -560)
 
 [node name="Spawn_mineral3" type="Marker2D" parent="PuntosDeMinerales" unique_id=532750432 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(334, 153)
+position = Vector2(-887, -446)
 
 [node name="Spawn_mineral4" type="Marker2D" parent="PuntosDeMinerales" unique_id=1702449417 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(223, 156)
+position = Vector2(2608, 351)
 
 [node name="Spawn_mineral5" type="Marker2D" parent="PuntosDeMinerales" unique_id=1950018933 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(65, 141)
+position = Vector2(2309, 1061)
 
 [node name="Spawn_mineral6" type="Marker2D" parent="PuntosDeMinerales" unique_id=134485180 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-86, 147)
+position = Vector2(3015, -1787)
 
 [node name="Spawn_mineral7" type="Marker2D" parent="PuntosDeMinerales" unique_id=771479925 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-99, -42)
+position = Vector2(-519, -833)
 
 [node name="Spawn_mineral8" type="Marker2D" parent="PuntosDeMinerales" unique_id=24421198 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(108, -86)
+position = Vector2(894, -830)
 
 [node name="Spawn_mineral9" type="Marker2D" parent="PuntosDeMinerales" unique_id=1144938520 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(35, 133)
+position = Vector2(1344, 528)
 
 [node name="Spawn_mineral10" type="Marker2D" parent="PuntosDeMinerales" unique_id=1942595453 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(119, 91)
+position = Vector2(-2163, -1648)
 
 [node name="Spawn_mineral11" type="Marker2D" parent="PuntosDeMinerales" unique_id=910527010 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(199, 21)
+position = Vector2(1589, -1376)
 
 [node name="Spawn_mineral12" type="Marker2D" parent="PuntosDeMinerales" unique_id=1532095202 groups=["puntos_spawns_minerales"]]
 z_index = 5
@@ -18048,15 +18048,15 @@ position = Vector2(260, -37)
 
 [node name="Spawn_mineral13" type="Marker2D" parent="PuntosDeMinerales" unique_id=143026714 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(251, 81)
+position = Vector2(3097, -309)
 
 [node name="Spawn_mineral14" type="Marker2D" parent="PuntosDeMinerales" unique_id=2059932950 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-19, 78)
+position = Vector2(-1843, 746)
 
 [node name="Spawn_mineral15" type="Marker2D" parent="PuntosDeMinerales" unique_id=182695042 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-81, 20)
+position = Vector2(876, -823)
 
 [connection signal="timeout" from="Timer_supervivencia" to="." method="_on_timer_supervivencia_timeout"]
 [connection signal="timeout" from="TimerLocura" to="." method="_on_timer_locura_timeout"]

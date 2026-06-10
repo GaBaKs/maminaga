@@ -10200,13 +10200,13 @@ offset_bottom = 6161.0
 
 [node name="PuntosDeSpawn" type="Node2D" parent="." unique_id=376806530]
 z_index = 50
-position = Vector2(-32, -87)
+position = Vector2(-450, -337)
 
 [node name="Spawn1" type="Marker2D" parent="PuntosDeSpawn" unique_id=639194070]
 position = Vector2(529, 931)
 
 [node name="Spawn2" type="Marker2D" parent="PuntosDeSpawn" unique_id=171458587]
-position = Vector2(1743, 205)
+position = Vector2(1865, 949)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=165066362]
 wait_time = 2.0
@@ -10225,11 +10225,11 @@ position = Vector2(-1119, 2)
 
 [node name="Spawn_mineral3" type="Marker2D" parent="PuntosDeMinerales" unique_id=2077088387 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-3048, -486)
+position = Vector2(-1523, 331)
 
 [node name="Spawn_mineral4" type="Marker2D" parent="PuntosDeMinerales" unique_id=1140680280 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(-2526, -37)
+position = Vector2(-620, 1104)
 
 [node name="Spawn_mineral5" type="Marker2D" parent="PuntosDeMinerales" unique_id=799870461 groups=["puntos_spawns_minerales"]]
 z_index = 50
@@ -10237,7 +10237,7 @@ position = Vector2(1697, 53)
 
 [node name="Spawn_mineral6" type="Marker2D" parent="PuntosDeMinerales" unique_id=1993629576 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-2557, -29)
+position = Vector2(-1403, 985)
 
 [node name="Spawn_mineral7" type="Marker2D" parent="PuntosDeMinerales" unique_id=221578303 groups=["puntos_spawns_minerales"]]
 z_index = 50
@@ -10245,35 +10245,35 @@ position = Vector2(494, 789)
 
 [node name="Spawn_mineral8" type="Marker2D" parent="PuntosDeMinerales" unique_id=1063447879 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(40, -54)
+position = Vector2(-251, 495)
 
 [node name="Spawn_mineral9" type="Marker2D" parent="PuntosDeMinerales" unique_id=151727496 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(-3016, -475)
+position = Vector2(-1001, -960)
 
 [node name="Spawn_mineral10" type="Marker2D" parent="PuntosDeMinerales" unique_id=1244463465 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(-2522, -893)
+position = Vector2(-1526, -182)
 
 [node name="Spawn_mineral11" type="Marker2D" parent="PuntosDeMinerales" unique_id=1069497348 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(397, -1597)
+position = Vector2(506, -601)
 
 [node name="Spawn_mineral12" type="Marker2D" parent="PuntosDeMinerales" unique_id=148925261 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(426, -1589)
+position = Vector2(-694, -432)
 
 [node name="Spawn_mineral13" type="Marker2D" parent="PuntosDeMinerales" unique_id=715172977 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-2491, -896)
+position = Vector2(-1835, -987)
 
 [node name="Spawn_mineral14" type="Marker2D" parent="PuntosDeMinerales" unique_id=516859105 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(1465, -1054)
+position = Vector2(1148, 873)
 
 [node name="Spawn_mineral15" type="Marker2D" parent="PuntosDeMinerales" unique_id=1965933663 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(1494, -1060)
+position = Vector2(2359, -662)
 
 [node name="Timer_supervivencia" type="Timer" parent="." unique_id=693542817]
 wait_time = 30.0

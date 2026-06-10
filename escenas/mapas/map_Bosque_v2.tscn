@@ -6255,7 +6255,7 @@ position = Vector2(-3048, -486)
 
 [node name="Spawn_mineral4" type="Marker2D" parent="PuntosDeMinerales" unique_id=676218993 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(-2526, -37)
+position = Vector2(-2108, 788)
 
 [node name="Spawn_mineral5" type="Marker2D" parent="PuntosDeMinerales" unique_id=1137230367 groups=["puntos_spawns_minerales"]]
 z_index = 50
@@ -6267,15 +6267,15 @@ position = Vector2(-2557, -29)
 
 [node name="Spawn_mineral7" type="Marker2D" parent="PuntosDeMinerales" unique_id=1558323025 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(494, 789)
+position = Vector2(-1252, -1522)
 
 [node name="Spawn_mineral8" type="Marker2D" parent="PuntosDeMinerales" unique_id=713573256 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(108, -86)
+position = Vector2(3253, -1203)
 
 [node name="Spawn_mineral9" type="Marker2D" parent="PuntosDeMinerales" unique_id=147658562 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(-3016, -475)
+position = Vector2(3788, 1231)
 
 [node name="Spawn_mineral10" type="Marker2D" parent="PuntosDeMinerales" unique_id=1275614581 groups=["puntos_spawns_minerales"]]
 z_index = 50
@@ -6287,15 +6287,15 @@ position = Vector2(397, -1603)
 
 [node name="Spawn_mineral12" type="Marker2D" parent="PuntosDeMinerales" unique_id=1078468683 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(426, -1589)
+position = Vector2(4164, 92)
 
 [node name="Spawn_mineral13" type="Marker2D" parent="PuntosDeMinerales" unique_id=315288470 groups=["puntos_spawns_minerales"]]
 z_index = 5
-position = Vector2(-2491, -896)
+position = Vector2(-1975, -1316)
 
 [node name="Spawn_mineral14" type="Marker2D" parent="PuntosDeMinerales" unique_id=1532025849 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(1465, -1054)
+position = Vector2(2860, 653)
 
 [node name="Spawn_mineral15" type="Marker2D" parent="PuntosDeMinerales" unique_id=328984703 groups=["puntos_spawns_minerales"]]
 z_index = 50
