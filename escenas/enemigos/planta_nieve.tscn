@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cjvsmgjix4nqp"]
 
 [ext_resource type="Texture2D" uid="uid://cntpfxujlmuee" path="res://assets/enemigo/PlantaSprites/Plant3/Without_shadow/Plant3_Run_without_shadow.png" id="1_nu0a6"]
-[ext_resource type="Script" path="res://scripts/enemigo/planta_nieve.gd" id="1_yxr80"]
+[ext_resource type="Script" uid="uid://8b4bhruke2ln" path="res://scripts/enemigo/planta_nieve.gd" id="1_yxr80"]
 [ext_resource type="Texture2D" uid="uid://bh6ey7xpw8853" path="res://assets/enemigo/PlantaSprites/Plant3/Without_shadow/Plant3_Attack_without_shadow.png" id="2_yxr80"]
 [ext_resource type="Texture2D" uid="uid://dd673fwdwfmwf" path="res://assets/enemigo/PlantaSprites/Plant3/Without_shadow/Plant3_Death_without_shadow.png" id="3_btmqq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv0l7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_undhv"]
 atlas = ExtResource("1_nu0a6")
@@ -589,6 +591,8 @@ animations = [{
 script = ExtResource("1_yxr80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139618266]
+z_index = 5
+shape = SubResource("CircleShape2D_hv0l7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1331542509]
 sprite_frames = SubResource("SpriteFrames_n0x6d")

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cebhkmdoj0l0h"]
 
-[ext_resource type="Texture2D" uid="uid://c2o4w2mjpdy1v" path="res://assets/enemigo/gallo/Black_grouse_Walk_with_shadow.png" id="1_g1dvd"]
-[ext_resource type="Script" path="res://scripts/enemigo/gallo.gd" id="1_p0im0"]
-[ext_resource type="Texture2D" uid="uid://cmr8weebcoxpw" path="res://assets/enemigo/gallo/Black_grouse_Flight_with_shadow.png" id="2_p0im0"]
-[ext_resource type="Texture2D" uid="uid://dgj40s0dfkb18" path="res://assets/enemigo/gallo/Black_grouse_Death_with_shadow.png" id="3_nsfhh"]
+[ext_resource type="Texture2D" uid="uid://gdinolq2xv5w" path="res://assets/enemigo/gallo/Black_grouse_Walk_with_shadow.png" id="1_g1dvd"]
+[ext_resource type="Script" uid="uid://bb1ejcdspy7c1" path="res://scripts/enemigo/gallo.gd" id="1_p0im0"]
+[ext_resource type="Texture2D" uid="uid://hi7r6aasrqip" path="res://assets/enemigo/gallo/Black_grouse_Flight_with_shadow.png" id="2_p0im0"]
+[ext_resource type="Texture2D" uid="uid://liqrlmv83b5d" path="res://assets/enemigo/gallo/Black_grouse_Death_with_shadow.png" id="3_nsfhh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubcj3"]
 radius = 11.0
@@ -519,6 +519,7 @@ animations = [{
 }]
 
 [node name="gallo" type="CharacterBody2D" unique_id=1271047742]
+z_index = 5
 script = ExtResource("1_p0im0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892579915]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yk5j4rqn1862"]
 
-[ext_resource type="Script" path="res://scripts/enemigo/orco_nieve.gd" id="1_bt3x1"]
+[ext_resource type="Script" uid="uid://dmr8hfoom7l7c" path="res://scripts/enemigo/orco_nieve.gd" id="1_bt3x1"]
 [ext_resource type="Texture2D" uid="uid://cnmn066586o40" path="res://assets/enemigo/OrcoSprites/PNG/Orc3/Without_shadow/orc3_run_without_shadow.png" id="1_g5unq"]
 [ext_resource type="Texture2D" uid="uid://b4en6qwd3caqp" path="res://assets/enemigo/OrcoSprites/PNG/Orc3/Without_shadow/orc3_attack_without_shadow.png" id="2_bt3x1"]
 [ext_resource type="Texture2D" uid="uid://dlr187iew88fr" path="res://assets/enemigo/OrcoSprites/PNG/Orc3/Without_shadow/orc3_death_without_shadow.png" id="4_kblfx"]
@@ -562,6 +562,7 @@ animations = [{
 }]
 
 [node name="orco_nieve" type="CharacterBody2D" unique_id=1089616918]
+z_index = 5
 script = ExtResource("1_bt3x1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516212393]

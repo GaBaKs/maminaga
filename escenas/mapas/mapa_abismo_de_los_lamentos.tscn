@@ -9618,6 +9618,7 @@ tile_set = SubResource("TileSet_hvy66")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=309418541]
 
 [node name="cartel_gameover" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("10_0nusx")]
+visible = false
 
 [node name="Joystick" type="CanvasLayer" parent="." unique_id=1110743618]
 offset = Vector2(1000, 500)
@@ -9632,10 +9633,10 @@ position = Vector2(-159, -19)
 position = Vector2(-15, 0)
 
 [node name="Spawn1" type="Marker2D" parent="PuntosDeSpawn" unique_id=1034539877]
-position = Vector2(13, -23)
+position = Vector2(-508, 2)
 
 [node name="Spawn2" type="Marker2D" parent="PuntosDeSpawn" unique_id=1234354447]
-position = Vector2(641, 363)
+position = Vector2(174, -158)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=1657619388]
 wait_time = 2.0
