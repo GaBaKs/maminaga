@@ -29,9 +29,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -108.0
+offset_left = -107.0
 offset_top = -22.0
-offset_right = 26.0
+offset_right = 27.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -39,7 +39,7 @@ texture = ExtResource("2_v7ak3")
 expand_mode = 1
 
 [node name="PergaminoMapa" type="Sprite2D" parent="." unique_id=1622050692]
-position = Vector2(55, 223)
+position = Vector2(49, 223)
 scale = Vector2(2.5104165, 1.871212)
 texture = ExtResource("3_v8grp")
 
@@ -56,7 +56,7 @@ layout_mode = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Control" unique_id=83680611]
 texture_filter = 1
-position = Vector2(53, 83)
+position = Vector2(51, 83)
 scale = Vector2(4, 4)
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1756989878]

@@ -22,7 +22,7 @@ func actualizar_boton():
 	if PlayerData.skins_desbloqueadas.has(id_skin_actual):
 		if PlayerData.skin_actual == id_skin_actual:
 			boton_accion.text = "Equipado"
-			boton_accion.disabled = true
+			boton_accion.disabled = false
 		else:
 			boton_accion.text = "Equipar"
 			boton_accion.disabled = false
@@ -31,6 +31,8 @@ func actualizar_boton():
 		boton_accion.disabled = false
 
 func _on_comprar_pressed():
+	if PlayerData.skin_actual == id_skin_actual:
+		return
 	if PlayerData.skins_desbloqueadas.has(id_skin_actual):
 		# Si ya la tiene, la equipa
 		PlayerData.skin_actual = id_skin_actual
