@@ -9,6 +9,16 @@ extends Control
 @onready var boton_equipar_arco = $boton_equipar_arco 
 @onready var boton_equipar_hacha = $boton_equipar_hacha
 
+# --- NUEVAS REFERENCIAS A LOS NODOS DE IMAGEN ---
+@onready var img_espada = $espada
+@onready var img_arco = $arco
+@onready var img_hacha = $hacha
+
+# --- RUTA DONDE ESTÁN GUARDADOS TUS SPRITES ---
+# ¡IMPORTANTE: Cambiá esto por la ruta real de tu carpeta de imágenes!
+# Asegurate de que termine con una barra "/"
+const RUTA_SPRITES = "res://assets/arma/" 
+
 # Agregamos "madera" como el primer nivel base
 const ORDEN_MATERIALES = ["madera", "amatista", "ruby", "agatha"]
 
@@ -27,14 +37,17 @@ func _ready():
 	compradas()
 
 func compradas():
-	# Evaluamos cada botón pasando el nodo y el ID del arma
-	configurar_botones(btn_espada, boton_equipar_espada, "espada")
-	configurar_botones(btn_arco, boton_equipar_arco, "arco")
-	configurar_botones(btn_hacha, boton_equipar_hacha, "hacha")
+	# Evaluamos cada botón pasando el nodo del botón principal, el de equipar, LA IMAGEN, y el ID
+	configurar_botones(btn_espada, boton_equipar_espada, img_espada, "espada")
+	configurar_botones(btn_arco, boton_equipar_arco, img_arco, "arco")
+	configurar_botones(btn_hacha, boton_equipar_hacha, img_hacha, "hacha")
 
-func configurar_botones(btn_principal: Button, btn_equip: Button, id_arma: String):
+func configurar_botones(btn_principal: Button, btn_equip: Button, nodo_img: TextureRect, id_arma: String):
+	# Por defecto mostramos la imagen de madera si el arma aún no fue comprada
+	var material_actual = "madera" 
+	
 	if PlayerData.armas_compradas.has(id_arma):
-		var material_actual = PlayerData.armas_compradas[id_arma]
+		material_actual = PlayerData.armas_compradas[id_arma]
 		var indice_tier = ORDEN_MATERIALES.find(material_actual)
 		
 		# Forzamos la actualización visual de la UI usando show()
@@ -57,6 +70,17 @@ func configurar_botones(btn_principal: Button, btn_equip: Button, id_arma: Strin
 		btn_principal.show()
 		btn_principal.text = "Comprar"
 
+	# --- LÓGICA PARA ACTUALIZAR LA IMAGEN ---
+	# Construimos el nombre del archivo exacto (ej: "espada-madera.png")
+	var nombre_archivo = id_arma + "-" + material_actual + ".png"
+	var ruta_completa = RUTA_SPRITES + nombre_archivo
+	
+	# Usamos ResourceLoader para evitar que el juego crashee si te falta alguna imagen
+	if ResourceLoader.exists(ruta_completa):
+		nodo_img.texture = load(ruta_completa)
+	else:
+		print("ATENCIÓN: No se encontró la imagen en la ruta: ", ruta_completa)
+
 func _on_boton_espada_pressed(): procesar_compra_mejora("espada")
 func _on_boton_arco_pressed(): procesar_compra_mejora("arco") 
 func _on_boton_hacha_pressed(): procesar_compra_mejora("hacha")
@@ -64,7 +88,7 @@ func _on_boton_hacha_pressed(): procesar_compra_mejora("hacha")
 func _on_boton_equip_pressed(id_arma: String):
 	# Si ya la tiene, la equipa
 	PlayerData.equipar_arma(id_arma)
-	# Refrescamos la interfaz para que los textos de los botones cambien
+	# Refrescamos la interfaz para que los textos y colores cambien
 	compradas() 
 
 func procesar_compra_mejora(id_arma: String):
@@ -92,7 +116,7 @@ func procesar_compra_mejora(id_arma: String):
 	else:
 		print("Faltan recursos. Necesitas ", costo, " de ", mineral_requerido)
 		
-	# Refrescamos la interfaz para que los textos de los botones cambien
+	# Refrescamos la interfaz para actualizar los textos de los botones y la imagen
 	compradas()
 
 func _on_atras_pressed() -> void:
