@@ -47,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_stclm")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1105676796]
@@ -168,6 +169,7 @@ offset_top = 402.0
 offset_right = 466.0
 offset_bottom = 435.0
 scale = Vector2(6, 6)
+mouse_filter = 2
 texture = ExtResource("4_aqsmi")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TextureRectDificultades" unique_id=629899105]
