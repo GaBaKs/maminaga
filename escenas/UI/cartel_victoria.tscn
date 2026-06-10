@@ -25,19 +25,20 @@ color = Color(0.039215688, 0.039215688, 0.039215688, 0.9372549)
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1492388372]
 texture_filter = 1
-offset_left = 191.00002
+offset_left = 164.00002
 offset_top = 74.0
-offset_right = 239.00002
+offset_right = 213.41179
 offset_bottom = 107.0
-scale = Vector2(15, 15)
+scale = Vector2(17, 17)
 texture = ExtResource("2_xm4ke")
+stretch_mode = 3
 
 [node name="BotonVolverMenu" type="Button" parent="." unique_id=836164656]
 texture_filter = 1
-offset_left = 467.0
-offset_top = 451.0
-offset_right = 538.5
-offset_bottom = 487.5
+offset_left = 514.0
+offset_top = 507.0
+offset_right = 585.5
+offset_bottom = 543.5
 scale = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="BotonVolverMenu" unique_id=1169173167]
@@ -57,10 +58,10 @@ theme_override_font_sizes/font_size = 20
 text = "Volver "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1396892204]
-offset_left = 420.0
-offset_top = 244.0
-offset_right = 894.28577
-offset_bottom = 498.2857
+offset_left = 332.00003
+offset_top = 313.99997
+offset_right = 898.78577
+offset_bottom = 514.0
 scale = Vector2(0.8, 0.8)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1802549644]
@@ -76,7 +77,7 @@ texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.16078432, 0.02745098, 0.015686275, 1)
 theme_override_fonts/font = ExtResource("3_t48rw")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=660122653]
@@ -91,7 +92,7 @@ texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.16078432, 0.02745098, 0.015686275, 1)
 theme_override_fonts/font = ExtResource("3_t48rw")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 45
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1391126699]
 layout_mode = 2
@@ -105,15 +106,15 @@ texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.16078432, 0.02745098, 0.015686275, 1)
 theme_override_fonts/font = ExtResource("3_t48rw")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 45
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1203507996]
 texture_filter = 1
-offset_left = 271.0
+offset_left = 264.0
 offset_top = 68.0
-offset_right = 352.0
+offset_right = 345.0
 offset_bottom = 99.0
-scale = Vector2(7, 7)
+scale = Vector2(8, 8)
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("2_mchn7")
 stretch_mode = 5

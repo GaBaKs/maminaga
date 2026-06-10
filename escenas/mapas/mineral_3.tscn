@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dctom8yrb6d2r" path="res://tileset/minerales/PNG/Assets/Yellow_crystal1.png" id="2_2w8ea"]
 
 [node name="mineral3" unique_id=2113515821 instance=ExtResource("1_7a6xu")]
+scale = Vector2(0.5, 0.5)
 valor = 3
 tipo_mineral = "mineral3"
 
