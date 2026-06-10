@@ -179,6 +179,7 @@ offset_top = 11.3333435
 offset_right = 198.50024
 offset_bottom = 50.333344
 scale = Vector2(0.17, 0.17)
+mouse_filter = 2
 theme = SubResource("Theme_4naqb")
 alignment = 1
 

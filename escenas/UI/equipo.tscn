@@ -49,7 +49,7 @@ offset_top = 339.0
 offset_right = 649.0
 offset_bottom = 393.0
 
-[node name="boton_baculo" type="Button" parent="." unique_id=1674752167]
+[node name="boton_hacha" type="Button" parent="." unique_id=1674752167]
 layout_mode = 0
 offset_left = 795.0
 offset_top = 342.0
@@ -70,7 +70,7 @@ offset_top = 405.0
 offset_right = 649.0
 offset_bottom = 459.0
 
-[node name="boton_equipar_baculo" type="Button" parent="." unique_id=1544580785]
+[node name="boton_equipar_hacha" type="Button" parent="." unique_id=1544580785]
 layout_mode = 0
 offset_left = 794.0
 offset_top = 401.0
@@ -112,4 +112,4 @@ script = ExtResource("5_np6vg")
 [connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]
 [connection signal="pressed" from="boton_espada" to="." method="_on_boton_espada_pressed"]
 [connection signal="pressed" from="boton_arco" to="." method="_on_boton_arco_pressed"]
-[connection signal="pressed" from="boton_baculo" to="." method="_on_boton_baculo_pressed"]
+[connection signal="pressed" from="boton_hacha" to="." method="_on_boton_hacha_pressed"]

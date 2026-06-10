@@ -59,7 +59,7 @@ var arma_escena : PackedScene
 var armas_disponibles = {
 	"arco" :  preload("res://escenas/armas/arco.tscn"),
 	"espada":  preload("res://escenas/armas/espada.tscn"),
-	#"baculo": preload("res://escenas/armas/baculo.tscn")
+	"hacha": preload("res://escenas/armas/hacha.tscn")
 }
 
 func _ready():

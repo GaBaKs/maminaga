@@ -62,10 +62,13 @@ func _on_boton_facil_pressed() -> void:
 	iniciar_partida()
 
 func _on_boton_normal_pressed() -> void:
+	boton_normal.text = "FUNCIONA"
 	Global.dificultad_actual = 1
 	iniciar_partida()
 
 func _on_boton_dificil_pressed() -> void:
+	boton_dificil.text = "FUNCIONA"
+	print("Selecciono dificil")
 	Global.dificultad_actual = 2
 	iniciar_partida()
 

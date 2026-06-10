@@ -2,35 +2,35 @@ extends Control
 
 # Asegúrate de arrastrar tus botones aquí desde el panel de Nodos
 @onready var btn_espada = $boton_espada
-@onready var btn_arco = $boton_arco # <-- Cambiado
-@onready var btn_baculo = $boton_baculo
+@onready var btn_arco = $boton_arco 
+@onready var btn_hacha = $boton_hacha
 
 @onready var boton_equipar_espada = $boton_equipar_espada
-@onready var boton_equipar_arco = $boton_equipar_arco # <-- Cambiado
-@onready var boton_equipar_baculo = $boton_equipar_baculo
+@onready var boton_equipar_arco = $boton_equipar_arco 
+@onready var boton_equipar_hacha = $boton_equipar_hacha
 
 # Agregamos "madera" como el primer nivel base
 const ORDEN_MATERIALES = ["madera", "amatista", "ruby", "agatha"]
 
-#aca van los costos de las armas
+# Aca van los costos de las armas
 const COSTOS_MEJORA = {
-	"madera":   {"mineral": "mineral1", "costo": 25}, # Costo inicial para obtener el arma base
-	"amatista": {"mineral": "mineral1", "costo": 50},
-	"ruby":     {"mineral": "mineral2", "costo": 100},
-	"agatha":   {"mineral": "mineral3", "costo": 150}
+	"madera":   {"mineral": "mineral1", "costo": 1}, # Costo inicial para obtener el arma base
+	"amatista": {"mineral": "mineral1", "costo": 5},
+	"ruby":     {"mineral": "mineral2", "costo": 5},
+	"agatha":   {"mineral": "mineral3", "costo": 10}
 }
 
 func _ready():
 	boton_equipar_espada.pressed.connect(func(): _on_boton_equip_pressed("espada"))
-	boton_equipar_arco.pressed.connect(func(): _on_boton_equip_pressed("arco")) # <-- Cambiado
-	boton_equipar_baculo.pressed.connect(func(): _on_boton_equip_pressed("baculo"))
+	boton_equipar_arco.pressed.connect(func(): _on_boton_equip_pressed("arco")) 
+	boton_equipar_hacha.pressed.connect(func(): _on_boton_equip_pressed("hacha"))
 	compradas()
 
 func compradas():
 	# Evaluamos cada botón pasando el nodo y el ID del arma
 	configurar_botones(btn_espada, boton_equipar_espada, "espada")
-	configurar_botones(btn_arco, boton_equipar_arco, "arco") # <-- Cambiado
-	configurar_botones(btn_baculo, boton_equipar_baculo, "baculo")
+	configurar_botones(btn_arco, boton_equipar_arco, "arco")
+	configurar_botones(btn_hacha, boton_equipar_hacha, "hacha")
 
 func configurar_botones(btn_principal: Button, btn_equip: Button, id_arma: String):
 	if PlayerData.armas_compradas.has(id_arma):
@@ -58,8 +58,8 @@ func configurar_botones(btn_principal: Button, btn_equip: Button, id_arma: Strin
 		btn_principal.text = "Comprar"
 
 func _on_boton_espada_pressed(): procesar_compra_mejora("espada")
-func _on_boton_arco_pressed(): procesar_compra_mejora("arco") # <-- Cambiado
-func _on_boton_baculo_pressed(): procesar_compra_mejora("baculo")
+func _on_boton_arco_pressed(): procesar_compra_mejora("arco") 
+func _on_boton_hacha_pressed(): procesar_compra_mejora("hacha")
 
 func _on_boton_equip_pressed(id_arma: String):
 	# Si ya la tiene, la equipa
