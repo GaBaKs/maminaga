@@ -6295,7 +6295,7 @@ visible = false
 position = Vector2(-2734, -646)
 
 [node name="TimerLocura" type="Timer" parent="." unique_id=987166930]
-wait_time = 5.0
+wait_time = 300.0
 one_shot = true
 autostart = true
 

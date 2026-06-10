@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtaqlabs6dcgn"]
 
 [ext_resource type="Script" uid="uid://c7bhmqdcw2kwr" path="res://scripts/enemigo/enemigo.gd" id="1_a5tj2"]
-[ext_resource type="Texture2D" uid="uid://kcp6dbyhnxkp" path="res://assets/enemigo/monstruito2.png" id="2_uhebs"]
+[ext_resource type="Texture2D" uid="uid://dpbvi7jcg34og" path="res://assets/enemigo/monstruito2.png" id="2_uhebs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8qs0"]
 radius = 14.0
