@@ -9,8 +9,8 @@ func _ready() -> void:
 	danio = 40.0 * multiplicador + PlayerData.danio
 	
 	var velocidad_ataque = 0.7   
-	alcance_radio = 70.0     
-	distancia_al_jugador = 20.0
+	alcance_radio = 50.0     
+	distancia_al_jugador = 10.0
 	
 	timer_ataque = Timer.new()
 	timer_ataque.wait_time = 3.0 / (velocidad_ataque + PlayerData.velocidad_ataque)

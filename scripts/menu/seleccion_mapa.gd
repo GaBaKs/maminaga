@@ -58,15 +58,15 @@ func _on_jugar_pressed():
 	boton_jugar.disabled = true
 
 func _on_boton_facil_pressed() -> void:
-	Global.dificultad_actual = 1
+	Global.dificultad_actual = 0
 	iniciar_partida()
 
 func _on_boton_normal_pressed() -> void:
-	Global.dificultad_actual = 2
+	Global.dificultad_actual = 1
 	iniciar_partida()
 
 func _on_boton_dificil_pressed() -> void:
-	Global.dificultad_actual = 3
+	Global.dificultad_actual = 2
 	iniciar_partida()
 
 func iniciar_partida():
