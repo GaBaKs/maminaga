@@ -90,8 +90,9 @@ scale = Vector2(5.031249, 3.8316333)
 texture = ExtResource("3_6o8fp")
 
 [node name="PergaminoJugar" type="Sprite2D" parent="HBoxContainer" unique_id=660355207]
-position = Vector2(249, 67)
-scale = Vector2(5.7083335, 6.2765155)
+texture_filter = 1
+position = Vector2(249.99997, 67)
+scale = Vector2(5.8333335, 6)
 texture = ExtResource("4_aqsmi")
 
 [node name="LButton" type="Button" parent="HBoxContainer" unique_id=1412332420]
@@ -162,18 +163,20 @@ text = "Volver"
 [node name="TextureRectDificultades" type="TextureRect" parent="." unique_id=1984546061]
 texture_filter = 1
 layout_mode = 0
-offset_left = 424.0
-offset_top = 397.0
-offset_right = 701.0
-offset_bottom = 605.0
+offset_left = 418.0
+offset_top = 402.0
+offset_right = 466.0
+offset_bottom = 435.0
+scale = Vector2(6, 6)
 texture = ExtResource("4_aqsmi")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TextureRectDificultades" unique_id=629899105]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 70.0
-offset_right = 235.0
-offset_bottom = 125.0
+offset_left = 7.500244
+offset_top = 11.3333435
+offset_right = 198.50024
+offset_bottom = 50.333344
+scale = Vector2(0.17, 0.17)
 theme = SubResource("Theme_4naqb")
 alignment = 1
 

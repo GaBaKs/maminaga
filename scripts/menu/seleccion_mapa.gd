@@ -66,15 +66,26 @@ func _on_volver_atras_pressed() -> void:
 func _on_boton_facil_pressed() -> void:
 	Global.dificultad_actual = 1
 	habilitar_boton_jugar()
+	$TextureRectDificultades.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonFacil.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonNormal.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonDificil.hide()
 
 func _on_boton_normal_pressed() -> void:
 	Global.dificultad_actual = 2
 	habilitar_boton_jugar()
+	$TextureRectDificultades.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonFacil.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonNormal.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonDificil.hide()
 
 func _on_boton_dificil_pressed() -> void:
 	Global.dificultad_actual = 3
 	habilitar_boton_jugar()
-	
+	$TextureRectDificultades.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonFacil.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonNormal.hide()
+	$TextureRectDificultades/HBoxContainer2/BotonDificil.hide()
 func habilitar_boton_jugar():
 	# 1. Inhabilitamos los botones de dificultad para que no puedan cambiarse
 	boton_facil.disabled = true
