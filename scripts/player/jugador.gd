@@ -57,6 +57,11 @@ func _physics_process(delta):
 	animacion()
 	var direccion = joystick.direction
 	velocity = direccion * velocidad
+	
+	# Guardamos la dirección para disparar cuando estamos quietos
+	if direccion != Vector2.ZERO:
+		ultima_direccion = direccion.normalized()
+		
 	move_and_slide()
 
 # logica de regeneración de vida
@@ -86,11 +91,12 @@ func morir():
 		return 
 		
 	yamurio = true 
-	get_tree().paused = true
+	
+	animated_sprite.play("death")
 	sonido_muerte.play()
+	
 	Global.emit_signal("jugador_murio", yamurio)
 	set_physics_process(false)
-	visible = false
 
 func _on_revivio_jugador():
 	vida_actual = PlayerData.vida
@@ -110,21 +116,21 @@ func disparar():
 			
 
 func animacion():
-	if velocity.x != 0:
+	if yamurio:
+		return
+		
+	if velocity != Vector2.ZERO:
+		animated_sprite.play("walk")
 		if not sonido_pasos.playing:
 			sonido_pasos.play(1)
 	else:
+		animated_sprite.play("idle")
 		sonido_pasos.stop()
 	
-	if velocity.x > 0:
-		animated_sprite.play("run_right")
-	elif velocity.x < 0:
-		animated_sprite.play("run_left")
-	else:
-		if ultima_direccion.x > 0:
-			animated_sprite.play("idle_right")
-		elif ultima_direccion.x < 0:
-			animated_sprite.play("idle_left")
+	if velocity.x < 0:
+		animated_sprite.flip_h = true
+	elif velocity.x > 0:
+		animated_sprite.flip_h = false
 
 func resetear_recursos_temporales():
 	for key in minerales_en_partida.keys():

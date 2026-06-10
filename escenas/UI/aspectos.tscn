@@ -62,8 +62,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_n4ijv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ly16x")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7dk7f")
-text = "Atras
-"
+text = "Volver"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=1276026373]
 position = Vector2(99, 326)
