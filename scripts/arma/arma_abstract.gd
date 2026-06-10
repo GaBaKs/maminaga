@@ -9,15 +9,15 @@ signal enemigo_perdido(enemigo: Node2D)
 @export var alcance_radio: float = 200.0
 @export var distancia_al_jugador: float = 50.0
 
-@onready var sprite_idle = $AnimatedSprite2D_idle
-var sprite_ataque = AnimatedSprite2D
+@onready var sprite_idle = $Animacion
+var sprite_ataque: AnimatedSprite2D # Tipado corregido para evitar errores
 @onready var area = $Area2D
 @onready var collision_shape = $Area2D/CollisionShape2D
-@onready var nivel_arma = {
-	"amatista": 1,
-	"ruby": 1.5,
-	"agatha": 2
-}
+
+# --- NUEVAS PROPIEDADES BASE ---
+var material_actual: String # Se sobreescribe al instanciar
+
+
 var puede_atacar: bool = true
 var enemigos_al_alcance: Array[Node2D] = []
 var timer_ataque: Timer
@@ -31,11 +31,9 @@ func _ready() -> void:
 		collision_shape.shape.radius = alcance_radio
 	if has_node("AnimatedSprite2D_ataque"):
 		sprite_ataque = $AnimatedSprite2D_ataque
+		
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
-
-
-
 
 func _actualizar_posicion() -> void:
 	if not is_instance_valid(jugador):
@@ -59,10 +57,10 @@ func atacar(objetivo: Node2D) -> void:
 
 	if is_instance_valid(objetivo):
 		direccion_actual = (objetivo.global_position - jugador.global_position).normalized()
-		aplicar_danio(objetivo)  # ← cada hija define esto
+		aplicar_danio(objetivo) 
 
 func aplicar_danio(objetivo: Node2D) -> void:
-	pass  # la hija sobreescribe esto
+	pass # la hija sobreescribe esto
 
 func _on_timer_ataque_timeout() -> void:
 	puede_atacar = true
@@ -77,7 +75,6 @@ func _on_body_exited(body: Node2D) -> void:
 		enemigos_al_alcance.erase(body)
 		enemigo_perdido.emit(body)
 		
-		
 func _physics_process(delta: float) -> void:
 	var objetivo: Node2D = null
 	
@@ -91,14 +88,10 @@ func _physics_process(delta: float) -> void:
 		direccion_actual = Vector2.RIGHT.rotated(nuevo_angulo)
 		rotation = direccion_actual.angle() 
 
-		# --- NUEVA LÓGICA: VOLTEAR EL ARMA SI MIRA A LA IZQUIERDA ---
 		if direccion_actual.x < 0:
-			# Si la dirección en X es negativa (apunta a la izquierda), invertimos la escala Y
 			scale.y = -1
 		else:
-			# Si apunta a la derecha, la escala Y vuelve a la normalidad
 			scale.y = 1
-		# ------------------------------------------------------------
 
 	_actualizar_posicion()
 

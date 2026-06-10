@@ -49,16 +49,17 @@ var skin_actual = "default"
 # INVENTARIO
 
 var armas_compradas = {
-	"espada": "amatista"
+	"espada": "madera"
 }
 var arma_equipada = {
 	"nombre": "espada",
-	"material": "amatista"
+	"material": "madera"
 }
 var arma_escena : PackedScene
 var armas_disponibles = {
-	"arco": preload("res://scripts/arma/arco.gd"),
-	"espada": preload("res://scripts/arma/espada.gd")
+	"arco" :  preload("res://escenas/armas/arco.tscn"),
+	"espada":  preload("res://escenas/armas/espada.tscn"),
+	#"baculo": preload("res://escenas/armas/baculo.tscn")
 }
 
 func _ready():

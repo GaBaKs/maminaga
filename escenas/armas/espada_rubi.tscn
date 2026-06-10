@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://cnnqtc7ho68oq"]
 
-[ext_resource type="Texture2D" uid="uid://bhbtl6370lumo" path="res://assets/arma/armas rubi.png" id="1_kqhf4"]
-[ext_resource type="Script" uid="uid://bfjnodf5vnixs" path="res://scripts/arma/espada_rubi.gd" id="1_liu52"]
-[ext_resource type="Texture2D" uid="uid://q67fit14o8cg" path="res://assets/arma/animacion arma/1.png" id="2_liu52"]
-[ext_resource type="Texture2D" uid="uid://cvpwq8x7adute" path="res://assets/arma/animacion arma/2.png" id="3_0l5uc"]
-[ext_resource type="Texture2D" uid="uid://biohtxo8qgl1q" path="res://assets/arma/animacion arma/3.png" id="4_miwms"]
-[ext_resource type="Texture2D" uid="uid://c2vqfli417yh4" path="res://assets/arma/animacion arma/4.png" id="5_wrjo8"]
-[ext_resource type="Texture2D" uid="uid://cfv0medwqj6u1" path="res://assets/arma/animacion arma/5.png" id="6_kmycp"]
-[ext_resource type="Texture2D" uid="uid://hpnan52g8dbg" path="res://assets/arma/animacion arma/6.png" id="7_hgoit"]
-[ext_resource type="Texture2D" uid="uid://cjwn2rwf2p7mw" path="res://assets/arma/animacion arma/7.png" id="8_7bvl4"]
-[ext_resource type="Texture2D" uid="uid://cmfl4mtjcixr2" path="res://assets/arma/animacion arma/8.png" id="9_qo8b3"]
+[ext_resource type="Texture2D" uid="uid://bp40a1v1bt4b2" path="res://assets/arma/armas rubi.png" id="1_kqhf4"]
+[ext_resource type="Texture2D" uid="uid://ftb6um78sv2e" path="res://assets/arma/animacion arma/1.png" id="2_liu52"]
+[ext_resource type="Texture2D" uid="uid://cef7okoi3hds8" path="res://assets/arma/animacion arma/2.png" id="3_0l5uc"]
+[ext_resource type="Texture2D" uid="uid://cpqwgbtiejjlq" path="res://assets/arma/animacion arma/3.png" id="4_miwms"]
+[ext_resource type="Texture2D" uid="uid://irhgrn0pgnsp" path="res://assets/arma/animacion arma/4.png" id="5_wrjo8"]
+[ext_resource type="Texture2D" uid="uid://nfuff6l43pvs" path="res://assets/arma/animacion arma/5.png" id="6_kmycp"]
+[ext_resource type="Texture2D" uid="uid://dnwysbkb4pkgm" path="res://assets/arma/animacion arma/6.png" id="7_hgoit"]
+[ext_resource type="Texture2D" uid="uid://0bcco4348n7o" path="res://assets/arma/animacion arma/7.png" id="8_7bvl4"]
+[ext_resource type="Texture2D" uid="uid://bjneqi7cjknvn" path="res://assets/arma/animacion arma/8.png" id="9_qo8b3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqsuj"]
 atlas = ExtResource("1_kqhf4")
@@ -206,7 +205,6 @@ animations = [{
 radius = 186.86894
 
 [node name="espada rubi" type="Node2D" unique_id=650196521]
-script = ExtResource("1_liu52")
 
 [node name="AnimatedSprite2D_idle" type="AnimatedSprite2D" parent="." unique_id=1711193543]
 texture_filter = 1

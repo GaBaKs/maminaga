@@ -17,10 +17,9 @@ func mostrar_cartel_victoria():
 		# Leemos la mochila para mostrarle al jugador lo que logró sacar
 		label_mineral1.text = "Cantidad de amatista recolectada: " + str(jugador.minerales_en_partida["mineral1"]) 
 		label_mineral2.text = "Cantidad de rubi recolectado: " + str(jugador.minerales_en_partida["mineral2"]) 
-<<<<<<< Updated upstream
+
 		label_mineral3.text = "Cantidad de agatha recolectada:" + str(jugador.minerales_en_partida["mineral3"])
-=======
->>>>>>> Stashed changes
+
 		label_mineral3.text = "Cantidad de agatha recolectada: " + str(jugador.minerales_en_partida["mineral3"])
 	
 	visible = true

@@ -47,6 +47,20 @@ var ajustes_dificultad = {
 	3: {"spawn_rate": 0.8, "multiplicador_minerales": 2.5}
 }
 
+const MULTIPLICADOR_DANIO = {
+	"madera": 1.0,
+	"amatista": 1.5,
+	"ruby": 2.0,
+	"agatha": 3.0
+}
+
+const TIER_MATERIAL = {
+	"madera": 0, # O el tier de animación que corresponda a madera
+	"amatista": 1,
+	"ruby": 2,
+	"agatha": 3
+}
+
 func obtener_multiplicador_enemigos():
 	return ajustes_dificultad[dificultad_actual]["spawn_rate"]
 

@@ -41,11 +41,16 @@ func _ready():
 	if barra_vida:
 		barra_vida.max_value = vida_actual
 		barra_vida.value = vida_actual
-	#self.mineral_recolectado.connect(_sumar_al_global)
-		PlayerData.arma_escena=PlayerData.armas_disponibles[PlayerData.arma_equipada["nombre"]]
+		
+		# --- INSTANCIACIÓN DEL ARMA CON MATERIAL ---
+		PlayerData.arma_escena = PlayerData.armas_disponibles[PlayerData.arma_equipada["nombre"]]
 		arma_actual = PlayerData.arma_escena.instantiate()
+		
+		# Le inyectamos el material ANTES de que ejecute su _ready()
+		arma_actual.material_actual = PlayerData.arma_equipada["material"]
+		
 		add_child(arma_actual)
-		print("arma actual:", arma_actual)
+		print("arma actual:", arma_actual.nombre_arma, " de ", arma_actual.material_actual)
 		arma_actual.position = Vector2.ZERO  # centrada en el jugador
 
 func _physics_process(delta):
@@ -56,7 +61,6 @@ func _physics_process(delta):
 
 
 func recibir_danio(cantidad):
-	# CLÁUSULA DE GUARDIA: Si el jugador ya murió, ignoramos el daño
 	if yamurio:
 		return 
 		
@@ -67,64 +71,50 @@ func recibir_danio(cantidad):
 		morir()
 
 func morir():
-	# Doble seguridad: Si ya pasó por acá, cortamos la ejecución
 	if yamurio:
 		return 
 		
-	# Lo marcamos como muerto INMEDIATAMENTE para que nadie más entre a esta función
 	yamurio = true 
-	
-	get_tree().paused = true # pausamos el juego
+	get_tree().paused = true
 	sonido_muerte.play()
-		
 	Global.emit_signal("jugador_murio", yamurio)
-	
-	set_physics_process(false) # Pausamos su movimiento
+	set_physics_process(false)
 	visible = false
+
 func _on_revivio_jugador():
-		vida_actual=PlayerData.vida
-		yamurio=true
-		set_physics_process(true)
-		visible = true
-		get_tree().paused = false
+	vida_actual = PlayerData.vida
+	yamurio = false # Corregido a false para que pueda volver a recibir daño
+	set_physics_process(true)
+	visible = true
+	get_tree().paused = false
 	
 func disparar():
 	if bala_escena:
 		var nueva_bala = bala_escena.instantiate()
-		# En lugar de current_scene, lo agregamos al padre del jugador (el mapa)
 		get_parent().add_child(nueva_bala) 
 		nueva_bala.global_position = global_position
 		nueva_bala.direccion = ultima_direccion
 	else:
-			print("ERROR: No hay escena cargada en bala_escena")
+		print("ERROR: No hay escena cargada en bala_escena")
 			
 
 func animacion():
-	
 	if velocity.x != 0:
 		if not sonido_pasos.playing:
 			sonido_pasos.play(1)
 	else:
-			sonido_pasos.stop()
-	
+		sonido_pasos.stop()
 	
 	if velocity.x > 0:
 		animated_sprite.play("run_right")
-
 	elif velocity.x < 0:
 		animated_sprite.play("run_left")
-
 	else:
 		if ultima_direccion.x > 0:
 			animated_sprite.play("idle_right")
-
 		elif ultima_direccion.x < 0:
 			animated_sprite.play("idle_left")
-			
-			
-			
 
-# Reinicia los contadores (llamar al inicio de cada partida)
 func resetear_recursos_temporales():
 	for key in minerales_en_partida.keys():
 		minerales_en_partida[key] = 0
