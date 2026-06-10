@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtrurmjwal88a" path="res://scripts/player/jugador.gd" id="1_jpodt"]
 [ext_resource type="PackedScene" uid="uid://4yo7np8erhxq" path="res://escenas/armas/arma_abstract.tscn" id="2_ovq70"]
+[ext_resource type="SpriteFrames" uid="uid://bhroarmtxid1x" path="res://escenas/player/skins/skin_default.tres" id="3_clsgm"]
 [ext_resource type="AudioStream" uid="uid://b3l6drcfo5soq" path="res://audios/sonido_muerte.mp3" id="5_clsgm"]
 [ext_resource type="AudioStream" uid="uid://ckmh7aa8le8mo" path="res://audios/caminar.mp3" id="6_l63m8"]
 
@@ -35,6 +36,8 @@ zoom = Vector2(2, 2)
 process_callback = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1519851020]
+sprite_frames = ExtResource("3_clsgm")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185478807]
 position = Vector2(0, 2)

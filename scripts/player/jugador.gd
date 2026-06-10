@@ -27,12 +27,6 @@ var yamurio= false
 var recarga_disparo := 0.5
 var timer_disparo := 0.0
 
-# --- VARIABLES DE ÁREA (OPCIÓN B) ---
-var danio_area := 1
-var recarga_area := 1.0
-var timer_area := 0.0
-
-
 func _ready():
 	Global.referencia_jugador = self 
 	Global.jugador_revivio.connect(_on_revivio_jugador)
@@ -42,16 +36,15 @@ func _ready():
 		barra_vida.max_value = vida_actual
 		barra_vida.value = vida_actual
 		
-		# --- INSTANCIACIÓN DEL ARMA CON MATERIAL ---
 		PlayerData.arma_escena = PlayerData.armas_disponibles[PlayerData.arma_equipada["nombre"]]
 		arma_actual = PlayerData.arma_escena.instantiate()
-		
-		# Le inyectamos el material ANTES de que ejecute su _ready()
 		arma_actual.material_actual = PlayerData.arma_equipada["material"]
-		
 		add_child(arma_actual)
 		print("arma actual:", arma_actual.nombre_arma, " de ", arma_actual.material_actual)
 		arma_actual.position = Vector2.ZERO  # centrada en el jugador
+		var ruta_skin = PlayerData.todas_las_skins[PlayerData.skin_actual]
+		animated_sprite.sprite_frames = load(ruta_skin)
+		print("SKIN SELECCIONADA: ",ruta_skin)
 
 func _physics_process(delta):
 	animacion()
