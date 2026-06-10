@@ -10276,7 +10276,7 @@ z_index = 50
 position = Vector2(2359, -662)
 
 [node name="Timer_supervivencia" type="Timer" parent="." unique_id=693542817]
-wait_time = 30.0
+wait_time = 330.0
 one_shot = true
 autostart = true
 
@@ -10292,7 +10292,7 @@ visible = false
 position = Vector2(113, -287)
 
 [node name="TimerLocura" type="Timer" parent="." unique_id=896697713]
-wait_time = 20.0
+wait_time = 300.0
 one_shot = true
 autostart = true
 

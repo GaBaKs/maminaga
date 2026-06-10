@@ -17905,7 +17905,7 @@ autoplay = true
 script = ExtResource("19_ybigs")
 
 [node name="Timer_supervivencia" type="Timer" parent="." unique_id=897202884]
-wait_time = 30.0
+wait_time = 330.0
 one_shot = true
 autostart = true
 
@@ -17921,7 +17921,7 @@ visible = false
 position = Vector2(-2734, -646)
 
 [node name="TimerLocura" type="Timer" parent="." unique_id=1040608320]
-wait_time = 20.0
+wait_time = 300.0
 one_shot = true
 autostart = true
 

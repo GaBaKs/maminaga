@@ -6306,7 +6306,7 @@ stream = ExtResource("13_6o02u")
 script = ExtResource("14_qryxp")
 
 [node name="Timer_supervivencia" type="Timer" parent="." unique_id=527694008]
-wait_time = 10.0
+wait_time = 330.0
 one_shot = true
 autostart = true
 
@@ -6322,7 +6322,7 @@ visible = false
 position = Vector2(-2734, -646)
 
 [node name="TimerLocura" type="Timer" parent="." unique_id=987166930]
-wait_time = 5.0
+wait_time = 300.0
 one_shot = true
 autostart = true
 
