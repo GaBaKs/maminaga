@@ -160,6 +160,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vlwnh")
 text = "Volver"
 
 [node name="TextureRectDificultades" type="TextureRect" parent="." unique_id=1984546061]
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = 418.0
