@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://qw40144gf1y6" path="res://tileset/mapacorrosion/PNG/Animation3.png" id="12_elquc"]
 [ext_resource type="PackedScene" uid="uid://b56b86jiyx3ro" path="res://escenas/player/jugador.tscn" id="13_5wshl"]
 [ext_resource type="Texture2D" uid="uid://q64yn64hlo24" path="res://tileset/mapacorrosion/PNG/Animation6.png" id="13_lvl6k"]
+[ext_resource type="AudioStream" uid="uid://bfnyoom2pc0br" path="res://audios/musica_oscuro.mp3" id="18_5wshl"]
+[ext_resource type="Script" uid="uid://coj88pygsbtu1" path="res://scripts/sonidos/musica/musica_mapa_oscurop.gd" id="19_ybigs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bik57"]
 texture = ExtResource("1_frbht")
@@ -17960,3 +17962,9 @@ position = Vector2(-19, 78)
 [node name="Spawn_mineral15" type="Marker2D" parent="PuntosDeMinerales" unique_id=182695042 groups=["puntos_spawns_minerales"]]
 z_index = 5
 position = Vector2(-81, 20)
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=2037271835]
+stream = ExtResource("18_5wshl")
+volume_db = -50.0
+autoplay = true
+script = ExtResource("19_ybigs")

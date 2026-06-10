@@ -7,6 +7,7 @@ var fuerza_retroceso := Vector2.ZERO
 var experiencia_muerte= 10
 var direccion_actual := Vector2.ZERO
 var danio = 1
+
 # Ya no necesitamos la variable 'jugador' con @onready aquí arriba 
 # porque la buscaremos dinámicamente.
 
@@ -50,7 +51,6 @@ func morir_enemigo():
 	print("¡Mato enemigo! Experiencia: ", PlayerData.experiencia)
 	if (PlayerData.experiencia>PlayerData.experiencia_max):
 		PlayerData.subir_nivel()
-	
 	set_physics_process(false)  # detiene el movimiento
 	reproducir_animacion_muerte()
 	# El move_and_slide() se llama UNA SOLA VEZ al final para aplicar la velocity que sea
