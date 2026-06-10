@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bgf5dxu21omri"]
+
+[ext_resource type="Script" uid="uid://dgcwkqulfk3uy" path="res://scripts/menu/pausaMenu.gd" id="1_85y7f"]
+[ext_resource type="Texture2D" uid="uid://cftjgmpvpkpjb" path="res://assets/menu/Botones pergamino/pausaabierto.png" id="1_b2jxc"]
+[ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="2_85y7f"]
+[ext_resource type="Texture2D" uid="uid://bwktad654vn7g" path="res://assets/menu/Botones pergamino/pausa3.png" id="3_go6rm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7sbt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85y7f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go6rm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy5cw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5wd8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5475"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Pausa" type="CanvasLayer" unique_id=1177517165]
+process_mode = 3
+script = ExtResource("1_85y7f")
+
+[node name="Pausaabierto" type="Sprite2D" parent="." unique_id=30833766]
+texture_filter = 1
+position = Vector2(574, 312)
+scale = Vector2(9.922222, 9.922223)
+texture = ExtResource("1_b2jxc")
+
+[node name="Control" type="Control" parent="." unique_id=427503579]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 350.0
+offset_top = 59.0
+offset_right = 818.0
+offset_bottom = 582.0
+
+[node name="Label" type="Label" parent="Control" unique_id=966654060]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 47.0
+offset_right = 337.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("2_85y7f")
+theme_override_font_sizes/font_size = 60
+text = "Pausa"
+
+[node name="Pausa3" type="Sprite2D" parent="Control" unique_id=932046421]
+texture_filter = 1
+position = Vector2(254.6875, 318.75)
+scale = Vector2(5.448171, 4.937498)
+texture = ExtResource("3_go6rm")
+
+[node name="Pausa4" type="Sprite2D" parent="Control" unique_id=851389552]
+texture_filter = 1
+position = Vector2(282, 200)
+scale = Vector2(5.4268293, 4.9583335)
+texture = ExtResource("3_go6rm")
+
+[node name="Continuar" type="Button" parent="Control" unique_id=1545203825]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 138.0
+offset_right = 333.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("2_85y7f")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7sbt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_85y7f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_go6rm")
+text = "Continuar"
+
+[node name="Vovler" type="Button" parent="Control" unique_id=1400011451]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 257.0
+offset_right = 322.0
+offset_bottom = 329.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("2_85y7f")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vy5cw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u5wd8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a5475")
+text = "Volver al menu"
