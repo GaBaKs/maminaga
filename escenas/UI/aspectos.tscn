@@ -67,7 +67,6 @@ text = "Volver"
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=1276026373]
 position = Vector2(99, 326)
 stream = ExtResource("4_w8jay")
-volume_db = -30.0
 script = ExtResource("5_a4do7")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=120694758]

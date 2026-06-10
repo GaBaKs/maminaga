@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://dgcwkqulfk3uy" path="res://scripts/menu/pausaMenu.gd" id="1_85y7f"]
 [ext_resource type="Texture2D" uid="uid://cftjgmpvpkpjb" path="res://assets/menu/Botones pergamino/pausaabierto.png" id="1_b2jxc"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="2_85y7f"]
+[ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="2_s7sbt"]
 [ext_resource type="Texture2D" uid="uid://bwktad654vn7g" path="res://assets/menu/Botones pergamino/pausa3.png" id="3_go6rm"]
+[ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="3_vy5cw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7sbt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -26,6 +28,12 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="Pausa" type="CanvasLayer" unique_id=1177517165]
 process_mode = 3
 script = ExtResource("1_85y7f")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=1278947921]
+position = Vector2(574, 312)
+scale = Vector2(9.922222, 9.922223)
+stream = ExtResource("2_s7sbt")
+script = ExtResource("3_vy5cw")
 
 [node name="Pausaabierto" type="Sprite2D" parent="." unique_id=30833766]
 texture_filter = 1

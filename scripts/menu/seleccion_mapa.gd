@@ -20,6 +20,10 @@ var proximo_nivel
 @onready var boton_normal = $TextureRectDificultades/HBoxContainer2/BotonNormal
 @onready var boton_dificil = $TextureRectDificultades/HBoxContainer2/BotonDificil
 
+@onready var label_bosque = $LabelBosque
+@onready var label_nieve = $LabelNieve
+@onready var label_oscuro = $LabelOscuro
+
 func _ready():
 	# ESTADO INICIAL: Cuando arranca la escena
 	# El botón jugar arranca habilitado y visible
@@ -27,6 +31,7 @@ func _ready():
 	boton_jugar.disabled = false
 	
 	# Ocultamos el recuadro de dificultades al inicio
+	actualizar_labels()
 	menu_dificultades.hide()
 
 func _on_lbutton_pressed():  
@@ -45,6 +50,7 @@ func animar_cambio():
 
 func actualizar_display():
 	display.texture = load("res://assets/menu/iconosMapas/" + opciones[indice_actual] + ".png")
+	actualizar_labels()
 	print(opciones[indice_actual])  
 
 func _on_jugar_pressed():
@@ -89,3 +95,18 @@ func iniciar_partida():
 
 func _on_volver_atras_pressed() -> void:
 	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")
+	
+	
+func actualizar_labels():
+	# Primero ocultamos todos
+	label_bosque.hide()
+	label_nieve.hide()
+	label_oscuro.hide()
+
+	# Mostramos el que corresponde
+	if indice_actual == 0:
+		label_bosque.show()
+	elif indice_actual == 1:
+		label_nieve.show()
+	elif indice_actual == 2:
+		label_oscuro.show()

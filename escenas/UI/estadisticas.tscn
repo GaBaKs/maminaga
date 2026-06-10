@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvo007prux4hv" path="res://assets/menu/descarga (1).jpg" id="1_j0avv"]
 [ext_resource type="Script" uid="uid://r0a2skr887sx" path="res://scripts/menu/estadisticas.gd" id="1_kxusn"]
-[ext_resource type="Texture2D" uid="uid://coi8n2eylothe" path="res://assets/menu/estadisticas.png" id="3_3r32r"]
+[ext_resource type="Texture2D" uid="uid://cj0w6ij3ygfrd" path="res://assets/menu/estadisticas.png" id="3_3r32r"]
 [ext_resource type="Texture2D" uid="uid://dxddk0vnrl04s" path="res://assets/menu/pergamino 1.png" id="4_pxbdy"]
 [ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="5_5fcji"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_pt41d"]
@@ -153,7 +153,6 @@ text = "Volver"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=388686027]
 stream = ExtResource("6_m7ib4")
-volume_db = -30.0
 script = ExtResource("7_3r32r")
 
 [connection signal="pressed" from="volver_menu" to="." method="_on_volver_menu_pressed"]

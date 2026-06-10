@@ -106,7 +106,6 @@ texture = ExtResource("6_g332j")
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=271399487]
 stream = ExtResource("4_qy112")
-volume_db = -30.0
 script = ExtResource("5_np6vg")
 
 [connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]

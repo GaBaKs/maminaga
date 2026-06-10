@@ -55,10 +55,8 @@ fill_mode = 1
 
 [node name="Sonido_Muerte" type="AudioStreamPlayer" parent="." unique_id=2038402044]
 stream = ExtResource("5_clsgm")
-volume_db = -40.0
 script = SubResource("GDScript_l63m8")
 
 [node name="Pasos" type="AudioStreamPlayer" parent="." unique_id=1476132535]
 stream = ExtResource("6_l63m8")
-volume_db = -20.0
 pitch_scale = 1.5

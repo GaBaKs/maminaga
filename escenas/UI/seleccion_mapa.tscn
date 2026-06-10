@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b5g5myy0fx7h8" path="res://assets/menu/iconosMapas/logo_bosque.png" id="7_aqsmi"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="8_6o8fp"]
 [ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="10_4naqb"]
+[ext_resource type="Texture2D" uid="uid://ck7tuv3hqaj4y" path="res://assets/menu/Botones pergamino/description.png" id="11_n3xrl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_766hy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -141,7 +142,6 @@ texture = ExtResource("7_aqsmi")
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=57051225]
 stream = ExtResource("7_5bj3u")
-volume_db = -30.0
 script = ExtResource("8_6o8fp")
 
 [node name="volver atras" type="Button" parent="." unique_id=1509712651]
@@ -203,6 +203,63 @@ theme_override_colors/font_color = Color(0.11764706, 0.05490196, 0.003921569, 1)
 theme_override_fonts/font = ExtResource("10_4naqb")
 theme_override_font_sizes/font_size = 30
 text = "Dificil"
+
+[node name="Description" type="Sprite2D" parent="." unique_id=1293444650]
+texture_filter = 1
+position = Vector2(916, 193)
+scale = Vector2(7.806816, 7.2910876)
+texture = ExtResource("11_n3xrl")
+
+[node name="LabelBosque" type="Label" parent="." unique_id=1352103642]
+visible = false
+layout_mode = 0
+offset_left = 827.0
+offset_top = 107.0
+offset_right = 1026.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("5_4naqb")
+theme_override_font_sizes/font_size = 30
+text = "     El Bosque
+
+Un espacio tranquilo
+  que sera un reto
+ sencillo para los 
+    aventureros"
+
+[node name="LabelNieve" type="Label" parent="." unique_id=2137885446]
+visible = false
+layout_mode = 0
+offset_left = 821.0
+offset_top = 92.0
+offset_right = 1016.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("5_4naqb")
+theme_override_font_sizes/font_size = 27
+text = "      Valle Boreal
+El frio de sus campos 
+ puede despitar hasta 
+los mas habilidosos. 
+ Se necesita un buen 
+   equipamiento para 
+enfrentar sus peligros."
+
+[node name="LabelOscuro" type="Label" parent="." unique_id=285464509]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 108.0
+offset_right = 1018.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("5_4naqb")
+theme_override_font_sizes/font_size = 30
+text = "  Tumbas Olvidadas
+
+    En esta tierra 
+desolada habitan los
+  mayores peligros.
+El riesgo es muy alto"
 
 [connection signal="pressed" from="HBoxContainer/LButton" to="." method="_on_lbutton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Jugar" to="." method="_on_jugar_pressed"]

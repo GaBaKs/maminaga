@@ -17900,7 +17900,7 @@ wait_time = 2.0
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=2037271835]
 stream = ExtResource("18_5wshl")
-volume_db = -50.0
+volume_db = -10.0
 autoplay = true
 script = ExtResource("19_ybigs")
 

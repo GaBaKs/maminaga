@@ -10132,7 +10132,6 @@ position = Vector2(-159, -19)
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=768871120]
 stream = ExtResource("14_2njgf")
-volume_db = -30.0
 script = ExtResource("15_4lpsi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1223960896]
