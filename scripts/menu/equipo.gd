@@ -15,9 +15,9 @@ const ORDEN_MATERIALES = ["madera", "amatista", "ruby", "agatha"]
 # Aca van los costos de las armas
 const COSTOS_MEJORA = {
 	"madera":   {"mineral": "mineral1", "costo": 1}, # Costo inicial para obtener el arma base
-	"amatista": {"mineral": "mineral1", "costo": 50},
-	"ruby":     {"mineral": "mineral2", "costo": 100},
-	"agatha":   {"mineral": "mineral3", "costo": 150}
+	"amatista": {"mineral": "mineral1", "costo": 5},
+	"ruby":     {"mineral": "mineral2", "costo": 5},
+	"agatha":   {"mineral": "mineral3", "costo": 10}
 }
 
 func _ready():
