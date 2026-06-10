@@ -73,7 +73,7 @@ func recibir_danio(cantidad):
 	if yamurio:
 		return 
 		
-	vida_actual -= cantidad
+	vida_actual -= cantidad*((100-PlayerData.armadura)/100)
 	barra_vida.value = vida_actual
 	
 	if vida_actual <= 0:

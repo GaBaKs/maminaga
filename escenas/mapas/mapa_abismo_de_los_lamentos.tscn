@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bgf5dxu21omri" path="res://escenas/UI/pausa.tscn" id="32_gg84h"]
 [ext_resource type="Texture2D" uid="uid://yhfuygx0xths" path="res://assets/menu/Botones pergamino/pausa.png" id="34_o8eit"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="35_eb2c2"]
-[ext_resource type="Script" path="res://scripts/menu/pausa.gd" id="36_o35qk"]
+[ext_resource type="Script" uid="uid://d12j2ymr1a5mr" path="res://scripts/menu/pausa.gd" id="36_o35qk"]
 [ext_resource type="PackedScene" uid="uid://c50j3oip8awvq" path="res://escenas/UI/cartel_victoria.tscn" id="37_o8eit"]
 [ext_resource type="PackedScene" uid="uid://crnppfxf0qxeb" path="res://escenas/player/extraccion.tscn" id="38_eb2c2"]
 
@@ -10169,6 +10169,7 @@ transform = Transform2D(1, 0, 0, 1, 200, 500)
 [node name="Pausa" parent="Joystick" unique_id=1177517165 instance=ExtResource("32_gg84h")]
 
 [node name="Joystick" parent="Joystick" unique_id=526028633 instance=ExtResource("11_2njgf")]
+position = Vector2(-72, 0)
 
 [node name="Pausa2" type="Sprite2D" parent="Joystick" unique_id=873749780]
 position = Vector2(848, -444)
@@ -10275,7 +10276,7 @@ z_index = 50
 position = Vector2(1494, -1060)
 
 [node name="Timer_supervivencia" type="Timer" parent="." unique_id=693542817]
-wait_time = 10.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
@@ -10291,7 +10292,7 @@ visible = false
 position = Vector2(113, -287)
 
 [node name="TimerLocura" type="Timer" parent="." unique_id=896697713]
-wait_time = 5.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 

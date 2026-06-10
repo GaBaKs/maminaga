@@ -42,9 +42,9 @@ var configuracion_mapas = {
 
 # --- DIFICULTAD ---
 var ajustes_dificultad = {
-	1: {"spawn_rate": 2.5, "multiplicador_minerales": 1.0},
-	2: {"spawn_rate": 1.5, "multiplicador_minerales": 1.5},
-	3: {"spawn_rate": 0.8, "multiplicador_minerales": 2.5}
+	0: {"spawn_rate": 2.5, "multiplicador_minerales": 1.0},
+	1: {"spawn_rate": 1.5, "multiplicador_minerales": 1.5},
+	2: {"spawn_rate": 0.8, "multiplicador_minerales": 2.5}
 }
 
 const MULTIPLICADOR_DANIO = {

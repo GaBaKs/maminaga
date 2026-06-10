@@ -5,7 +5,7 @@ extends Node2D
 @export var intentos_maximos: int = 20
 @onready var label_timer = $Joystick/timerarriba
 # Variables globales para el mapa
-var tiempo_total_partida = 10.0 # 5.5 minutos
+var tiempo_total_partida = 30.0 # 5.5 minutos
 var tiempo_spawn_base = 2.0 # Valor por defecto
 
 @onready var foreground = $Foreground

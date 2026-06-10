@@ -20,11 +20,11 @@
 [ext_resource type="AudioStream" uid="uid://bmfxsprycorep" path="res://audios/musica_oscuro.mp3" id="18_5wshl"]
 [ext_resource type="PackedScene" uid="uid://c50j3oip8awvq" path="res://escenas/UI/cartel_victoria.tscn" id="18_b3ta5"]
 [ext_resource type="PackedScene" uid="uid://crnppfxf0qxeb" path="res://escenas/player/extraccion.tscn" id="19_wbbn5"]
-[ext_resource type="Script" path="res://scripts/sonidos/musica/musica_mapa_oscurop.gd" id="19_ybigs"]
-[ext_resource type="PackedScene" path="res://escenas/UI/pausa.tscn" id="20_q7ous"]
+[ext_resource type="Script" uid="uid://coj88pygsbtu1" path="res://scripts/sonidos/musica/musica_mapa_oscurop.gd" id="19_ybigs"]
+[ext_resource type="PackedScene" uid="uid://bgf5dxu21omri" path="res://escenas/UI/pausa.tscn" id="20_q7ous"]
 [ext_resource type="Texture2D" uid="uid://yhfuygx0xths" path="res://assets/menu/Botones pergamino/pausa.png" id="22_ydfvp"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="23_yl36w"]
-[ext_resource type="Script" path="res://scripts/menu/pausa.gd" id="24_tlouh"]
+[ext_resource type="Script" uid="uid://d12j2ymr1a5mr" path="res://scripts/menu/pausa.gd" id="24_tlouh"]
 [ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="26_4qrnp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bik57"]
@@ -17905,7 +17905,7 @@ autoplay = true
 script = ExtResource("19_ybigs")
 
 [node name="Timer_supervivencia" type="Timer" parent="." unique_id=897202884]
-wait_time = 10.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
@@ -17921,7 +17921,7 @@ visible = false
 position = Vector2(-2734, -646)
 
 [node name="TimerLocura" type="Timer" parent="." unique_id=1040608320]
-wait_time = 5.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 

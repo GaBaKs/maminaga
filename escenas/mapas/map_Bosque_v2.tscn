@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="6_22mar"]
 [ext_resource type="Texture2D" uid="uid://dsqn2l84qpfyr" path="res://tileset/Decoraciones de piedra/Texture/TX Shadow Plant.png" id="6_mgab0"]
 [ext_resource type="Texture2D" uid="uid://cpwqrs0pjuykv" path="res://tileset/Decoraciones de piedra/Texture/TX Struct.png" id="7_1vn4m"]
-[ext_resource type="Script" path="res://scripts/menu/pausa.gd" id="7_22mar"]
+[ext_resource type="Script" uid="uid://d12j2ymr1a5mr" path="res://scripts/menu/pausa.gd" id="7_22mar"]
 [ext_resource type="Texture2D" uid="uid://gt6bx77rm63" path="res://tileset/deco exterior/exterior.png" id="8_1hrnh"]
 [ext_resource type="PackedScene" uid="uid://b56b86jiyx3ro" path="res://escenas/player/jugador.tscn" id="9_src8b"]
 [ext_resource type="PackedScene" uid="uid://6qs2usjqcilp" path="res://escenas/UI/cartel_gameover.tscn" id="11_wulo0"]
