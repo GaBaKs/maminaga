@@ -11,6 +11,7 @@ func _ready():
 func _on_boton_revivir_pressed():
 	visible = false
 	Global.emit_signal("jugador_revivio")
+	get_tree().paused = false
 
 func _on_boton_menu_pressed():
 	if Global.referencia_jugador != null:
@@ -21,6 +22,7 @@ func _on_boton_menu_pressed():
 
 func _on_jugador_murio(yamurio: bool):
 	print("murio")
+	get_tree().paused = true
 	if yamurio:
 		print("ya termina el juego y va al menu")
 	visible=true

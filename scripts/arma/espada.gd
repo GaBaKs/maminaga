@@ -6,7 +6,7 @@ func _ready() -> void:
 	nombre_arma = "Espada de " + material_actual.capitalize()
 	
 	var multiplicador = Global.MULTIPLICADOR_DANIO.get(material_actual, 2.0)
-	danio = 40.0 * multiplicador 
+	danio = 40.0 * multiplicador + PlayerData.danio
 	
 	var velocidad_ataque = 0.7   
 	alcance_radio = 70.0     

@@ -9,7 +9,7 @@ func _ready() -> void:
 	nombre_arma = "arco de "+ material_actual.capitalize()
 	
 	var multiplicador = Global.MULTIPLICADOR_DANIO.get(material_actual, 1.0)
-	danio = 25.0 * multiplicador
+	danio = 25.0 * multiplicador + PlayerData.danio
 	
 	velocidad_ataque = 0.5
 	alcance_radio = 250.0

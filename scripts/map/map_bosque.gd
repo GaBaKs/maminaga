@@ -2,8 +2,8 @@ extends Node2D
 @export var tipos_de_minerales: Array[PackedScene] = [preload("res://escenas/mapas/mineral_1.tscn"),preload("res://escenas/mapas/mineral_2.tscn"),preload("res://escenas/mapas/mineral_3.tscn")]
 @export var spawn_distancia_min: float = 400.0
 @export var spawn_distancia_max: float = 600.0
-@export var intentos_maximos: int = 10
-
+@export var intentos_maximos: int = 20
+@onready var label_timer = $Joystick/timerarriba
 # Variables globales para el mapa
 var tiempo_total_partida = 330.0 # 5.5 minutos
 var tiempo_spawn_base = 2.0 # Valor por defecto
@@ -32,6 +32,21 @@ func _ready() -> void:
 	for nodo in get_tree().get_nodes_in_group("jugador"):
 		print(nodo.name, " - ", nodo.get_class(), " - ", nodo.get_path())
 	generar_minerales_por_dificultad()
+	
+func _process(delta):
+	# Verificamos que el timer esté corriendo y que el label exista
+	if $Timer_supervivencia.time_left > 0:
+		var tiempo_restante = $Timer_supervivencia.time_left
+		
+		# Matemática para formato reloj
+		var minutos = int(tiempo_restante) / 60
+		var segundos = int(tiempo_restante) % 60
+		
+		# Actualizamos el texto en pantalla
+		label_timer.text = "%02d:%02d" % [minutos, segundos]
+	else:
+		label_timer.text = "00:00"
+	
 @export var tipos_de_enemigos: Array[PackedScene]
 func _on_enemy_timer_timeout():
 	# 2. Calculamos el minuto actual
@@ -39,7 +54,6 @@ func _on_enemy_timer_timeout():
 	var tiempo_transcurrido = tiempo_total_partida - $Timer_supervivencia.time_left
 	var minuto_actual = int(tiempo_transcurrido / 60.0) # Esto nos dará 0, 1, 2, 3, 4 o 5
 	
-	# 3. Instanciamos el enemigo (TU LÓGICA DE SPAWN VA ACÁ)
 	var jugador = Global.referencia_jugador
 	if not is_instance_valid(jugador):
 		return
@@ -51,21 +65,16 @@ func _on_enemy_timer_timeout():
 	var escena = Global.enemigosBosque.values().pick_random()
 	var nuevo_enemigo = escena.instantiate()
 	add_child(nuevo_enemigo)
-	nuevo_enemigo.global_position = punto  # ← global_position en lugar de position
+	nuevo_enemigo.global_position = punto 
 	# 4. Aumentamos la vida del enemigo según el minuto
-	# Asumiendo que tu enemigo tiene una variable llamada 'vida' y empieza en 100
 	var vida_base = 100.0
-	# Sube un 50% extra por cada minuto que pasa
-	var multiplicador_vida = 1.0 + (minuto_actual * 0.5) 
+	var multiplicador_vida = 1.0 + (minuto_actual * 0.2) 
 	nuevo_enemigo.vida_enemigo = vida_base * multiplicador_vida
 	
-	# 5. Aceleramos el siguiente spawn
-	# Restamos tiempo según el minuto actual (ej: 0.15s menos por minuto)
 	var reduccion_tiempo = minuto_actual * 0.15 
 	var nuevo_tiempo_espera = tiempo_spawn_base - reduccion_tiempo  
-	# Usamos max() para poner un límite y que nunca spawneen en menos de 0.2s 
-	# (salvo en el evento del modo locura)
 	$EnemyTimer.wait_time = max(0.2, nuevo_tiempo_espera)
+	
 func buscar_punto_spawn(origen: Vector2) -> Variant:
 	for i in range(intentos_maximos):
 		var angulo = randf() * TAU

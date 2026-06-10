@@ -63,7 +63,7 @@ var armas_disponibles = {
 }
 
 func _ready():
-	guardar_datos()
+	#guardar_datos()
 	cargar_datos()
 	pass
 
