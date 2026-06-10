@@ -10,20 +10,19 @@ var proximo_nivel
 @onready var boton_jugar = $HBoxContainer/Jugar
 
 # === NUEVAS REFERENCIAS (Ajustá las rutas a donde estén tus botones realmente) ===
+@onready var menu_dificultades = $TextureRectDificultades # Referencia directa al contenedor padre
 @onready var boton_facil = $TextureRectDificultades/HBoxContainer2/BotonFacil 
 @onready var boton_normal = $TextureRectDificultades/HBoxContainer2/BotonNormal
 @onready var boton_dificil = $TextureRectDificultades/HBoxContainer2/BotonDificil
 
 func _ready():
 	# ESTADO INICIAL: Cuando arranca la escena
-	# Ocultamos y bloqueamos el botón de jugar
-	boton_jugar.hide()
-	boton_jugar.disabled = true
+	# El botón jugar arranca habilitado y visible
+	boton_jugar.show()
+	boton_jugar.disabled = false
 	
-	# Nos aseguramos de que las dificultades estén habilitadas
-	boton_facil.disabled = false
-	boton_normal.disabled = false
-	boton_dificil.disabled = false
+	# Ocultamos el recuadro de dificultades al inicio
+	menu_dificultades.hide()
 
 func _on_lbutton_pressed():  
 	indice_actual = (indice_actual - 1 + opciones.size()) % opciones.size()
@@ -32,22 +31,6 @@ func _on_lbutton_pressed():
 func _on_rbutton_pressed():  
 	indice_actual = (indice_actual + 1) % opciones.size()
 	animar_cambio()
-	
-func _on_jugar_pressed():
-	# Verificamos que se haya elegido una dificultad por seguridad
-	if Global.dificultad_actual:
-		print("Iniciando mapa en dificultad: ", Global.dificultad_actual)
-		
-		if (indice_actual == 0):
-			proximo_nivel=("res://escenas/mapas/map_Bosque_v2.tscn")
-		elif (indice_actual == 1):
-			proximo_nivel=("res://escenas/mapas/mapa_abismo_de_los_lamentos.tscn")
-		elif (indice_actual == 2):
-			proximo_nivel=("res://escenas/mapas/mapa_oscuro.tscn")
-			
-		print("Cargando: ", proximo_nivel)
-		Global.nivel_a_cargar = proximo_nivel
-		get_tree().change_scene_to_file(proximo_nivel)
 	
 func animar_cambio():
 	var tween = create_tween()
@@ -59,39 +42,37 @@ func actualizar_display():
 	display.texture = load("res://assets/menu/iconosMapas/" + opciones[indice_actual] + ".png")
 	print(opciones[indice_actual])  
 
-
-func _on_volver_atras_pressed() -> void:
-	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")
+func _on_jugar_pressed():
+	# Al apretar jugar, mostramos las dificultades y bloqueamos jugar para que no lo aprieten de nuevo
+	menu_dificultades.show()
+	boton_jugar.disabled = true
 
 func _on_boton_facil_pressed() -> void:
 	Global.dificultad_actual = 1
-	habilitar_boton_jugar()
-	$TextureRectDificultades.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonFacil.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonNormal.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonDificil.hide()
+	iniciar_partida()
 
 func _on_boton_normal_pressed() -> void:
 	Global.dificultad_actual = 2
-	habilitar_boton_jugar()
-	$TextureRectDificultades.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonFacil.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonNormal.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonDificil.hide()
+	iniciar_partida()
 
 func _on_boton_dificil_pressed() -> void:
 	Global.dificultad_actual = 3
-	habilitar_boton_jugar()
-	$TextureRectDificultades.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonFacil.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonNormal.hide()
-	$TextureRectDificultades/HBoxContainer2/BotonDificil.hide()
-func habilitar_boton_jugar():
-	# 1. Inhabilitamos los botones de dificultad para que no puedan cambiarse
-	boton_facil.disabled = true
-	boton_normal.disabled = true
-	boton_dificil.disabled = true
+	iniciar_partida()
+
+func iniciar_partida():
+	# Esta función junta la lógica que antes tenías en el botón Jugar
+	print("Iniciando mapa en dificultad: ", Global.dificultad_actual)
 	
-	# 2. Mostramos el "cartel" de jugar y lo habilitamos
-	boton_jugar.show()
-	boton_jugar.disabled = false
+	if (indice_actual == 0):
+		proximo_nivel = "res://escenas/mapas/map_Bosque_v2.tscn"
+	elif (indice_actual == 1):
+		proximo_nivel = "res://escenas/mapas/mapa_abismo_de_los_lamentos.tscn"
+	elif (indice_actual == 2):
+		proximo_nivel = "res://escenas/mapas/mapa_oscuro.tscn"
+		
+	print("Cargando: ", proximo_nivel)
+	Global.nivel_a_cargar = proximo_nivel
+	get_tree().change_scene_to_file(proximo_nivel)
+
+func _on_volver_atras_pressed() -> void:
+	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")

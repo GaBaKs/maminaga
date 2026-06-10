@@ -59,6 +59,17 @@ func _physics_process(delta):
 	velocity = direccion * velocidad
 	move_and_slide()
 
+# logica de regeneración de vida
+	if not yamurio and vida_actual < PlayerData.vida:
+		vida_actual += PlayerData.regen_vida * delta
+		
+		# Ponemos un tope para que no se pase de la vida máxima
+		if vida_actual > PlayerData.vida:
+			vida_actual = PlayerData.vida
+			
+		# Actualizamos la barra
+		if barra_vida:
+			barra_vida.value = vida_actual
 
 func recibir_danio(cantidad):
 	if yamurio:

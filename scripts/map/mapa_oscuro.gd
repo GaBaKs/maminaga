@@ -1,4 +1,3 @@
-GDScript
 extends Node2D
 
 @export var tipos_de_minerales: Array[PackedScene] = [preload("res://escenas/mapas/mineral_1.tscn"),preload("res://escenas/mapas/mineral_2.tscn"),preload("res://escenas/mapas/mineral_3.tscn")]

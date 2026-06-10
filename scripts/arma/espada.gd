@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 	var velocidad_ataque = 0.7   
 	alcance_radio = 70.0     
-	distancia_al_jugador = 30.0
+	distancia_al_jugador = 20.0
 	
 	timer_ataque = Timer.new()
 	timer_ataque.wait_time = 3.0 / (velocidad_ataque + PlayerData.velocidad_ataque)
