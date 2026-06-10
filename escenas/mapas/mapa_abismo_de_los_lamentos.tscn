@@ -31,6 +31,13 @@
 [ext_resource type="Texture2D" uid="uid://cm0wqec4qr8od" path="res://tileset/Fences/Fence_Top_Right.png" id="20_r30of"]
 [ext_resource type="Texture2D" uid="uid://m6t31a1xlldq" path="res://tileset/Decoration/Log_Cabin.png" id="21_t8qd3"]
 [ext_resource type="Texture2D" uid="uid://dpqdhkot6jeth" path="res://tileset/Decoration/Snowman_0.png" id="22_6yadr"]
+[ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="31_shec5"]
+[ext_resource type="PackedScene" uid="uid://bgf5dxu21omri" path="res://escenas/UI/pausa.tscn" id="32_gg84h"]
+[ext_resource type="Texture2D" uid="uid://yhfuygx0xths" path="res://assets/menu/Botones pergamino/pausa.png" id="34_o8eit"]
+[ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="35_eb2c2"]
+[ext_resource type="Script" path="res://scripts/menu/pausa.gd" id="36_o35qk"]
+[ext_resource type="PackedScene" uid="uid://c50j3oip8awvq" path="res://escenas/UI/cartel_victoria.tscn" id="37_o8eit"]
+[ext_resource type="PackedScene" uid="uid://crnppfxf0qxeb" path="res://escenas/player/extraccion.tscn" id="38_eb2c2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_apchg"]
 texture = ExtResource("1_13ahe")
@@ -10075,6 +10082,15 @@ texture = ExtResource("6_hvy66")
 [sub_resource type="TileSet" id="TileSet_hvy66"]
 sources/0 = SubResource("TileSetAtlasSource_4rr2o")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nuv0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35i0o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_is5dd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="mapa nieve" type="Node2D" unique_id=1610385003]
 y_sort_enabled = true
 script = ExtResource("1_hvy66")
@@ -10111,82 +10127,174 @@ z_index = 10
 tile_map_data = PackedByteArray("AADw//r/AAAQAAYAAADw//v/AAAQAAcAAADw//z/AAAQAAgAAADw//3/AAAQAAkAAADx//r/AAARAAYAAADx//v/AAARAAcAAADx//z/AAARAAgAAADx//3/AAARAAkAAAD1/wMAAAAQAAwAAAD1/wQAAAAQAA0AAAD2/wMAAAARAAwAAAD2/wQAAAARAA0AAADw////AAAQAAEAAADw/wAAAAAQAAIAAADw/wEAAAAQAAMAAADx////AAARAAEAAADx/wAAAAARAAIAAADx/wEAAAARAAMAAAD6////AAAQAAEAAAD6/wAAAAAQAAIAAAD6/wEAAAAQAAMAAAD7////AAARAAEAAAD7/wAAAAARAAIAAAD7/wEAAAARAAMAAAD1//n/AAAQAAEAAAD1//r/AAAQAAIAAAD1//v/AAAQAAMAAAD2//n/AAARAAEAAAD2//r/AAARAAIAAAD2//v/AAARAAMAAAD6//z/AAAQAAwAAAD6//3/AAAQAA0AAAD7//z/AAARAAwAAAD7//3/AAARAA0AAAA=")
 tile_set = SubResource("TileSet_hvy66")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=309418541]
-
-[node name="cartel_gameover" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("10_0nusx")]
-visible = false
-
-[node name="Joystick" type="CanvasLayer" parent="." unique_id=1110743618]
-offset = Vector2(1000, 500)
-transform = Transform2D(1, 0, 0, 1, 1000, 500)
-
-[node name="Joystick" parent="Joystick" unique_id=526028633 instance=ExtResource("11_2njgf")]
-
 [node name="Player" parent="." unique_id=1603352472 instance=ExtResource("12_4lpsi")]
 position = Vector2(-159, -19)
-
-[node name="PuntosDeSpawn" type="Node2D" parent="." unique_id=855993568]
-position = Vector2(-15, 0)
-
-[node name="Spawn1" type="Marker2D" parent="PuntosDeSpawn" unique_id=1034539877]
-position = Vector2(-508, 2)
-
-[node name="Spawn2" type="Marker2D" parent="PuntosDeSpawn" unique_id=1234354447]
-position = Vector2(174, -158)
-
-[node name="EnemyTimer" type="Timer" parent="." unique_id=1657619388]
-wait_time = 2.0
-autostart = true
-
-[node name="PuntosDeMinerales" type="Node2D" parent="." unique_id=1156807379]
-position = Vector2(7, -25)
-
-[node name="Marker2D" type="Marker2D" parent="PuntosDeMinerales" unique_id=1831107461]
-position = Vector2(-17, 287)
-
-[node name="Marker2D2" type="Marker2D" parent="PuntosDeMinerales" unique_id=453616133]
-position = Vector2(-639, 350)
-
-[node name="Marker2D3" type="Marker2D" parent="PuntosDeMinerales" unique_id=1230796434]
-position = Vector2(-161, 1809)
-
-[node name="Marker2D4" type="Marker2D" parent="PuntosDeMinerales" unique_id=2127280354]
-position = Vector2(399, 1937)
-
-[node name="Marker2D5" type="Marker2D" parent="PuntosDeMinerales" unique_id=1652500491]
-position = Vector2(1568, 1161)
-
-[node name="Marker2D6" type="Marker2D" parent="PuntosDeMinerales" unique_id=6311451]
-position = Vector2(2160, 986)
-
-[node name="Marker2D7" type="Marker2D" parent="PuntosDeMinerales" unique_id=1441083116]
-position = Vector2(2239, -309)
-
-[node name="Marker2D8" type="Marker2D" parent="PuntosDeMinerales" unique_id=2010664354]
-position = Vector2(-1566, -929)
-
-[node name="Marker2D9" type="Marker2D" parent="PuntosDeMinerales" unique_id=1615760586]
-position = Vector2(-1886, -909)
-
-[node name="Marker2D10" type="Marker2D" parent="PuntosDeMinerales" unique_id=1217968680]
-position = Vector2(-2066, -897)
-
-[node name="Marker2D11" type="Marker2D" parent="PuntosDeMinerales" unique_id=1556808863]
-position = Vector2(-2166, -369)
-
-[node name="Marker2D12" type="Marker2D" parent="PuntosDeMinerales" unique_id=1841147907]
-position = Vector2(-1987, 29)
-
-[node name="Marker2D13" type="Marker2D" parent="PuntosDeMinerales" unique_id=1239515485]
-position = Vector2(-783, -915)
-
-[node name="Marker2D14" type="Marker2D" parent="PuntosDeMinerales" unique_id=1708465895]
-position = Vector2(1198, 91)
-
-[node name="Marker2D15" type="Marker2D" parent="PuntosDeMinerales" unique_id=1652404890]
-position = Vector2(-798, 931)
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=768871120]
 stream = ExtResource("14_2njgf")
 volume_db = -30.0
 script = ExtResource("15_4lpsi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1223960896]
+
+[node name="cartel_gameover" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("10_0nusx")]
+visible = false
+
+[node name="LabelLocura" type="Label" parent="CanvasLayer" unique_id=1432396680]
+visible = false
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.32126078, 0.011098337, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.1254902, 0.003921569, 0, 1)
+theme_override_fonts/font = ExtResource("31_shec5")
+theme_override_font_sizes/font_size = 80
+text = "¡SOBREVIVE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TimerOcultarLocura" type="Timer" parent="CanvasLayer/LabelLocura" unique_id=1169151927]
+wait_time = 3.0
+one_shot = true
+
+[node name="Joystick" type="CanvasLayer" parent="." unique_id=260708676]
+offset = Vector2(200, 500)
+transform = Transform2D(1, 0, 0, 1, 200, 500)
+
+[node name="Pausa" parent="Joystick" unique_id=1177517165 instance=ExtResource("32_gg84h")]
+
+[node name="Joystick" parent="Joystick" unique_id=526028633 instance=ExtResource("11_2njgf")]
+
+[node name="Pausa2" type="Sprite2D" parent="Joystick" unique_id=873749780]
+position = Vector2(848, -444)
+scale = Vector2(2.6342428, 2.7580643)
+texture = ExtResource("34_o8eit")
+
+[node name="PausaButton" type="Button" parent="Joystick" unique_id=16800381]
+offset_left = 820.0
+offset_top = -471.0
+offset_right = 904.0
+offset_bottom = -422.0
+theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.39215687, 0.3137255, 1)
+theme_override_colors/font_hover_color = Color(0.4862745, 0.2784314, 0.21960784, 1)
+theme_override_fonts/font = ExtResource("35_eb2c2")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1nuv0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_35i0o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_is5dd")
+text = "||"
+script = ExtResource("36_o35qk")
+
+[node name="timerarriba" type="Label" parent="Joystick" unique_id=1589408451]
+offset_left = 5101.0
+offset_top = 6138.0
+offset_right = 5141.0
+offset_bottom = 6161.0
+
+[node name="PuntosDeSpawn" type="Node2D" parent="." unique_id=376806530]
+z_index = 50
+position = Vector2(-32, -87)
+
+[node name="Spawn1" type="Marker2D" parent="PuntosDeSpawn" unique_id=639194070]
+position = Vector2(529, 931)
+
+[node name="Spawn2" type="Marker2D" parent="PuntosDeSpawn" unique_id=171458587]
+position = Vector2(1743, 205)
+
+[node name="EnemyTimer" type="Timer" parent="." unique_id=165066362]
+wait_time = 2.0
+autostart = true
+
+[node name="PuntosDeMinerales" type="Node2D" parent="." unique_id=534412831]
+position = Vector2(-13, 63)
+
+[node name="Spawn_mineral" type="Marker2D" parent="PuntosDeMinerales" unique_id=390077705 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(-1154, 5)
+
+[node name="Spawn_mineral2" type="Marker2D" parent="PuntosDeMinerales" unique_id=49022942 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(-1119, 2)
+
+[node name="Spawn_mineral3" type="Marker2D" parent="PuntosDeMinerales" unique_id=2077088387 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-3048, -486)
+
+[node name="Spawn_mineral4" type="Marker2D" parent="PuntosDeMinerales" unique_id=1140680280 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(-2526, -37)
+
+[node name="Spawn_mineral5" type="Marker2D" parent="PuntosDeMinerales" unique_id=799870461 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(1697, 53)
+
+[node name="Spawn_mineral6" type="Marker2D" parent="PuntosDeMinerales" unique_id=1993629576 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-2557, -29)
+
+[node name="Spawn_mineral7" type="Marker2D" parent="PuntosDeMinerales" unique_id=221578303 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(494, 789)
+
+[node name="Spawn_mineral8" type="Marker2D" parent="PuntosDeMinerales" unique_id=1063447879 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(108, -86)
+
+[node name="Spawn_mineral9" type="Marker2D" parent="PuntosDeMinerales" unique_id=151727496 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(-3016, -475)
+
+[node name="Spawn_mineral10" type="Marker2D" parent="PuntosDeMinerales" unique_id=1244463465 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(-2522, -893)
+
+[node name="Spawn_mineral11" type="Marker2D" parent="PuntosDeMinerales" unique_id=1069497348 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(397, -1597)
+
+[node name="Spawn_mineral12" type="Marker2D" parent="PuntosDeMinerales" unique_id=148925261 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(426, -1589)
+
+[node name="Spawn_mineral13" type="Marker2D" parent="PuntosDeMinerales" unique_id=715172977 groups=["puntos_spawns_minerales"]]
+z_index = 5
+position = Vector2(-2491, -896)
+
+[node name="Spawn_mineral14" type="Marker2D" parent="PuntosDeMinerales" unique_id=516859105 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(1465, -1054)
+
+[node name="Spawn_mineral15" type="Marker2D" parent="PuntosDeMinerales" unique_id=1965933663 groups=["puntos_spawns_minerales"]]
+z_index = 50
+position = Vector2(1494, -1060)
+
+[node name="Timer_supervivencia" type="Timer" parent="." unique_id=693542817]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="CartelVictoria" parent="." unique_id=76188559 instance=ExtResource("37_o8eit")]
+visible = false
+
+[node name="extraccion" parent="." unique_id=1982181193 instance=ExtResource("38_eb2c2")]
+visible = false
+position = Vector2(113, -287)
+
+[node name="extraccion2" parent="." unique_id=331717673 instance=ExtResource("38_eb2c2")]
+visible = false
+position = Vector2(113, -287)
+
+[node name="TimerLocura" type="Timer" parent="." unique_id=896697713]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="CanvasLayer/LabelLocura/TimerOcultarLocura" to="." method="_on_timer_ocultar_locura_timeout"]
+[connection signal="timeout" from="Timer_supervivencia" to="." method="_on_timer_supervivencia_timeout"]
+[connection signal="timeout" from="TimerLocura" to="." method="_on_timer_locura_timeout"]
