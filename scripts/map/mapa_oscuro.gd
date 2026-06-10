@@ -61,7 +61,7 @@ func _on_enemy_timer_timeout():
 		return
 
 	# CORRECCIÓN ENEMIGOS: Evitar crasheo por diccionario vacío
-	var valores_enemigos = Global.enemigosBosque.values()
+	var valores_enemigos = Global.enemigosOscuro.values()
 	if valores_enemigos.is_empty():
 		return
 		
