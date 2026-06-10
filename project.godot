@@ -23,6 +23,8 @@ PlayerData="*uid://bprucqscp3key"
 [display]
 
 window/size/viewport_width=1153
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [global_group]
 
