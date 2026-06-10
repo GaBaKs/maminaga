@@ -10245,7 +10245,7 @@ position = Vector2(494, 789)
 
 [node name="Spawn_mineral8" type="Marker2D" parent="PuntosDeMinerales" unique_id=1063447879 groups=["puntos_spawns_minerales"]]
 z_index = 50
-position = Vector2(108, -86)
+position = Vector2(40, -54)
 
 [node name="Spawn_mineral9" type="Marker2D" parent="PuntosDeMinerales" unique_id=151727496 groups=["puntos_spawns_minerales"]]
 z_index = 50
