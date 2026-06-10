@@ -1,11 +1,10 @@
 extends Node2D
-
 @export var tipos_de_minerales: Array[PackedScene] = [preload("res://escenas/mapas/mineral_1.tscn"),preload("res://escenas/mapas/mineral_2.tscn"),preload("res://escenas/mapas/mineral_3.tscn")]
 @export var spawn_distancia_min: float = 400.0
 @export var spawn_distancia_max: float = 600.0
 @export var intentos_maximos: int = 10
 
-@onready var foreground = $TilemapLayers/Terreno
+@onready var foreground = $Foreground
 
 var dificultad := 1
 
@@ -29,7 +28,7 @@ func _on_enemy_timer_timeout():
 	if punto == null:
 		return
 
-	var escena = Global.enemigosNieve.values().pick_random()
+	var escena = Global.enemigosBosque.values().pick_random()
 	var nuevo_enemigo = escena.instantiate()
 	add_child(nuevo_enemigo)
 	nuevo_enemigo.global_position = punto  # ← global_position en lugar de position
@@ -104,13 +103,44 @@ func generar_minerales_por_dificultad():
 		for escena_mineral in tipos_de_minerales:
 			if escena_mineral != null:
 				var nuevo_mineral = escena_mineral.instantiate()
+				
+				# 1. PRIMERO LO AGREGAMOS AL MAPA (Nace)
+				add_child(nuevo_mineral) 
+				
+				# 2. DESPUÉS LE DECIMOS A DÓNDE IR
 				var offset_x = randf_range(-20.0, 20.0)
 				var offset_y = randf_range(-20.0, 20.0)
-				
 				nuevo_mineral.global_position = punto.global_position + Vector2(offset_x, offset_y)
-				print("Gema spawneada en: ", nuevo_mineral.global_position)
-				add_child(nuevo_mineral)
+				
 				gemas_creadas += 1
 				
 	print("¡Éxito! Se spawnearon un total de ", gemas_creadas, " minerales.")
 	print("--- FIN SPAWN MINERALES ---")
+# Conectá la señal timeout de tu TimerSupervivencia
+func _on_timer_supervivencia_timeout():
+	# Pasaron los 10 minutos
+	Global.ganar_partida()
+
+
+func _on_timer_locura_timeout() -> void:
+	print("¡MODO LOCURA ACTIVADO! Sobrevive 30 segundos más.")
+	
+	# Buscamos el timer que genera a los enemigos
+	# (Asegurate de que el nombre coincida con tu nodo real en la escena)
+	var timer_enemigos = $EnemyTimer
+	
+	# Bajamos el tiempo de espera al mínimo para que spawneen rapidísimo
+	# Por ejemplo, 0.1 o 0.2 segundos entre cada enemigo
+	timer_enemigos.wait_time = 0.1
+	$CanvasLayer/LabelLocura.show()
+	$CanvasLayer/LabelLocura/TimerOcultarLocura.start()
+	var extraccion = $extraccion
+	var extraccion2 = $extraccion2
+	extraccion.show()
+	extraccion2.show()
+	extraccion.monitoring = true
+	extraccion2.monitoring = true
+
+
+func _on_timer_ocultar_locura_timeout() -> void:
+	$CanvasLayer/LabelLocura.hide()

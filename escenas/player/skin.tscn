@@ -39,7 +39,7 @@ texture = ExtResource("2_v7ak3")
 expand_mode = 1
 
 [node name="PergaminoMapa" type="Sprite2D" parent="." unique_id=1622050692]
-position = Vector2(48, 226)
+position = Vector2(55, 223)
 scale = Vector2(2.5104165, 1.871212)
 texture = ExtResource("3_v8grp")
 

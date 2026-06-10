@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://crnppfxf0qxeb"]
 
-[ext_resource type="Script" uid="uid://k3kqgqievl2y" path="res://scripts/map/extraccion.gd" id="1_euo1c"]
+[ext_resource type="Script" uid="uid://cesssikj0t5rf" path="res://scripts/map/extraccion.gd" id="1_7o6q3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqyys"]
 size = Vector2(3, 2.28125)
 
-[node name="extraccion" type="Node2D" unique_id=1793651603]
+[node name="extraccion" type="Area2D" unique_id=1982181193]
+monitoring = false
+script = ExtResource("1_7o6q3")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1661704179]
-script = ExtResource("1_euo1c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1743844906]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743844906]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_gqyys")

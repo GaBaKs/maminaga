@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://dy7hasrc7uvao"]
 
 [ext_resource type="Script" uid="uid://dtp40fddc0omw" path="res://scripts/map/map_bosque.gd" id="1_3kfbn"]
-[ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="3_4t432"]
 [ext_resource type="PackedScene" uid="uid://7x1r8ksdjobp" path="res://escenas/joystick.tscn" id="3_bb8n1"]
 [ext_resource type="Texture2D" uid="uid://b88eiws5v6tfg" path="res://tileset/pixel_16_woods v2 free/Principal.png" id="4_jvrhv"]
 [ext_resource type="Texture2D" uid="uid://chaspoc0s0akp" path="res://tileset/Decoraciones de piedra/Texture/TX Props.png" id="5_wiu7m"]
@@ -6103,28 +6102,6 @@ spawn_distancia_max = 200.0
 
 [node name="cartel_gameover" parent="CanvasLayer" unique_id=2130493672 instance=ExtResource("11_wulo0")]
 
-[node name="LabelLocura" type="Label" parent="CanvasLayer" unique_id=1701759826]
-visible = false
-texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.32126078, 0.011098337, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.1254902, 0.003921569, 0, 1)
-theme_override_fonts/font = ExtResource("3_4t432")
-theme_override_font_sizes/font_size = 80
-text = "¡SOBREVIVE!"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TimerOcultarLocura" type="Timer" parent="CanvasLayer/LabelLocura" unique_id=353617792]
-wait_time = 3.0
-one_shot = true
-
 [node name="Joystick" type="CanvasLayer" parent="." unique_id=697574457]
 offset = Vector2(200, 500)
 transform = Transform2D(1, 0, 0, 1, 200, 500)
@@ -6287,18 +6264,15 @@ autostart = true
 [node name="CartelVictoria" parent="." unique_id=494833260 instance=ExtResource("13_qryxp")]
 
 [node name="extraccion" parent="." unique_id=1793651603 instance=ExtResource("14_4t432")]
-visible = false
 position = Vector2(113, -287)
 
 [node name="extraccion2" parent="." unique_id=669638459 instance=ExtResource("14_4t432")]
-visible = false
 position = Vector2(-2734, -646)
 
 [node name="TimerLocura" type="Timer" parent="." unique_id=987166930]
-wait_time = 5.0
+wait_time = 300.0
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="CanvasLayer/LabelLocura/TimerOcultarLocura" to="." method="_on_timer_ocultar_locura_timeout"]
 [connection signal="timeout" from="Timer_supervivencia" to="." method="_on_timer_supervivencia_timeout"]
 [connection signal="timeout" from="TimerLocura" to="." method="_on_timer_locura_timeout"]

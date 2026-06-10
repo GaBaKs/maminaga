@@ -1,5 +1,4 @@
 extends Node2D
-
 @export var tipos_de_minerales: Array[PackedScene] = [preload("res://escenas/mapas/mineral_1.tscn"),preload("res://escenas/mapas/mineral_2.tscn"),preload("res://escenas/mapas/mineral_3.tscn")]
 @export var spawn_distancia_min: float = 400.0
 @export var spawn_distancia_max: float = 600.0
@@ -121,3 +120,27 @@ func generar_minerales_por_dificultad():
 func _on_timer_supervivencia_timeout():
 	# Pasaron los 10 minutos
 	Global.ganar_partida()
+
+
+func _on_timer_locura_timeout() -> void:
+	print("¡MODO LOCURA ACTIVADO! Sobrevive 30 segundos más.")
+	
+	# Buscamos el timer que genera a los enemigos
+	# (Asegurate de que el nombre coincida con tu nodo real en la escena)
+	var timer_enemigos = $EnemyTimer
+	
+	# Bajamos el tiempo de espera al mínimo para que spawneen rapidísimo
+	# Por ejemplo, 0.1 o 0.2 segundos entre cada enemigo
+	timer_enemigos.wait_time = 0.1
+	$CanvasLayer/LabelLocura.show()
+	$CanvasLayer/LabelLocura/TimerOcultarLocura.start()
+	var extraccion = $extraccion
+	var extraccion2 = $extraccion2
+	extraccion.show()
+	extraccion2.show()
+	extraccion.monitoring = true
+	extraccion2.monitoring = true
+
+
+func _on_timer_ocultar_locura_timeout() -> void:
+	$CanvasLayer/LabelLocura.hide()

@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b5qcjjmluel4k" path="res://tileset/Fences/Fence_Top_Left.png" id="14_e1ygp"]
 [ext_resource type="Texture2D" uid="uid://df13owhi1ifsl" path="res://tileset/Decoration/Snowman_5.png" id="14_hvy66"]
 [ext_resource type="Script" uid="uid://c6ce0au7wlcaj" path="res://scripts/sonidos/musica/musica_mapa_bosque.gd" id="15_4lpsi"]
-[ext_resource type="Texture2D" uid="uid://dimd44svxcaw6" path="res://tileset/mapacorrosion/PNG/Objects.png" id="15_44ljn"]
+[ext_resource type="Texture2D" uid="uid://dcm0hl13a1645" path="res://tileset/mapacorrosion/PNG/Objects.png" id="15_44ljn"]
 [ext_resource type="Texture2D" uid="uid://f7ik723xj3x2" path="res://tileset/Trees/Tree_3.png" id="17_hvy66"]
 [ext_resource type="Texture2D" uid="uid://cm0wqec4qr8od" path="res://tileset/Fences/Fence_Top_Right.png" id="20_r30of"]
 [ext_resource type="Texture2D" uid="uid://m6t31a1xlldq" path="res://tileset/Decoration/Log_Cabin.png" id="21_t8qd3"]
