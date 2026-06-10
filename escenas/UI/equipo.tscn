@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="4_qy112"]
 [ext_resource type="Texture2D" uid="uid://dp1deto4hni54" path="res://assets/arma/arco.png" id="4_w04cf"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="5_np6vg"]
-[ext_resource type="Texture2D" uid="uid://dsrf4kjd57tey" path="res://assets/arma/espada.png" id="5_opotf"]
+[ext_resource type="Texture2D" uid="uid://dnwh3xnh0uawu" path="res://assets/arma/espada.png" id="5_opotf"]
 [ext_resource type="Texture2D" uid="uid://oy7n7uq73sft" path="res://assets/arma/hacha.png" id="6_g332j"]
 
 [node name="equipo" type="Control" unique_id=1359550272]
@@ -37,10 +37,10 @@ offset_bottom = 100.0
 
 [node name="boton_espada" type="Button" parent="." unique_id=387996950]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 401.0
-offset_right = 365.0
-offset_bottom = 455.0
+offset_left = 219.0
+offset_top = 341.0
+offset_right = 364.0
+offset_bottom = 395.0
 
 [node name="boton_arco" type="Button" parent="." unique_id=2140810269]
 layout_mode = 0
@@ -59,9 +59,9 @@ offset_bottom = 396.0
 [node name="boton_equipar_espada" type="Button" parent="." unique_id=246937115]
 layout_mode = 0
 offset_left = 219.0
-offset_top = 340.0
+offset_top = 405.0
 offset_right = 364.0
-offset_bottom = 395.0
+offset_bottom = 460.0
 
 [node name="boton_equipar_arco" type="Button" parent="." unique_id=1107436147]
 layout_mode = 0
@@ -77,7 +77,7 @@ offset_top = 401.0
 offset_right = 940.0
 offset_bottom = 456.0
 
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=1360083105]
+[node name="arco" type="TextureRect" parent="." unique_id=1360083105]
 texture_filter = 1
 layout_mode = 0
 offset_left = 470.0
@@ -86,7 +86,7 @@ offset_right = 696.0
 offset_bottom = 370.0
 texture = ExtResource("4_w04cf")
 
-[node name="TextureRect4" type="TextureRect" parent="." unique_id=2025125714]
+[node name="espada" type="TextureRect" parent="." unique_id=2025125714]
 texture_filter = 1
 layout_mode = 0
 offset_left = 178.0
@@ -95,7 +95,7 @@ offset_right = 407.0
 offset_bottom = 374.0
 texture = ExtResource("5_opotf")
 
-[node name="TextureRect5" type="TextureRect" parent="." unique_id=729673314]
+[node name="hacha" type="TextureRect" parent="." unique_id=729673314]
 texture_filter = 1
 layout_mode = 0
 offset_left = 751.0
