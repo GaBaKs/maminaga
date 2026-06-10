@@ -8,6 +8,11 @@ var proximo_nivel
 # Referencias a tus nodos
 @onready var display = $HBoxContainer/BosqueIcono  
 @onready var boton_jugar = $HBoxContainer/Jugar
+@onready var lbutton = $HBoxContainer/LButton
+@onready var rbutton = $HBoxContainer/RButton
+@onready var pergamino1 = $HBoxContainer/PergaminoLateral
+@onready var pergamino2 = $HBoxContainer/PergaminoLateral2
+
 
 # === NUEVAS REFERENCIAS (Ajustá las rutas a donde estén tus botones realmente) ===
 @onready var menu_dificultades = $TextureRectDificultades # Referencia directa al contenedor padre
@@ -44,6 +49,11 @@ func actualizar_display():
 
 func _on_jugar_pressed():
 	# Al apretar jugar, mostramos las dificultades y bloqueamos jugar para que no lo aprieten de nuevo
+	lbutton.hide()
+	rbutton.hide()
+	pergamino1.hide()
+	pergamino2.hide()
+	boton_jugar.hide()
 	menu_dificultades.show()
 	boton_jugar.disabled = true
 
