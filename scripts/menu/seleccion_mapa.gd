@@ -35,7 +35,7 @@ func _on_rbutton_pressed():
 	
 func _on_jugar_pressed():
 	# Verificamos que se haya elegido una dificultad por seguridad
-	if Global.dificultad_actual != "":
+	if Global.dificultad_actual:
 		print("Iniciando mapa en dificultad: ", Global.dificultad_actual)
 		
 		if (indice_actual == 0):
@@ -64,15 +64,15 @@ func _on_volver_atras_pressed() -> void:
 	get_tree().change_scene_to_file("res://escenas/UI/menu.tscn")
 
 func _on_boton_facil_pressed() -> void:
-	Global.dificultad_actual = "facil"
+	Global.dificultad_actual = 1
 	habilitar_boton_jugar()
 
 func _on_boton_normal_pressed() -> void:
-	Global.dificultad_actual = "normal"
+	Global.dificultad_actual = 2
 	habilitar_boton_jugar()
 
 func _on_boton_dificil_pressed() -> void:
-	Global.dificultad_actual = "dificil"
+	Global.dificultad_actual = 3
 	habilitar_boton_jugar()
 	
 func habilitar_boton_jugar():

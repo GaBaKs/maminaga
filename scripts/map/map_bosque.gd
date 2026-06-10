@@ -15,11 +15,11 @@ var dificultad := 1
 func _ready() -> void:
 	# 1. Definimos la velocidad base de aparición según la dificultad
 	match Global.dificultad_actual:
-		"facil":
+		1: # Fácil
 			tiempo_spawn_base = 3.0 # Un enemigo cada 3 segundos
-		"normal":
+		2: # Normal
 			tiempo_spawn_base = 2.0 # Un enemigo cada 2 segundos
-		"dificil":
+		3: # Difícil
 			tiempo_spawn_base = 1.0 # Un enemigo por segundo
 			
 	# Asignamos el tiempo al timer
