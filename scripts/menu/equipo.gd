@@ -17,7 +17,7 @@ extends Control
 # --- RUTA DONDE ESTÁN GUARDADOS TUS SPRITES ---
 # ¡IMPORTANTE: Cambiá esto por la ruta real de tu carpeta de imágenes!
 # Asegurate de que termine con una barra "/"
-const RUTA_SPRITES = "res://escenas/armas/sprites/" 
+const RUTA_SPRITES = "res://assets/arma/"
 
 # Agregamos "madera" como el primer nivel base
 const ORDEN_MATERIALES = ["madera", "amatista", "ruby", "agatha"]
@@ -32,7 +32,7 @@ const MAPEO_MINERALES = {
 
 # --- VARIABLES PARA LOS CARTELES ---
 var dialogo_confirmacion: ConfirmationDialog
-var dialogo_advertencia: AcceptDialog # <-- NUEVA VARIABLE
+var dialogo_advertencia: AcceptDialog 
 var arma_en_tramite: String = ""
 var material_en_tramite: String = ""
 var moneda_en_tramite: String = "" # Puede ser "almas" o el nombre del mineral
@@ -78,16 +78,20 @@ func configurar_botones(btn_principal: Button, btn_equip: Button, nodo_img: Text
 		btn_principal.show()
 		btn_principal.text = "Comprar"
 
-	# --- LÓGICA PARA ACTUALIZAR LA IMAGEN ---
+	# --- NUEVA LÓGICA SEGURA PARA ACTUALIZAR LA IMAGEN ---
 	# Construimos el nombre del archivo exacto (ej: "espada-madera.png")
 	var nombre_archivo = id_arma + "-" + material_actual + ".png"
 	var ruta_completa = RUTA_SPRITES + nombre_archivo
 	
-	# Usamos ResourceLoader para evitar que el juego crashee si te falta alguna imagen
-	if ResourceLoader.exists(ruta_completa):
-		nodo_img.texture = load(ruta_completa)
+	# Cargamos la textura en una variable temporal
+	var nueva_textura = load(ruta_completa)
+	
+	# Solo la aplicamos si Godot la encontró exitosamente
+	if nueva_textura != null:
+		nodo_img.texture = nueva_textura
 	else:
-		print("ATENCIÓN: No se encontró la imagen en la ruta: ", ruta_completa)
+		# Usamos printerr para que salga en rojo en el depurador y sea fácil de ver
+		printerr("ERROR DE IMAGEN: Godot no encontró el sprite. Buscó exactamente esta ruta: ", ruta_completa)
 
 func _on_boton_espada_pressed(): procesar_compra_mejora("espada")
 func _on_boton_arco_pressed(): procesar_compra_mejora("arco") 
@@ -150,7 +154,6 @@ func mostrar_cartel_confirmacion():
 	add_child(dialogo_confirmacion)
 	dialogo_confirmacion.popup_centered()
 
-# --- NUEVA FUNCIÓN PARA EL AVISO ---
 func mostrar_cartel_advertencia(mensaje: String):
 	if dialogo_advertencia != null:
 		dialogo_advertencia.queue_free()

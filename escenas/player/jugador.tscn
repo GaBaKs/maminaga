@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ckmh7aa8le8mo" path="res://audios/caminar.mp3" id="6_l63m8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhvu3"]
+radius = 12.0
 
 [sub_resource type="GDScript" id="GDScript_l63m8"]
 script/source = "extends AudioStreamPlayer
@@ -36,20 +37,23 @@ zoom = Vector2(2, 2)
 process_callback = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1519851020]
+texture_filter = 1
+position = Vector2(-1.5258789e-05, -4.9999847)
+scale = Vector2(1.3333322, 1.3333322)
 sprite_frames = ExtResource("3_clsgm")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185478807]
-position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_lhvu3")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1890487245]
-modulate = Color(0.6072, 0.36799997, 0.92, 1)
-self_modulate = Color(1.017, 0.236, 1.56, 1)
-offset_left = -38.0
-offset_top = -47.0
-offset_right = 37.0
-offset_bottom = -20.0
+self_modulate = Color(0.8158286, 0, 0.08656279, 1)
+z_index = 12
+offset_left = -15.000002
+offset_top = -26.000002
+offset_right = 60.0
+offset_bottom = 0.9999981
+scale = Vector2(0.4, 0.4)
 value = 100.0
 fill_mode = 1
 

@@ -653,7 +653,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_47332")
 }],
-"loop": true,
+"loop": false,
 "name": &"muerte",
 "speed": 5.0
 }]
@@ -666,4 +666,4 @@ shape = SubResource("CircleShape2D_on8la")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=114674637]
 sprite_frames = SubResource("SpriteFrames_c3dpf")
-animation = &"muerte"
+animation = &"abajo"
