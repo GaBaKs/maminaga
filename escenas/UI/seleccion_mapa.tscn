@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c1ox1mfjdg6o8" path="res://assets/menu/pergamino mapa.png" id="4_aqsmi"]
 [ext_resource type="FontFile" uid="uid://cqhplwvdglnfk" path="res://assets/menu/Micro5-Regular.ttf" id="5_4naqb"]
 [ext_resource type="AudioStream" uid="uid://ctaqn4qgjw31j" path="res://audios/musica_seleccion_mapas.mp3" id="7_5bj3u"]
-[ext_resource type="Texture2D" uid="uid://bfqom8dtsttr8" path="res://assets/menu/iconosMapas/logo_bosque.png" id="7_aqsmi"]
+[ext_resource type="Texture2D" uid="uid://b5g5myy0fx7h8" path="res://assets/menu/iconosMapas/logo_bosque.png" id="7_aqsmi"]
 [ext_resource type="Script" uid="uid://dgilvs7j8obv1" path="res://scripts/sonidos/musica/musica_selectmap.gd" id="8_6o8fp"]
+[ext_resource type="FontFile" uid="uid://deyorkw17uy1s" path="res://assets/Micro5-Regular.ttf" id="10_4naqb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_766hy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -36,6 +37,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlwnh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_4naqb"]
 
 [node name="SeleccionMapa" type="Control" unique_id=955157318]
 layout_mode = 3
@@ -75,16 +78,18 @@ grow_vertical = 2
 theme_override_constants/separation = 160
 
 [node name="PergaminoLateral2" type="Sprite2D" parent="HBoxContainer" unique_id=433982177]
+texture_filter = 1
 position = Vector2(490, 64)
 scale = Vector2(5.031249, 3.8316333)
 texture = ExtResource("3_6o8fp")
 
 [node name="PergaminoLateral" type="Sprite2D" parent="HBoxContainer" unique_id=877426334]
+texture_filter = 1
 position = Vector2(13, 63)
 scale = Vector2(5.031249, 3.8316333)
 texture = ExtResource("3_6o8fp")
 
-[node name="PergaminoMapa" type="Sprite2D" parent="HBoxContainer" unique_id=660355207]
+[node name="PergaminoJugar" type="Sprite2D" parent="HBoxContainer" unique_id=660355207]
 position = Vector2(249, 67)
 scale = Vector2(5.7083335, 6.2765155)
 texture = ExtResource("4_aqsmi")
@@ -99,6 +104,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_766hy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_a6102")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dqrsa")
+disabled = true
 text = "<
 "
 
@@ -127,6 +133,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bcitv")
 text = ">"
 
 [node name="BosqueIcono" type="Sprite2D" parent="HBoxContainer" unique_id=1839502063]
+texture_filter = 1
 position = Vector2(250.99997, -193.00002)
 scale = Vector2(0.7926338, 0.778745)
 texture = ExtResource("7_aqsmi")
@@ -152,7 +159,49 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_n3xrl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vlwnh")
 text = "Volver"
 
+[node name="TextureRectDificultades" type="TextureRect" parent="." unique_id=1984546061]
+texture_filter = 1
+layout_mode = 0
+offset_left = 424.0
+offset_top = 397.0
+offset_right = 701.0
+offset_bottom = 605.0
+texture = ExtResource("4_aqsmi")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRectDificultades" unique_id=629899105]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 70.0
+offset_right = 235.0
+offset_bottom = 125.0
+theme = SubResource("Theme_4naqb")
+alignment = 1
+
+[node name="BotonFacil" type="Button" parent="TextureRectDificultades/HBoxContainer2" unique_id=547542090]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11459894, 0.05667171, 0.0006668515, 1)
+theme_override_fonts/font = ExtResource("10_4naqb")
+theme_override_font_sizes/font_size = 30
+text = "Facil"
+
+[node name="BotonNormal" type="Button" parent="TextureRectDificultades/HBoxContainer2" unique_id=1624376781]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11669437, 0.054915234, 0.0033379097, 1)
+theme_override_fonts/font = ExtResource("10_4naqb")
+theme_override_font_sizes/font_size = 30
+text = "Normal"
+
+[node name="BotonDificil" type="Button" parent="TextureRectDificultades/HBoxContainer2" unique_id=890769405]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11764706, 0.05490196, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("10_4naqb")
+theme_override_font_sizes/font_size = 30
+text = "Dificil"
+
 [connection signal="pressed" from="HBoxContainer/LButton" to="." method="_on_lbutton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="HBoxContainer/RButton" to="." method="_on_rbutton_pressed"]
 [connection signal="pressed" from="volver atras" to="." method="_on_volver_atras_pressed"]
+[connection signal="pressed" from="TextureRectDificultades/HBoxContainer2/BotonFacil" to="." method="_on_boton_facil_pressed"]
+[connection signal="pressed" from="TextureRectDificultades/HBoxContainer2/BotonNormal" to="." method="_on_boton_normal_pressed"]
+[connection signal="pressed" from="TextureRectDificultades/HBoxContainer2/BotonDificil" to="." method="_on_boton_dificil_pressed"]

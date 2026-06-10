@@ -24,7 +24,7 @@ var enemigosNieve = {
 }
 # --- Variables de Navegación y Configuración ---
 var mapa_seleccionado: String = "" # Ejemplo: "res://mapas/bosque.tscn"
-var dificultad_actual: int = 1    # 1: Fácil, 2: Medio, 3: Difícil
+var dificultad_actual: String = "normal"   # 1: Fácil, 2: Medio, 3: Difícil
 var skin_equipada: String = "default"
 var referencia_jugador: CharacterBody2D
 var cartel_interfaz: CanvasLayer 
