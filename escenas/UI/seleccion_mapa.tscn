@@ -105,7 +105,6 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_766hy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_a6102")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dqrsa")
-disabled = true
 text = "<
 "
 
