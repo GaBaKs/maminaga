@@ -8,7 +8,7 @@ extends Node2D
 var tiempo_total_partida = 30.0 # 5.5 minutos
 var tiempo_spawn_base = 2.0 # Valor por defecto
 
-@onready var foreground = $TilemapLayers/Foreground
+@onready var foreground = $Foreground
 
 var dificultad := 1
 
@@ -62,7 +62,7 @@ func _on_enemy_timer_timeout():
 	if punto == null:
 		return
 
-	var escena = Global.enemigosBosque.values().pick_random()
+	var escena = Global.enemigosNieve.values().pick_random()
 	var nuevo_enemigo = escena.instantiate()
 	add_child(nuevo_enemigo)
 	nuevo_enemigo.global_position = punto 
