@@ -17,18 +17,26 @@ extends Control
 # --- RUTA DONDE ESTÁN GUARDADOS TUS SPRITES ---
 # ¡IMPORTANTE: Cambiá esto por la ruta real de tu carpeta de imágenes!
 # Asegurate de que termine con una barra "/"
-const RUTA_SPRITES = "res://assets/arma/" 
+const RUTA_SPRITES = "res://escenas/armas/sprites/" 
 
 # Agregamos "madera" como el primer nivel base
 const ORDEN_MATERIALES = ["madera", "amatista", "ruby", "agatha"]
 
 # Aca van los costos de las armas
-const COSTOS_MEJORA = {
-	"madera":   {"mineral": "mineral1", "costo": 1}, # Costo inicial para obtener el arma base
-	"amatista": {"mineral": "mineral1", "costo": 5},
-	"ruby":     {"mineral": "mineral2", "costo": 5},
-	"agatha":   {"mineral": "mineral3", "costo": 10}
+# Mapeamos los nombres nuevos a las variables originales de tu PlayerData
+const MAPEO_MINERALES = {
+	"amatista": "mineral1",
+	"ruby": "mineral2",
+	"agatha": "mineral3"
 }
+
+# --- VARIABLES PARA LOS CARTELES ---
+var dialogo_confirmacion: ConfirmationDialog
+var dialogo_advertencia: AcceptDialog # <-- NUEVA VARIABLE
+var arma_en_tramite: String = ""
+var material_en_tramite: String = ""
+var moneda_en_tramite: String = "" # Puede ser "almas" o el nombre del mineral
+var costo_en_tramite: int = 0
 
 func _ready():
 	boton_equipar_espada.pressed.connect(func(): _on_boton_equip_pressed("espada"))
@@ -100,21 +108,92 @@ func procesar_compra_mejora(id_arma: String):
 		var indice_actual = ORDEN_MATERIALES.find(material_actual)
 		material_objetivo = ORDEN_MATERIALES[indice_actual + 1]
 		
-	var datos_costo = COSTOS_MEJORA[material_objetivo]
-	var mineral_requerido = datos_costo["mineral"]
-	var costo = datos_costo["costo"]
+	# Guardamos los datos de la transacción actual
+	arma_en_tramite = id_arma
+	material_en_tramite = material_objetivo
 	
-	if PlayerData.minerales[mineral_requerido] >= costo:
-		PlayerData.minerales[mineral_requerido] -= costo
-		PlayerData.armas_compradas[id_arma] = material_objetivo
+	# Asignamos precio según si es compra nueva o mejora
+	if material_objetivo == "madera":
+		moneda_en_tramite = "almas"
+		if id_arma == "arco":
+			costo_en_tramite = 30
+		elif id_arma == "hacha":
+			costo_en_tramite = 50
+		else:
+			costo_en_tramite = 0 # La espada ya la tiene de base
+	else:
+		# Si es una mejora, pide 2 del mineral correspondiente
+		moneda_en_tramite = material_objetivo 
+		costo_en_tramite = 2
+	
+	# Mostramos el cartel en lugar de comprar directamente
+	mostrar_cartel_confirmacion()
+
+func mostrar_cartel_confirmacion():
+	# Si ya existía un cartel de antes, lo borramos para no acumular basura
+	if dialogo_confirmacion != null:
+		dialogo_confirmacion.queue_free()
 		
-		if PlayerData.arma_equipada["nombre"] == id_arma:
-			PlayerData.arma_equipada["material"] = material_objetivo
+	dialogo_confirmacion = ConfirmationDialog.new()
+	dialogo_confirmacion.title = "Confirmar Transacción"
+	
+	var accion = "Comprar" if material_en_tramite == "madera" else "Mejorar a"
+	dialogo_confirmacion.dialog_text = "¿Estás seguro que deseas " + accion + " " + arma_en_tramite.capitalize() + " " + material_en_tramite.capitalize() + "?\n\nCosto: " + str(costo_en_tramite) + " " + moneda_en_tramite.capitalize()
+	
+	dialogo_confirmacion.ok_button_text = "Aceptar"
+	dialogo_confirmacion.cancel_button_text = "Cancelar"
+	
+	# Conectamos el botón de Aceptar a la ejecución real de la compra
+	dialogo_confirmacion.confirmed.connect(_on_compra_aceptada)
+	
+	# Lo agregamos y lo mostramos en el centro
+	add_child(dialogo_confirmacion)
+	dialogo_confirmacion.popup_centered()
+
+# --- NUEVA FUNCIÓN PARA EL AVISO ---
+func mostrar_cartel_advertencia(mensaje: String):
+	if dialogo_advertencia != null:
+		dialogo_advertencia.queue_free()
+		
+	dialogo_advertencia = AcceptDialog.new()
+	dialogo_advertencia.title = "Recursos insuficientes"
+	dialogo_advertencia.dialog_text = mensaje
+	dialogo_advertencia.ok_button_text = "Entendido"
+	
+	add_child(dialogo_advertencia)
+	dialogo_advertencia.popup_centered()
+
+func _on_compra_aceptada():
+	var compra_exitosa = false
+	
+	if moneda_en_tramite == "almas":
+		if PlayerData.almas >= costo_en_tramite:
+			PlayerData.almas -= costo_en_tramite
+			compra_exitosa = true
+		else:
+			# Calculamos y mostramos lo que le falta
+			var faltante = costo_en_tramite - PlayerData.almas
+			mostrar_cartel_advertencia("No tienes suficientes almas.\nTe faltan: " + str(faltante) + " almas.")
+	else:
+		# Si es mineral, buscamos su ID interno (mineral1, mineral2, etc) en el mapeo
+		var id_mineral = MAPEO_MINERALES[moneda_en_tramite]
+		
+		if PlayerData.minerales[id_mineral] >= costo_en_tramite:
+			PlayerData.minerales[id_mineral] -= costo_en_tramite
+			compra_exitosa = true
+		else:
+			# Calculamos y mostramos lo que le falta
+			var faltante = costo_en_tramite - PlayerData.minerales[id_mineral]
+			mostrar_cartel_advertencia("No tienes suficientes minerales.\nTe faltan: " + str(faltante) + " de " + moneda_en_tramite.capitalize() + ".")
+
+	if compra_exitosa:
+		PlayerData.armas_compradas[arma_en_tramite] = material_en_tramite
+		
+		if PlayerData.arma_equipada["nombre"] == arma_en_tramite:
+			PlayerData.arma_equipada["material"] = material_en_tramite
 			
 		PlayerData.guardar_datos()
-		print("Éxito: ", id_arma, " subió a ", material_objetivo)
-	else:
-		print("Faltan recursos. Necesitas ", costo, " de ", mineral_requerido)
+		print("Éxito: ", arma_en_tramite, " subió a ", material_en_tramite)
 		
 	# Refrescamos la interfaz para actualizar los textos de los botones y la imagen
 	compradas()
