@@ -41,7 +41,6 @@ func aplicar_danio(objetivo: Node2D) -> void:
 	# El daño ahora escala con el tier de madera, amatista, etc.
 	nueva_bala.danio_bala = danio + PlayerData.danio
 	print("daño bala: ", nueva_bala.danio_bala, " (", material_actual, ")")
-	
 	# La agregamos al mapa (current_scene) para que se mueva independiente del jugador
 	get_tree().current_scene.add_child(nueva_bala)
 	

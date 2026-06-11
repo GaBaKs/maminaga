@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cf3hmr3wj6eod"]
 
 [ext_resource type="Script" uid="uid://rcwcs5oe4p2j" path="res://scripts/arma/bala.gd" id="1_0bjxa"]
-[ext_resource type="Texture2D" uid="uid://bro5whlrkxj5v" path="res://assets/arma/bala.webp" id="1_2y4dy"]
+[ext_resource type="Texture2D" uid="uid://h7dxfn00dx3d" path="res://assets/arma/flecha.png" id="2_0bjxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qc4h"]
 
@@ -12,9 +12,9 @@ metadata/_edit_horizontal_guides_ = [304.0]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=228338539]
 shape = SubResource("CircleShape2D_2qc4h")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1882303326]
-position = Vector2(-3.0517578e-05, 1)
-scale = Vector2(0.043877598, 0.039795853)
-texture = ExtResource("1_2y4dy")
+[node name="Flecha" type="Sprite2D" parent="." unique_id=1211762624]
+texture_filter = 1
+rotation = 2.3496323
+texture = ExtResource("2_0bjxa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

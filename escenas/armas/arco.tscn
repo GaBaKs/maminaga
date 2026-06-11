@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://0sdeelsnvyjy" path="res://scripts/arma/arco.gd" id="1_f78qo"]
 [ext_resource type="PackedScene" uid="uid://cf3hmr3wj6eod" path="res://escenas/armas/bala.tscn" id="2_1j2le"]
-[ext_resource type="Texture2D" uid="uid://dgey2lsda4xuy" path="res://assets/arma/armas amatista.png" id="3_1j2le"]
+[ext_resource type="Texture2D" uid="uid://b43gkyixw2fux" path="res://assets/arma/armas amatista.png" id="3_1j2le"]
 [ext_resource type="Texture2D" uid="uid://bom1xe7oa6es3" path="res://assets/arma/armas madera.png" id="3_a80lo"]
-[ext_resource type="Texture2D" uid="uid://bp40a1v1bt4b2" path="res://assets/arma/armas rubi.png" id="5_ead62"]
-[ext_resource type="Texture2D" uid="uid://bnk31criahxqx" path="res://assets/arma/armas agata.png" id="6_d5ig5"]
+[ext_resource type="Texture2D" uid="uid://bhbtl6370lumo" path="res://assets/arma/armas rubi.png" id="5_ead62"]
+[ext_resource type="Texture2D" uid="uid://cgapvqbbq4wpc" path="res://assets/arma/armas agata.png" id="6_d5ig5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utwdo"]
 atlas = ExtResource("3_a80lo")
@@ -516,8 +516,8 @@ bala_escena = ExtResource("2_1j2le")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=73210841]
 texture_filter = 1
-position = Vector2(19, -17)
-rotation = 1.7377225
+position = Vector2(23.999998, -12)
+rotation = 2.1728015
 scale = Vector2(2.0347347, 2.0347347)
 sprite_frames = SubResource("SpriteFrames_n2ia6")
 animation = &"idle0"

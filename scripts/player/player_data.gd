@@ -25,7 +25,7 @@ var minerales = {
 	"mineral2": 100,
 	"mineral3": 100
 }
-var almas = 0
+var almas = 700
 
 # SKINS
 
