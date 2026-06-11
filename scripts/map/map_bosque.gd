@@ -110,8 +110,6 @@ func _hay_colision(pos: Vector2) -> bool:
 func generar_minerales_por_dificultad():
 	print("--- INICIANDO SPAWN MINERALES ---")
 	var jugador = get_tree().get_first_node_in_group("jugador")
-	if jugador:
-		print("-> EL JUGADOR ESTA EN: ", jugador.global_position)
 	
 	var ajustes = Global.ajustes_dificultad[Global.dificultad_actual]
 	var multiplicador = ajustes["multiplicador_minerales"]
@@ -122,18 +120,14 @@ func generar_minerales_por_dificultad():
 		return
 		
 	var puntos_disponibles = $PuntosDeMinerales.get_children()
-	print("1. Puntos encontrados en el mapa: ", puntos_disponibles.size())
-	
 	if puntos_disponibles.is_empty():
 		print("ERROR: La carpeta PuntosDeMinerales no tiene ningún Marker2D adentro.")
 		return
 		
 	puntos_disponibles.shuffle()
-	var cantidad_base = 5
+	var cantidad_base = 10
 	var cantidad_a_spawnear = min(int(cantidad_base * multiplicador), puntos_disponibles.size())
-	print("2. Vetas a spawnear según la dificultad: ", cantidad_a_spawnear)
 	
-	print("3. Tipos de minerales cargados en el array: ", tipos_de_minerales.size())
 	if tipos_de_minerales.is_empty():
 		print("ERROR: El Array tipos_de_minerales está vacío. ¡Te faltó cargarlos en el Inspector!")
 		return
